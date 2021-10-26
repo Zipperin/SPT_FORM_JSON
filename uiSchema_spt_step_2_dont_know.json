@@ -1,0 +1,984 @@
+{
+    "variables": {},
+    "uiSchema": {
+        "onChangeHandler": "function ({ values, prevValues }) {     console.log({ values });      const cloneObject = (obj) => JSON.parse(JSON.stringify(obj));      const fillObjectWithStateKeyMap = (objForCopy, data, map) => {         const clone = cloneObject(objForCopy);          Object.keys(map).forEach((shipperKey) => {             const dataKey = map[shipperKey];             clone[shipperKey] = data[dataKey] ? data[dataKey] : '';         });          return clone;     };      const fillShipperAsApplicant = (values) => {           const stateKeyMap = {             shipperLegalAddress: 'legalAddress',             shipperInn: 'inn',             shipperOgrn: 'ogrn',             shipperKpp: 'kpp'         };         const updatedValues = fillObjectWithStateKeyMap(values, values, stateKeyMap);         updatedValues.shipperCompanyName = {             key: values.client,             value: values.companyName         };         return {updatedValues};     };      const generateShipperLegalAddressFromChoosedCompany = ({extAddresses}) => {         const data = extAddresses.pop();          if (!data) {             return '';         }          const requiredFieldsNames = [                'extRegion',             'extCity',             'extHouse',             'extStreet',             'extOffice',         ];          const requiredFields = requiredFieldsNames.map((fieldName) => data[fieldName]).filter((v) => !!v);          return requiredFields.join(', ');     };      const fillShipperAsChoosedCompany = (values) => {         const stateKeyMap = {             shipperCountry: 'regCountry',             shipperInn: 'inn',             shipperOgrn: 'ogrn',             shipperKpp: 'kpp'         };          const company = values.shipperCompanyName;          const updatedValues = fillObjectWithStateKeyMap(values, company, stateKeyMap);          updatedValues.shipperLegalAddress = generateShipperLegalAddressFromChoosedCompany(company);          return { updatedValues };     };      const clearShipper = (values) => {         const updatedValues = cloneObject(values);          const defaultState = {             shipperCompanyName: {},             shipperCountry: '',             shipperLegalAddress: '',             shipperInn: '',             shipperOgrn: '',             shipperKpp: ''         };          Object.keys(defaultState).forEach((key) => updatedValues[key] = defaultState[key]);          return { updatedValues };     };      const clearConsignee = (values) => {         const updatedValues = cloneObject(values);          const defaultState = {             consigneeName: '',             importerCountry: {},             сonsigneeLocation: ''            };          Object.keys(defaultState).forEach((key) => updatedValues[key] = defaultState[key]);          return { updatedValues };     };      const fillConsigneeAsApplicant = (values) => {         const stateKeyMap = {             consigneeName: 'companyName',             сonsigneeLocation: 'legalAddress'         };          return { updatedValues: fillObjectWithStateKeyMap(values, values, stateKeyMap) };     };      const isShipperCheckboxChanged = prevValues.exporterIsShipper.length !== values.exporterIsShipper.length;     if (isShipperCheckboxChanged) {         const isShipperCheckboxDisabled = values.exporterIsShipper.length === 0;          if (isShipperCheckboxDisabled) {             return clearShipper(values);         }          return fillShipperAsApplicant(values);     }      const isShipperChoosedFromList = (!!values.shipperCompanyName.key) && (values.shipperCompanyName.key !== prevValues.shipperCompanyName.key);     if (isShipperChoosedFromList) {         return fillShipperAsChoosedCompany(values);     }      const isConsigneeCheckboxChanged = prevValues.importerIsConsignee.length !== values.importerIsConsignee.length;     if (isConsigneeCheckboxChanged) {         const isConsigneeCheckboxDisabled = values.importerIsConsignee.length === 0;          if (isConsigneeCheckboxDisabled) {             return clearConsignee(values);         }          return fillConsigneeAsApplicant(values);     }    }",
+        "blocks": [
+          {
+            "name": "routeTableEdit",
+            "title": "Пункт маршрута",
+            "rows": [
+              {
+                "columns": [
+                  {
+                    "id": "radio-send",
+                    "gridAttributes": {
+                      "lg": 4
+                    }
+                  },
+                  {
+                    "id": "radio-middle",
+                    "gridAttributes": {
+                      "lg": 4
+                    }
+                  },
+                  {
+                    "id": "radio-destination",
+                    "gridAttributes": {
+                      "lg": 4
+                    }
+                  }
+                ]
+              },
+              {
+                "columns": [
+                  {
+                    "id": "country",
+                    "gridAttributes": {
+                      "lg": 12
+                    }
+                  }
+                ]
+              },
+              {
+                "columns": [
+                  {
+                    "id": "locality",
+                    "gridAttributes": {
+                      "lg": 12
+                    }
+                  }
+                ]
+              },
+              {
+                "columns": [
+                  {
+                    "id": "typeOfTransport",
+                    "gridAttributes": {
+                      "lg": 12
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "rows": [
+          {
+            "type": "formSeparator",
+            "expansionPanel": {
+              "title": "Информация о заявителе",
+              "expandedByDefault": true,
+              "isDynamicStatus": true,
+              "validateStatus": {
+                "success": "Заполнено",
+                "default": "Заполните",
+                "error": "Ошибка"
+              }
+            }
+          },
+          {
+            "columns": [
+              {
+                "id": "companyName",
+                "gridAttributes": {
+                  "lg": 4
+                }
+              },
+              {
+                "id": "legalAddress",
+                "gridAttributes": {
+                  "lg": 4
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "inn",
+                "gridAttributes": {
+                  "lg": 4
+                }
+              },
+              {
+                "id": "kpp",
+                "gridAttributes": {
+                  "lg": 4
+                }
+              },
+              {
+                "id": "ogrn",
+                "gridAttributes": {
+                  "lg": 4
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "companyEmail",
+                "gridAttributes": {
+                  "lg": 4
+                }
+              },
+              {
+                "id": "companyPhone",
+                "gridAttributes": {
+                  "lg": 4
+                }
+              }
+            ]
+          },
+          {
+            "type": "formSeparator",
+            "expansionPanel": {
+              "title": "Информация об импортере",
+              "expandedByDefault": true,
+              "isDynamicStatus": true,
+              "validateStatus": {
+                "success": "Заполнено",
+                "default": "Заполните",
+                "error": "Ошибка"
+              }
+            }
+          },
+          {
+            "columns": [
+              {
+                "id": "importerName",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "countryOfImporter",
+                "gridAttributes": {
+                  "lg": 4
+                }
+              },
+              {
+                "id": "address",
+                "gridAttributes": {
+                  "lg": 8
+                }
+              }
+            ]
+          },
+          {
+            "type": "formSeparator",
+            "expansionPanel": {
+              "title": "Информация об условиях поставки",
+              "expandedByDefault": true,
+              "isDynamicStatus": true,
+              "validateStatus": {
+                "success": "Заполнено",
+                "default": "Заполните",
+                "error": "Ошибка"
+              }
+            }
+          },
+          {
+            "columns": [
+              {
+                "type": "typography",
+                "typographyProps": {
+                  "html": "Грузоотправитель",
+                  "variant": "h5",
+                  "margin": "0px 0px 15px 0px"
+                },
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "exporterIsShipper-1",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "shipperCompanyName",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "shipperCountry",
+                "gridAttributes": {
+                  "lg": 4
+                }
+              },
+              {
+                "id": "shipperLegalAddress",
+                "gridAttributes": {
+                  "lg": 8
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "shipperInn",
+                "gridAttributes": {
+                  "lg": 4
+                }
+              },
+              {
+                "id": "shipperOgrn",
+                "gridAttributes": {
+                  "lg": 4
+                }
+              },
+              {
+                "id": "shipperKpp",
+                "gridAttributes": {
+                  "lg": 4
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "type": "divider"
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "type": "typography",
+                "typographyProps": {
+                  "html": "Грузополучатель",
+                  "variant": "h5",
+                  "margin": "0px 0px 15px 0px"
+                },
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "importerIsConsignee-1",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "consigneeName",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "importerCountry",
+                "gridAttributes": {
+                  "lg": 4
+                }
+              },
+              {
+                "id": "сonsigneeLocation",
+                "gridAttributes": {
+                  "lg": 8
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "type": "divider"
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "type": "typography",
+                "typographyProps": {
+                  "html": "Маршрут следования",
+                  "variant": "h5",
+                  "tooltip": "1231",
+                  "margin": "0px 0px 15px 0px"
+                },
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "routeTable",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "routeDate",
+                "gridAttributes": {
+                  "lg": 4
+                }
+              }
+            ]
+          }
+        ],
+        "fields": {
+          "countryOfImporter": {
+            "id": "countryOfImporter",
+            "value": null,
+            "type": "String",
+            "uiType": "reference",
+            "label": "Страна",
+            "multiple": false,
+            "placeholder": "Выберите страну",
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
+            "requestParams": {
+              "resultObjectParams": {
+                "name": [
+                  "shortName"
+                ],
+                "key": "uuid"
+              },
+              "params": {
+                "headers": {},
+                "queryParams": {
+                  "showDetails": 0,
+                  "showRefs": 0,
+                  "size": 1000
+                },
+                "relativeUrl": "api/v1/catalogs/country/items/search"
+              },
+              "filters": [
+                {
+                  "name": "shortName_starlike"
+                }
+              ]
+            }
+          },
+          "routeDate": {
+            "id": "routeDate",
+            "label": "Дата отгрузки",
+            "uiType": "krDate",
+            "placeholder": "дд.мм.гггг",
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": []
+          },
+          "country": {
+            "id": "country",
+            "value": null,
+            "type": "String",
+            "uiType": "reference",
+            "readonly": true,
+            "label": "Страна",
+            "multiple": false,
+            "placeholder": "Выберите страну",
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
+            "requestParams": {
+              "resultObjectParams": {
+                "name": [
+                  "shortName"
+                ],
+                "key": "uuid"
+              },
+              "params": {
+                "headers": {},
+                "queryParams": {
+                  "showDetails": 0,
+                  "showRefs": 0,
+                  "size": 1000
+                },
+                "relativeUrl": "api/v1/catalogs/country/items/search"
+              },
+              "filters": [
+                {
+                  "name": "shortName_starlike"
+                }
+              ]
+            }
+          },
+          "shipperCountry": {
+            "id": "shipperCountry",
+            "value": null,
+            "type": "String",
+            "label": "Страна",
+            "multiple": false,
+            "readonly": true,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "exporterIsShipper",
+                "equalValue": "exporterIsShipper-1",
+                "inverse": true
+              }
+            ]
+          },
+          "routeTable": {
+            "isLoading": false,
+            "uiType": "proTable",
+            "id": "routeTable",
+            "minVisibleRows": 3,
+            "readonly": true,
+            "showRowNumber": true,
+            "showAllElementsText": "Показать все",
+            "headerCells": {
+              "0": {
+                "text": "№",
+                "uiType": "filter"
+              },
+              "1": "СТРАНА",
+              "2": "НАСЕЛЕННЫЙ ПУНКТ",
+              "3": "ВИД ТРАНСПОРТА",
+              "4": " "
+            },
+            "inputs": [
+              {
+                "dataIndex": "rowsNumber"
+              },
+              {
+                "dataIndex": "country"
+              },
+              {
+                "dataIndex": "locality"
+              },
+              {
+                "dataIndex": "typeOfTransport"
+              }
+            ],
+            "bodyCells": {
+              "0": "",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "krDropdownMenu"
+            },
+            "colsWidth": {
+              "0": "10%",
+              "1": "25%",
+              "2": "30%",
+              "3": "35%",
+              "4": "10%"
+            },
+            "selectedRows": [],
+            "wrapperClasses": {
+              "quickView": "Table_quickView__CajKO"
+            },
+            "editBlockName": "routeTableEdit",
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ]
+          },
+          "radio": {
+            "id": "radio",
+            "readonly": true,
+            "type": "String",
+            "uiType": "radio",
+            "label": "Выбор пункта маршрута",
+            "data": [
+              {
+                "label": "Место отправления",
+                "value": "send",
+                "key": "radio-send"
+              },
+              {
+                "label": "Промежуточный пункт",
+                "value": "middle",
+                "key": "radio-middle"
+              },
+              {
+                "label": "Место назначения",
+                "value": "destination",
+                "key": "radio-destination"
+              }
+            ],
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ]
+          },
+          "address": {
+            "id": "address",
+            "type": "String",
+            "label": "Адрес",
+            "placeholder": "Введите адрес",
+            "multiline": false,
+            "readonly": false,
+            "tooltip": "",
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ]
+          },
+          "locality": {
+            "id": "locality",
+            "type": "String",
+            "label": "Населенный пункт",
+            "multiline": false,
+            "readonly": true,
+            "placeholder": "Введите населенный пункт",
+            "multiple": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ]
+          },
+          "typeOfTransport": {
+            "id": "typeOfTransport",
+            "value": null,
+            "readonly": true,
+            "type": "String",
+            "uiType": "reference",
+            "label": "Вид транспорта",
+            "placeholder": "Выберите вид транспорта",
+            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/types_of_transport/items/search",
+            "requestParams": {
+              "resultObjectParams": {
+                "name": [
+                  "name"
+                ],
+                "key": "uuid"
+              },
+              "params": {
+                "headers": {},
+                "queryParams": {
+                  "showDetails": 0,
+                  "showRefs": 0,
+                  "size": 1000
+                },
+                "relativeUrl": "api/v1/catalogs/types_of_transport/items/search"
+              },
+              "filters": [
+                {
+                  "name": "name_startlike"
+                }
+              ]
+            },
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "disabled",
+                "equalName": "radio",
+                "equalValue": "destination"
+              }
+            ]
+          },
+          "importerCountry": {
+            "id": "importerCountry",
+            "value": null,
+            "type": "String",
+            "uiType": "reference",
+            "label": "Страна",
+            "placeholder": "Выберите страну",
+            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
+            "requestParams": {
+              "resultObjectParams": {
+                "name": [
+                  "caption"
+                ],
+                "key": "uuid"
+              },
+              "params": {
+                "headers": [],
+                "queryParams": {
+                  "showDetails": 0,
+                  "showRefs": 0,
+                  "size": 1000
+                },
+                "relativeUrl": "api/v1/catalogs/country/items/search"
+              },
+              "filters": [
+                {
+                  "name": "caption_startlike"
+                }
+              ]
+            },
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "importerIsConsignee",
+                "equalValue": "importerIsConsignee-1",
+                "inverse": true
+              }
+            ]
+          },
+          "сonsigneeLocation": {
+            "id": "сonsigneeLocation",
+            "type": "String",
+            "label": "Адрес",
+            "tooltip": "123",
+            "sendIfNotVisible": true,
+            "placeholder": "Введите адрес",
+            "multiline": false,
+            "readonly": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "importerIsConsignee",
+                "equalValue": "importerIsConsignee-1",
+                "inverse": true
+              }
+            ]
+          },
+          "consigneeName": {
+            "id": "consigneeName",
+            "type": "String",
+            "label": "Наименование",
+            "sendIfNotVisible": true,
+            "placeholder": "Введите наименование",
+            "tooltip": "",
+            "multiline": false,
+            "readonly": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "importerIsConsignee",
+                "equalValue": "importerIsConsignee-1",
+                "inverse": true
+              }
+            ]
+          },
+          "importerName": {
+            "id": "importerName",
+            "type": "String",
+            "label": "Наименование",
+            "placeholder": "Введите наименование",
+            "tooltip": "123",
+            "multiline": false,
+            "readonly": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ]
+          },
+          "importerIsConsignee": {
+            "id": "importerIsConsignee",
+            "data": [
+              {
+                "label": "Импортер является грузополучателем",
+                "value": "importerIsConsignee-1",
+                "key": "importerIsConsignee-1"
+              }
+            ],
+            "type": "String",
+            "uiType": "checkbox",
+            "value": "true",
+            "visible": true,
+            "title": ""
+          },
+          "shipperCompanyName": {
+            "id": "shipperCompanyName",
+            "type": "String",
+            "value": null,
+            "sendIfNotVisible": true,
+            "uiType": "reference",
+            "label": "Наименование",
+            "placeholder": "Введите наименование или ИНН",
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/org/items/search",
+            "requestParams": {
+              "additionalFields": {
+                "inn": "inn",
+                "regCountry": "regCountry.caption",
+                "extAddresses": "extAddresses",
+                "ogrn": "ogrn",
+                "kpp": "kpp",
+                "extRegion": "extAddresses[0].extRegion",
+                "extCity": "extAddresses[0].extCity",
+                "extStreet": "extAddresses[0].extHouse",
+                "extHouse": "extAddresses[0].extStreet",
+                "extOffice": "extAddresses[0].extOffice"
+              },
+              "resultObjectParams": {
+                "name": [
+                  "caption"
+                ],
+                "key": "uuid"
+              },
+              "params": {
+                "headers": [],
+                "queryParams": {
+                  "showDetails": 1,
+                  "showRefs": 1,
+                  "size": 10
+                },
+                "relativeUrl": "api/v1/catalogs/org/items/search"
+              },
+              "filters": [
+                {
+                  "name": "caption_startlike"
+                }
+              ]
+            },
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "exporterIsShipper",
+                "equalValue": "exporterIsShipper-1",
+                "inverse": true
+              }
+            ]
+          },
+          "shipperLegalAddress": {
+            "id": "shipperLegalAddress",
+            "type": "String",
+            "label": "Адрес",
+            "multiline": false,
+            "sendIfNotVisible": true,
+            "readonly": true,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "exporterIsShipper",
+                "equalValue": "exporterIsShipper-1",
+                "inverse": true
+              }
+            ]
+          },
+          "shipperInn": {
+            "id": "shipperInn",
+            "type": "String",
+            "label": "ИНН",
+            "multiline": false,
+            "sendIfNotVisible": true,
+            "readonly": true,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "exporterIsShipper",
+                "equalValue": "exporterIsShipper-1",
+                "inverse": true
+              }
+            ]
+          },
+          "shipperOgrn": {
+            "id": "shipperOgrn",
+            "type": "String",
+            "label": "ОГРН/ОГРНИП",
+            "multiline": false,
+            "sendIfNotVisible": true,
+            "readonly": true,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "exporterIsShipper",
+                "equalValue": "exporterIsShipper-1",
+                "inverse": true
+              }
+            ]
+          },
+          "shipperKpp": {
+            "id": "shipperKpp",
+            "type": "String",
+            "label": "КПП",
+            "multiline": false,
+            "readonly": true,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "equalName": "exporterIsShipper",
+                "equalValue": "exporterIsShipper-1",
+                "type": "visible",
+                "inverse": true
+              }
+            ]
+          },
+          "exporterIsShipper": {
+            "id": "exporterIsShipper",
+            "data": [
+              {
+                "label": "Заявитель является грузоотправителем",
+                "value": "exporterIsShipper-1",
+                "key": "exporterIsShipper-1"
+              }
+            ],
+            "type": "String",
+            "uiType": "checkbox",
+            "value": "true",
+            "visible": true,
+            "title": ""
+          },
+          "legalAddress": {
+            "id": "legalAddress",
+            "type": "String",
+            "uiType": "infoField",
+            "title": "Юридический адрес"
+          },
+          "companyName": {
+            "id": "companyName",
+            "type": "String",
+            "uiType": "infoField",
+            "title": "Наименование организации"
+          },
+          "inn": {
+            "id": "inn",
+            "type": "String",
+            "uiType": "infoField",
+            "title": "ИНН"
+          },
+          "ogrn": {
+            "id": "ogrn",
+            "type": "String",
+            "uiType": "infoField",
+            "title": "ОГРН"
+          },
+          "kpp": {
+            "id": "kpp",
+            "type": "String",
+            "uiType": "infoField",
+            "title": "КПП"
+          },
+          "companyEmail": {
+            "id": "companyEmail",
+            "uiType": "infoField",
+            "title": "E-mail"
+          },
+          "companyPhone": {
+            "id": "companyPhone",
+            "type": "String",
+            "uiType": "infoField",
+            "title": "Телефон"
+          }
+        },
+        "serviceTitle": "Выдача сертификата о происхождении товара",
+        "formTitle": "",
+        "uiFormType": {
+          "type": "json",
+          "withSteps": "true"
+        },
+        "navigationButtons": {
+          "next": {
+            "hide": false,
+            "label": "Далее"
+          },
+          "cancel": {
+            "hide": false
+          },
+          "fillLater": {
+            "hide": true
+          },
+          "prev": {
+            "hide": false
+          }
+        },
+        "uiSteps": {
+          "count": 7,
+          "current": 2,
+          "passed": [
+            1
+          ],
+          "disabled": [
+            4
+          ],
+          "names": [
+            "Определение вида сертификата",
+            "Заполнение информации о заявителе и получателе, и условиях поставки",
+            "Заполнение информации о партии товаров",
+            "Подписание и направление заявления на экспертизу",
+            "Подписание и направление заявления на выдачу сертификата",
+            "Подтверждение проекта сертификата и оплаты",
+            "Получение решения по заявлению"
+          ]
+        }
+      }
+}

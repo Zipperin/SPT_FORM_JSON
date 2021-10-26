@@ -1,0 +1,278 @@
+{
+    "variables": {},
+    "uiSchema": {
+        "blocks": [],
+        "rows": [
+          {
+            "type": "formSeparator",
+            "expansionPanel": {
+              "title": "Решение по заявлению ",
+              "expandedByDefault": true,
+              "isDynamicStatus": false,
+              "validateStatus": {
+                "success": "Заполнено",
+                "default": "Заполните",
+                "error": "Ошибка"
+              }
+            }
+          },
+          {
+            "columns": [
+              {
+                "id": "NOT_SPT_FORMALIZED_1",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "certificateRegistrationNumber",
+                "gridAttributes": {
+                  "lg": 4
+                }
+              },
+              {
+                "id": "certificateRegistrationDate",
+                "gridAttributes": {
+                  "lg": 4
+                }
+              },
+              {
+                "id": "downloadLink",
+                "gridAttributes": {
+                  "lg": 4
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "type": "divider"
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "NOT_SPT_FORMALIZED_2",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "organizationExpertiseName",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              },
+              {
+                "id": "organizationExpertiseAddress",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "employeeTPPName",
+                "gridAttributes": {
+                  "lg": 4
+                }
+              },
+              {
+                "id": "employeeTPPPosition",
+                "gridAttributes": {
+                  "lg": 4
+                }
+              },
+              {
+                "id": "employeeTPPPhone",
+                "gridAttributes": {
+                  "lg": 4
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "DOCUMENT",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          }
+        ],
+        "fields": {
+          "organizationExpertiseName": {
+            "id": "organizationExpertiseName",
+            "type": "String",
+            "label": "Наименование организации",
+            "multiline": false,
+            "readonly": true,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {}
+            ]
+          },
+          "organizationExpertiseAddress": {
+            "id": "organizationExpertiseAddress",
+            "type": "String",
+            "label": "Адрес организации",
+            "multiline": false,
+            "readonly": true,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {}
+            ]
+          },
+          "DOCUMENT": {
+            "id": "DOCUMENT",
+            "uiType": "document",
+            "fileName": "Заявление.pdf",
+            "fileSize": 634237233,
+            "date": 1633260900358,
+            "href": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+            "fileDateText": "Загружен",
+            "canDelete": true
+          },
+          "employeeTPPName": {
+            "id": "employeeTPPName",
+            "type": "String",
+            "uiType": "infoField",
+            "title": "ФИО инспектора"
+          },
+          "employeeTPPPosition": {
+            "id": "employeeTPPPosition",
+            "type": "String",
+            "uiType": "infoField",
+            "title": "Должность инспектора"
+          },
+          "employeeTPPPhone": {
+            "id": "employeeTPPPhone",
+            "type": "String",
+            "uiType": "infoField",
+            "title": "Телефон инспектора"
+          },
+          "NOT_SPT_FORMALIZED_1": {
+            "id": "NOT_SPT_FORMALIZED_1",
+            "uiType": "notification",
+            "notificationStatus": "SUCCESS",
+            "html": ""
+          },
+          "NOT_SPT_FORMALIZED_2": {
+            "id": "NOT_SPT_FORMALIZED_2",
+            "uiType": "notification",
+            "notificationStatus": "INFO",
+            "html": ""
+          },
+          "certificateRegistrationNumber": {
+            "id": "certificateRegistrationNumber",
+            "type": "String",
+            "label": "Регистрационный номер сертификата",
+            "multiline": false,
+            "readonly": true,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {}
+            ]
+          },
+          "certificateRegistrationDate": {
+            "id": "certificateRegistrationDate",
+            "type": "String",
+            "label": "Дата регистрации",
+            "multiline": false,
+            "readonly": true,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {}
+            ]
+          },
+          "downloadLink": {
+            "id": "downloadLink",
+            "type": "String",
+            "label": "Ссылка для скачивания",
+            "multiline": false,
+            "readonly": true,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {}
+            ]
+          }
+        },
+        "serviceTitle": "Выдача сертификата о происхождении товара",
+        "formTitle": "",
+        "uiFormType": {
+          "type": "json",
+          "withSteps": "true"
+        },
+        "navigationButtons": {
+          "next": {
+            "label": "К перечню заявлений",
+            "lastStepHide": false
+          },
+          "cancel": {
+            "hide": false
+          },
+          "fillLater": {
+            "hide": true
+          },
+          "prev": {
+            "hide": true
+          }
+        },
+        "uiSteps": {
+          "count": 7,
+          "current": 7,
+          "passed": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6
+          ],
+          "disabled": [],
+          "names": [
+            "Определение вида сертификата",
+            "Заполнение информации о заявителе и получателе, и условиях поставки",
+            "Заполнение информации о партии товаров",
+            "Подписание и направление заявления на экспертизу",
+            "Подписание и направление заявления на выдачу сертификата",
+            "Подтверждение проекта сертификата и оплаты",
+            "Получение решения по заявлению"
+          ]
+        }
+      }
+}

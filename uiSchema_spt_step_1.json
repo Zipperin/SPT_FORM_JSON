@@ -1,0 +1,230 @@
+{
+    "variables": {},
+    "uiSchema": {
+        "blocks": [],
+        "rows": [
+          {
+            "columns": [
+              {
+                "id": "NOT_SPT_TYPE_CERT_1",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "type": "formSeparator",
+            "expansionPanel": {
+              "title": "Определение вида сертификата",
+              "isDynamicStatus": true,
+              "expandedByDefault": true,
+              "validateStatus": {
+                "success": "Заполнено",
+                "default": "Заполните",
+                "error": "Ошибка"
+              }
+            }
+          },
+          {
+            "columns": [
+              {
+                "id": "NOT_SPT_TYPE_CERT_2",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "certType_certCT1",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              },
+              {
+                "id": "certType_certCT1_Uz",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              },
+              {
+                "id": "certType_certCT2Rus",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              },
+              {
+                "id": "certType_certCT2En",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              },
+              {
+                "id": "certType_certCT3",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              },
+              {
+                "id": "certType_certGenFormRus",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              },
+              {
+                "id": "certType_certGenFormEn",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              },
+              {
+                "id": "certType_certEAV",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              },
+              {
+                "id": "certType_certA",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              },
+              {
+                "id": "certType_dontknow",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          }
+        ],
+        "fields": {
+          "NOT_SPT_TYPE_CERT_1": {
+            "id": "NOT_SPT_TYPE_CERT_1",
+            "uiType": "notification",
+            "notificationStatus": "INFO",
+            "html": ""
+          },
+          "NOT_SPT_TYPE_CERT_2": {
+            "id": "NOT_SPT_TYPE_CERT_2",
+            "uiType": "notification",
+            "notificationStatus": "INFO",
+            "html": ""
+          },
+          "certType": {
+            "id": "certType",
+            "type": "String",
+            "uiType": "radio",
+            "data": [
+              {
+                "label": "Сертификат о происхождении товара формы СТ-1",
+                "value": "certCT1",
+                "key": "certType_certCT1",
+                "readonly": true,
+                "tooltip": "1"
+              },
+              {
+                "label": "Сертификат о происхождении товара формы СТ-1 для Республики Узбекистан",
+                "value": "certCT1Uz",
+                "key": "certType_certCT1_Uz",
+                "tooltip": "2"
+              },
+              {
+                "label": "Сертификат о происхождении товара формы СТ-2  (выдать на русском языке)",
+                "value": "certCT2Rus",
+                "key": "certType_certCT2Rus",
+                "tooltip": "3"
+              },
+              {
+                "label": "Сертификат о происхождении товара формы СТ-2  (выдать на английском языке)",
+                "value": "certCT2En",
+                "key": "certType_certCT2En",
+                "tooltip": "4"
+              },
+              {
+                "label": "Сертификат о происхождении товара формы СТ-3",
+                "value": "certCT3",
+                "key": "certType_certCT3",
+                "tooltip": "5"
+              },
+              {
+                "label": "Сертификат о происхождении товара общей формы  (выдать на русском языке)",
+                "value": "certGenFormRus",
+                "key": "certType_certGenFormRus",
+                "tooltip": "6"
+              },
+              {
+                "label": "Сертификат о происхождении товара общей формы  (выдать на английском языке)",
+                "value": "certGenFormEn",
+                "key": "certType_certGenFormEn",
+                "tooltip": "7"
+              },
+              {
+                "label": "Сертификат о происхождении товара формы EAV",
+                "value": "certEAV",
+                "key": "certType_certEAV",
+                "tooltip": "8"
+              },
+              {
+                "label": "Сертификат о происхождении товара формы \"А\"",
+                "value": "certA",
+                "key": "certType_certA",
+                "tooltip": "9"
+              },
+              {
+                "label": "Не знаю",
+                "value": "dontknow",
+                "key": "certType_dontknow",
+                "tooltip": "10"
+              }
+            ],
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ]
+          }
+        },
+        "serviceTitle": "Выдача сертификата о происхождении товара",
+        "formTitle": "",
+        "uiFormType": {
+          "type": "json",
+          "withSteps": "true"
+        },
+        "navigationButtons": {
+          "next": {
+            "hide": false,
+            "label": "Далее"
+          },
+          "cancel": {
+            "hide": false
+          },
+          "fillLater": {
+            "hide": true
+          },
+          "prev": {
+            "hide": true
+          }
+        },
+        "uiSteps": {
+          "count": 7,
+          "current": 1,
+          "passed": [],
+          "disabled": [
+            4
+          ],
+          "names": [
+            "Определение вида сертификата",
+            "Заполнение информации о заявителе и получателе, и условиях поставки",
+            "Заполнение информации о партии товаров",
+            "Подписание и направление заявления на экспертизу",
+            "Подписание и направление заявления на выдачу сертификата",
+            "Подтверждение проекта сертификата и оплаты",
+            "Получение решения по заявлению"
+          ]
+        }
+      }
+}
