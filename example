@@ -1,1 +1,1351 @@
-просто проверка
+{
+    "variables": {},
+    "uiSchema": {
+        "onChangeHandler": "function({values,fields,prevValues,getName}) {console.log(values);var descriptionV = values.productName.description; return {updatedValues: Object.assign({}, values, {description: descriptionV})}}",
+        "blocks": [
+          {
+            "name": "proTableEdit",
+            "title": "Информация о товаре",
+            "rows": [
+              {
+                "columns": [
+                  {
+                    "gridAttributes": {
+                      "lg": 2
+                    }
+                  },
+                  {
+                    "id": "GROUP_BUTTON_FOR_CHECKBOX",
+                    "gridAttributes": {
+                      "lg": 10
+                    }
+                  }
+                ]
+              },
+              {
+                "columns": [
+                  {
+                    "id": "NOT_SPT_DEF_TYPE_CERT_1",
+                    "gridAttributes": {
+                      "lg": 12
+                    }
+                  }
+                ]
+              },
+              {
+                "columns": [
+                  {
+                    "id": "productName",
+                    "gridAttributes": {
+                      "lg": 12
+                    }
+                  }
+                ]
+              },
+              {
+                "columns": [
+                  {
+                    "id": "productNameAdd",
+                    "gridAttributes": {
+                      "lg": 12
+                    }
+                  }
+                ]
+              },
+              {
+                "columns": [
+                  {
+                    "id": "TNVEDcode",
+                    "gridAttributes": {
+                      "lg": 12
+                    }
+                  }
+                ]
+              },
+              {
+                "columns": [
+                  {
+                    "id": "description",
+                    "gridAttributes": {
+                      "lg": 12
+                    }
+                  }
+                ]
+              },
+              {
+                "columns": [
+                  {
+                    "id": "descriptionAdd",
+                    "gridAttributes": {
+                      "lg": 12
+                    }
+                  }
+                ]
+              },
+              {
+                "columns": [
+                  {
+                    "id": "productManufacturerNameAdd",
+                    "gridAttributes": {
+                      "lg": 12
+                    }
+                  }
+                ]
+              },
+              {
+                "columns": [
+                  {
+                    "id": "radio1-yes",
+                    "gridAttributes": {
+                      "lg": 3
+                    }
+                  },
+                  {
+                    "id": "radio1-no",
+                    "gridAttributes": {
+                      "lg": 3
+                    }
+                  },
+                  {
+                    "id": "radio1-dontKnow",
+                    "gridAttributes": {
+                      "lg": 3
+                    }
+                  }
+                ]
+              },
+              {
+                "columns": [
+                  {
+                    "id": "cargoOriginCountry",
+                    "gridAttributes": {
+                      "lg": 6
+                    }
+                  },
+                  {
+                    "id": "invoiceOfCountry",
+                    "gridAttributes": {
+                      "lg": 6
+                    }
+                  }
+                ]
+              },
+              {
+                "columns": [
+                  {
+                    "id": "certificateOfCountry",
+                    "gridAttributes": {
+                      "lg": 6
+                    }
+                  }
+                ]
+              }
+            ]
+          },
+          {
+            "name": "routeTableEdit",
+            "title": "Пункт маршрута",
+            "rows": [
+              {
+                "columns": [
+                  {
+                    "id": "radio-send",
+                    "gridAttributes": {
+                      "lg": 4
+                    }
+                  },
+                  {
+                    "id": "radio-middle",
+                    "gridAttributes": {
+                      "lg": 4
+                    }
+                  },
+                  {
+                    "id": "radio-destination",
+                    "gridAttributes": {
+                      "lg": 4
+                    }
+                  }
+                ]
+              },
+              {
+                "columns": [
+                  {
+                    "id": "country",
+                    "gridAttributes": {
+                      "lg": 12
+                    }
+                  }
+                ]
+              },
+              {
+                "columns": [
+                  {
+                    "id": "locality",
+                    "gridAttributes": {
+                      "lg": 12
+                    }
+                  }
+                ]
+              },
+              {
+                "columns": [
+                  {
+                    "id": "typeOfTransport",
+                    "gridAttributes": {
+                      "lg": 12
+                    }
+                  }
+                ]
+              }
+            ]
+          }
+        ],
+        "rows": [
+          {
+            "type": "formSeparator",
+            "expansionPanel": {
+              "title": "Определение видов сертификатов",
+              "isDynamicStatus": true,
+              "expandedByDefault": true,
+              "validateStatus": {
+                "success": "Заполнено",
+                "default": "Заполните",
+                "error": "Ошибка"
+              }
+            }
+          },
+          {
+            "columns": [
+              {
+                "type": "typography",
+                "typographyProps": {
+                  "html": "Информация о товаре",
+                  "variant": "h5",
+                  "margin": "0px 0px 15px 0px"
+                },
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "NOT_SPT_DEF_TYPE_CERT_2",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "productsDetailsTable",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "type": "typography",
+                "typographyProps": {
+                  "html": "Маршрут следования",
+                  "tooltip": "1231",
+                  "variant": "h5",
+                  "margin": "0px 0px 15px 0px"
+                },
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "NOT_SPT_DEF_TYPE_CERT_3",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "routeTable",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "type": "divider"
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "type": "typography",
+                "typographyProps": {
+                  "html": "Соблюдение условий непосредственной поставки",
+                  "tooltip": "1231",
+                  "variant": "h5",
+                  "margin": "0px 0px 15px 0px"
+                },
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "radio2-yes",
+                "gridAttributes": {
+                  "lg": 3
+                }
+              },
+              {
+                "id": "radio2-no",
+                "gridAttributes": {
+                  "lg": 3
+                }
+              },
+              {
+                "id": "radio2-dontKnow",
+                "gridAttributes": {
+                  "lg": 3
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "countryImporter",
+                "gridAttributes": {
+                  "lg": 6
+                }
+              },
+              {
+                "id": "countryExporter",
+                "gridAttributes": {
+                  "lg": 6
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "сonsigneeСountry",
+                "gridAttributes": {
+                  "lg": 6
+                }
+              },
+              {
+                "id": "shipperCountry",
+                "gridAttributes": {
+                  "lg": 6
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "shippingDate",
+                "gridAttributes": {
+                  "lg": 6
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "CUSTOM_BUTTON1",
+                "gridAttributes": {
+                  "lg": 2
+                }
+              },
+              {
+                "gridAttributes": {
+                  "lg": 2
+                }
+              }
+            ]
+          }
+        ],
+        "fields": {
+          "GROUP_BUTTON_FOR_CHECKBOX": {
+            "id": "GROUP_BUTTON_FOR_CHECKBOX",
+            "uiType": "groupButtons",
+            "buttons": [
+              {
+                "id": "1",
+                "label": "Выбрать из каталога",
+                "disabled": false
+              },
+              {
+                "id": "2",
+                "label": "Добавить новую",
+                "disabled": false
+              }
+            ],
+            "activeButton": "1"
+          },
+          "productsDetailsTable": {
+            "isLoading": false,
+            "uiType": "proTable",
+            "id": "productsDetailsTable",
+            "addRowButtonText": "+ Добавить товар",
+            "minVisibleRows": 3,
+            "showRowNumber": true,
+            "showAllElementsText": "Показать все",
+            "headerCells": {
+              "0": {
+                "text": "№",
+                "uiType": "filter"
+              },
+              "1": "НАИМЕНОВАНИЕ ТОВАРА",
+              "2": "СТРАНА ПРОИСХОЖДЕНИЯ",
+              "3": " "
+            },
+            "inputs": [
+              {
+                "dataIndex": "rowsNumber"
+              },
+              {
+                "dataIndex": "productName",
+                "tmpl": "{{productName.value}}{{productNameAdd}}"
+              },
+              {
+                "dataIndex": "cargoOriginCountry"
+              }
+            ],
+            "bodyCells": {
+              "0": "",
+              "1": "",
+              "2": "",
+              "3": "krDropdownMenu"
+            },
+            "colsWidth": {
+              "0": "10%",
+              "1": "40%",
+              "2": "30%",
+              "3": "10%"
+            },
+            "selectedRows": [],
+            "wrapperClasses": {
+              "quickView": "Table_quickView__CajKO"
+            },
+            "editBlockName": "proTableEdit",
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ]
+          },
+          "routeTable": {
+            "isLoading": false,
+            "uiType": "proTable",
+            "id": "routeTable",
+            "addRowButtonText": "+ Добавить",
+            "minVisibleRows": 3,
+            "showRowNumber": true,
+            "showAllElementsText": "Показать все",
+            "headerCells": {
+              "0": {
+                "text": "№",
+                "uiType": "filter"
+              },
+              "1": "СТРАНА",
+              "2": "НАСЕЛЕННЫЙ ПУНКТ",
+              "3": "ВИД ТРАНСПОРТА",
+              "4": " "
+            },
+            "inputs": [
+              {
+                "dataIndex": "rowsNumber"
+              },
+              {
+                "dataIndex": "country"
+              },
+              {
+                "dataIndex": "locality"
+              },
+              {
+                "dataIndex": "typeOfTransport"
+              }
+            ],
+            "bodyCells": {
+              "0": "",
+              "1": "",
+              "2": "",
+              "3": "",
+              "4": "krDropdownMenu"
+            },
+            "colsWidth": {
+              "0": "10%",
+              "1": "25%",
+              "2": "30%",
+              "3": "35%",
+              "4": "10%"
+            },
+            "selectedRows": [],
+            "wrapperClasses": {
+              "quickView": "Table_quickView__CajKO"
+            },
+            "editBlockName": "routeTableEdit",
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ]
+          },
+          "NOT_SPT_DEF_TYPE_CERT_2": {
+            "id": "NOT_SPT_DEF_TYPE_CERT_2",
+            "uiType": "notification",
+            "notificationStatus": "INFO",
+            "html": ""
+          },
+          "NOT_SPT_DEF_TYPE_CERT_1": {
+            "id": "NOT_SPT_DEF_TYPE_CERT_1",
+            "uiType": "notification",
+            "notificationStatus": "WARNING",
+            "html": ""
+          },
+          "NOT_SPT_DEF_TYPE_CERT_3": {
+            "id": "NOT_SPT_DEF_TYPE_CERT_3",
+            "uiType": "notification",
+            "notificationStatus": "INFO",
+            "html": ""
+          },
+          "rowsNumber": {
+            "id": "rowsNumber",
+            "type": "String"
+          },
+          "productName": {
+            "id": "productName",
+            "value": " ",
+            "type": "String",
+            "uiType": "reference",
+            "label": "Каталог продукции",
+            "placeholder": "Введите название товара или Код ТН ВЭД",
+            "multiple": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "GROUP_BUTTON_FOR_CHECKBOX",
+                "equalValue": "1"
+              }
+            ],
+            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/org_goods/items/search",
+            "requestParams": {
+              "additionalFields": {
+                "description": "description"
+              },
+              "resultObjectParams": {
+                "name": [
+                  "tnved.code",
+                  "caption"
+                ],
+                "key": "uuid"
+              },
+              "params": {
+                "headers": {},
+                "queryParams": {
+                  "showDetails": 1,
+                  "showRefs": 1,
+                  "size": 100
+                },
+                "relativeUrl": "api/v1/catalogs/org_goods/items/search"
+              },
+              "filters": [
+                {
+                  "name": "caption_like"
+                }
+              ]
+            }
+          },
+          "productNameAdd": {
+            "id": "productNameAdd",
+            "value": " ",
+            "type": "String",
+            "label": "Наименование",
+            "placeholder": "Введите наименование товара",
+            "multiple": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "GROUP_BUTTON_FOR_CHECKBOX",
+                "equalValue": "2"
+              }
+            ]
+          },
+          "TNVEDcode": {
+            "id": "TNVEDcode",
+            "value": " ",
+            "type": "String",
+            "uiType": "reference",
+            "label": "Код ТН ВЭД",
+            "placeholder": "Введите код ТН ВЭД",
+            "multiple": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "GROUP_BUTTON_FOR_CHECKBOX",
+                "equalValue": "2"
+              }
+            ],
+            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/tnved/items/search",
+            "requestParams": {
+              "additionalFields": {},
+              "resultObjectParams": {
+                "name": [
+                  "code"
+                ],
+                "key": "uuid"
+              },
+              "params": {
+                "headers": {},
+                "queryParams": {
+                  "showDetails": 1,
+                  "showRefs": 1,
+                  "size": 100
+                },
+                "relativeUrl": "api/v1/catalogs/tnved/items/search"
+              },
+              "filters": [
+                {
+                  "name": "caption_like"
+                }
+              ]
+            }
+          },
+          "description": {
+            "id": "description",
+            "type": "String",
+            "label": "Описание",
+            "placeholder": "Введите описание товара",
+            "multiline": false,
+            "readonly": true,
+            "multiple": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "GROUP_BUTTON_FOR_CHECKBOX",
+                "equalValue": "1"
+              }
+            ]
+          },
+          "descriptionAdd": {
+            "id": "descriptionAdd",
+            "type": "String",
+            "placeholder": "Введите описание товара",
+            "label": "Описание",
+            "multiline": false,
+            "readonly": false,
+            "multiple": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "GROUP_BUTTON_FOR_CHECKBOX",
+                "equalValue": "2"
+              }
+            ]
+          },
+          "productManufacturerNameAdd": {
+            "id": "productManufacturerNameAdd",
+            "type": "String",
+            "value": null,
+            "uiType": "reference",
+            "label": "Наименование производителя",
+            "placeholder": "Введите наименование производителя",
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/org/items/search",
+            "requestParams": {
+              "additionalFields": {},
+              "resultObjectParams": {
+                "name": [
+                  "caption"
+                ],
+                "key": "uuid"
+              },
+              "params": {
+                "headers": [],
+                "queryParams": {
+                  "showDetails": 1,
+                  "showRefs": 1,
+                  "size": 10
+                },
+                "relativeUrl": "api/v1/catalogs/org/items/search"
+              },
+              "filters": [
+                {
+                  "name": "caption_startlike"
+                }
+              ]
+            },
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "GROUP_BUTTON_FOR_CHECKBOX",
+                "equalValue": "2"
+              }
+            ]
+          },
+          "cargoOriginCountry": {
+            "id": "cargoOriginCountry",
+            "value": null,
+            "type": "String",
+            "visible": false,
+            "uiType": "reference",
+            "label": "Страна происхождения товара",
+            "placeholder": "Выберите страну",
+            "tooltip": "1231",
+            "multiple": false,
+            "multiline": true,
+            "constraints": [
+              {}
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "radio1",
+                "equalValue": "no",
+                "inverse": true
+              }
+            ],
+            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
+            "requestParams": {
+              "resultObjectParams": {
+                "name": [
+                  "shortName"
+                ],
+                "key": "uuid"
+              },
+              "params": {
+                "headers": {},
+                "queryParams": {
+                  "showDetails": 0,
+                  "showRefs": 0,
+                  "size": 1000
+                },
+                "relativeUrl": "api/v1/catalogs/country/items/search"
+              },
+              "filters": [
+                {
+                  "name": "shortName_starlike"
+                }
+              ]
+            }
+          },
+          "invoiceOfCountry": {
+            "id": "invoiceOfCountry",
+            "value": null,
+            "type": "String",
+            "uiType": "reference",
+            "visible": false,
+            "label": "Страна, выдавшая счет-фактуру",
+            "placeholder": "Выберите страну",
+            "tooltip": "",
+            "multiple": false,
+            "multiline": true,
+            "constraints": [
+              {}
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "radio1",
+                "equalValue": "no",
+                "inverse": true
+              }
+            ],
+            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
+            "requestParams": {
+              "resultObjectParams": {
+                "name": [
+                  "shortName"
+                ],
+                "key": "uuid"
+              },
+              "params": {
+                "headers": {},
+                "queryParams": {
+                  "showDetails": 0,
+                  "showRefs": 0,
+                  "size": 1000
+                },
+                "relativeUrl": "api/v1/catalogs/country/items/search"
+              },
+              "filters": [
+                {
+                  "name": "shortName_starlike"
+                }
+              ]
+            }
+          },
+          "certificateOfCountry": {
+            "id": "certificateOfCountry",
+            "value": null,
+            "type": "String",
+            "visible": false,
+            "uiType": "reference",
+            "label": "Страна, выдавшая сертификат о происхождении товара",
+            "placeholder": "Выберите страну",
+            "description": "При наличии",
+            "tooltip": "1231",
+            "multiple": false,
+            "multiline": true,
+            "constraints": [
+              {}
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "radio1",
+                "equalValue": "no",
+                "inverse": true
+              }
+            ],
+            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
+            "requestParams": {
+              "resultObjectParams": {
+                "name": [
+                  "shortName"
+                ],
+                "key": "uuid"
+              },
+              "params": {
+                "headers": {},
+                "queryParams": {
+                  "showDetails": 0,
+                  "showRefs": 0,
+                  "size": 1000
+                },
+                "relativeUrl": "api/v1/catalogs/country/items/search"
+              },
+              "filters": [
+                {
+                  "name": "shortName_starlike"
+                }
+              ]
+            }
+          },
+          "country": {
+            "id": "country",
+            "value": null,
+            "type": "String",
+            "uiType": "reference",
+            "label": "Страна",
+            "placeholder": "Выберите страну",
+            "multiple": false,
+            "multiline": true,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
+            "requestParams": {
+              "resultObjectParams": {
+                "name": [
+                  "shortName"
+                ],
+                "key": "uuid"
+              },
+              "params": {
+                "headers": {},
+                "queryParams": {
+                  "showDetails": 0,
+                  "showRefs": 0,
+                  "size": 1000
+                },
+                "relativeUrl": "api/v1/catalogs/country/items/search"
+              },
+              "filters": [
+                {
+                  "name": "shortName_starlike"
+                }
+              ]
+            }
+          },
+          "productAdditionalName": {
+            "id": "productAdditionalName",
+            "type": "String",
+            "label": "Дополнительная информация",
+            "multiline": false,
+            "readonly": false,
+            "tooltip": "1",
+            "placeholder": "Введите дополнительную информацию о товаре",
+            "multiple": false,
+            "constraints": []
+          },
+          "radio1": {
+            "id": "radio1",
+            "type": "String",
+            "uiType": "radio",
+            "label": "Использование сырья, материалов и комплектующих иностранного происхождения",
+            "data": [
+              {
+                "label": "Да",
+                "value": "yes",
+                "key": "radio1-yes"
+              },
+              {
+                "label": "Нет",
+                "value": "no",
+                "key": "radio1-no"
+              },
+              {
+                "label": "Не знаю",
+                "value": "dontKnow",
+                "key": "radio1-dontKnow"
+              }
+            ],
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ]
+          },
+          "radio2": {
+            "id": "radio2",
+            "type": "String",
+            "uiType": "radio",
+            "tooltip": "12",
+            "data": [
+              {
+                "label": "Да",
+                "value": "yes",
+                "key": "radio2-yes"
+              },
+              {
+                "label": "Нет",
+                "value": "no",
+                "key": "radio2-no"
+              },
+              {
+                "label": "Не знаю",
+                "value": "dontKnow",
+                "key": "radio2-dontKnow"
+              }
+            ],
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ]
+          },
+          "radio": {
+            "id": "radio",
+            "type": "String",
+            "uiType": "radio",
+            "label": "Выбор пункта маршрута",
+            "data": [
+              {
+                "label": "Место отправления",
+                "value": "send",
+                "key": "radio-send"
+              },
+              {
+                "label": "Промежуточный пункт",
+                "value": "middle",
+                "key": "radio-middle"
+              },
+              {
+                "label": "Место назначения",
+                "value": "destination",
+                "key": "radio-destination"
+              }
+            ],
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ]
+          },
+          "countryImporter": {
+            "id": "countryImporter",
+            "value": null,
+            "visible": false,
+            "type": "String",
+            "uiType": "reference",
+            "label": "Страна импортер",
+            "placeholder": "Выберите страну",
+            "tooltip": "1231",
+            "multiple": false,
+            "multiline": true,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalFields": {
+                  "comparisonType": "or",
+                  "fields": [
+                    {
+                      "equalName": "radio2",
+                      "equalValue": "no"
+                    },
+                    {
+                      "equalName": "radio2",
+                      "equalValue": "dontKnow"
+                    }
+                  ]
+                }
+              }
+            ],
+            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
+            "requestParams": {
+              "resultObjectParams": {
+                "name": [
+                  "shortName"
+                ],
+                "key": "uuid"
+              },
+              "params": {
+                "headers": {},
+                "queryParams": {
+                  "showDetails": 0,
+                  "showRefs": 0,
+                  "size": 1000
+                },
+                "relativeUrl": "api/v1/catalogs/country/items/search"
+              },
+              "filters": [
+                {
+                  "name": "shortName_starlike"
+                }
+              ]
+            }
+          },
+          "countryExporter": {
+            "id": "countryExporter",
+            "value": null,
+            "type": "String",
+            "uiType": "reference",
+            "visible": false,
+            "label": "Страна экспортер",
+            "placeholder": "Выберите страну",
+            "tooltip": "1231",
+            "multiple": false,
+            "multiline": true,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalFields": {
+                  "comparisonType": "or",
+                  "fields": [
+                    {
+                      "equalName": "radio2",
+                      "equalValue": "no"
+                    },
+                    {
+                      "equalName": "radio2",
+                      "equalValue": "dontKnow"
+                    }
+                  ]
+                }
+              }
+            ],
+            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
+            "requestParams": {
+              "resultObjectParams": {
+                "name": [
+                  "shortName"
+                ],
+                "key": "uuid"
+              },
+              "params": {
+                "headers": {},
+                "queryParams": {
+                  "showDetails": 0,
+                  "showRefs": 0,
+                  "size": 1000
+                },
+                "relativeUrl": "api/v1/catalogs/country/items/search"
+              },
+              "filters": [
+                {
+                  "name": "shortName_starlike"
+                }
+              ]
+            }
+          },
+          "сonsigneeСountry": {
+            "id": "сonsigneeСountry",
+            "value": null,
+            "type": "String",
+            "uiType": "reference",
+            "label": "Страна грузополучатель",
+            "placeholder": "Выберите страну",
+            "tooltip": "",
+            "multiple": false,
+            "multiline": true,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "radio2",
+                "equalValue": "dontKnow"
+              }
+            ],
+            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
+            "requestParams": {
+              "resultObjectParams": {
+                "name": [
+                  "shortName"
+                ],
+                "key": "uuid"
+              },
+              "params": {
+                "headers": {},
+                "queryParams": {
+                  "showDetails": 0,
+                  "showRefs": 0,
+                  "size": 1000
+                },
+                "relativeUrl": "api/v1/catalogs/country/items/search"
+              },
+              "filters": [
+                {
+                  "name": "shortName_starlike"
+                }
+              ]
+            }
+          },
+          "shipperCountry": {
+            "id": "shipperCountry",
+            "value": null,
+            "type": "String",
+            "uiType": "reference",
+            "label": "Страна грузоотправитель",
+            "placeholder": "Выберите страну",
+            "tooltip": "1231",
+            "multiple": false,
+            "multiline": true,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "radio2",
+                "equalValue": "dontKnow"
+              }
+            ],
+            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
+            "requestParams": {
+              "resultObjectParams": {
+                "name": [
+                  "shortName"
+                ],
+                "key": "uuid"
+              },
+              "params": {
+                "headers": {},
+                "queryParams": {
+                  "showDetails": 0,
+                  "showRefs": 0,
+                  "size": 1000
+                },
+                "relativeUrl": "api/v1/catalogs/country/items/search"
+              },
+              "filters": [
+                {
+                  "name": "shortName_starlike"
+                }
+              ]
+            }
+          },
+          "shippingDate": {
+            "id": "shippingDate",
+            "label": "Дата отгрузки",
+            "uiType": "krDate",
+            "visible": false,
+            "tooltip": "1123",
+            "placeholder": "дд/мм/гггг",
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalFields": {
+                  "comparisonType": "or",
+                  "fields": [
+                    {
+                      "equalName": "radio2",
+                      "equalValue": "no"
+                    },
+                    {
+                      "equalName": "radio2",
+                      "equalValue": "dontKnow"
+                    }
+                  ]
+                }
+              }
+            ]
+          },
+          "CUSTOM_BUTTON1": {
+            "id": "CUSTOM_BUTTON1",
+            "type": "redirect",
+            "uiType": "button",
+            "buttonLabel": "Отменить",
+            "value": "123123",
+            "buttonVariant": "second"
+          },
+          "locality": {
+            "id": "locality",
+            "type": "String",
+            "label": "Населенный пункт",
+            "multiline": false,
+            "readonly": false,
+            "placeholder": "Введите населенный пункт",
+            "multiple": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ]
+          },
+          "typeOfTransport": {
+            "id": "typeOfTransport",
+            "value": null,
+            "type": "String",
+            "uiType": "reference",
+            "label": "Вид транспорта",
+            "placeholder": "Выберите вид транспорта",
+            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/types_of_transport/items/search",
+            "requestParams": {
+              "resultObjectParams": {
+                "name": [
+                  "name"
+                ],
+                "key": "uuid"
+              },
+              "params": {
+                "headers": {},
+                "queryParams": {
+                  "showDetails": 0,
+                  "showRefs": 0,
+                  "size": 1000
+                },
+                "relativeUrl": "api/v1/catalogs/types_of_transport/items/search"
+              },
+              "filters": [
+                {
+                  "name": "name_startlike"
+                }
+              ]
+            },
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": []
+          }
+        },
+        "serviceTitle": "Выдача сертификата о происхождении товара",
+        "formTitle": "",
+        "uiFormType": {
+          "type": "json",
+          "withSteps": "true"
+        },
+        "navigationButtons": {
+          "next": {
+            "hide": false,
+            "label": "Определить виды сертификатов"
+          },
+          "fillLater": {
+            "hide": true
+          },
+          "cancel": {
+            "hide": false
+          },
+          "prev": {
+            "hide": true,
+            "label": "Назад"
+          }
+        },
+        "uiSteps": {
+          "count": 7,
+          "current": 1,
+          "passed": [],
+          "disabled": [
+            4
+          ],
+          "names": [
+            "Определение вида сертификата",
+            "Заполнение информации о заявителе и получателе, и условиях поставки",
+            "Заполнение информации о партии товаров",
+            "Подписание и направление заявления на экспертизу",
+            "Подписание и направление заявления на выдачу сертификата",
+            "Подтверждение проекта сертификата и оплаты",
+            "Получение решения по заявлению"
+          ]
+        }
+      }
+}
