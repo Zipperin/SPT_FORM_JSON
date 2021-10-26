@@ -1598,8 +1598,7 @@
         "navigationButtons": {
           "next": {
             "label": "К перечню заявлений",
-            "lastStepHide": false,
-            "action": "finish"
+            "lastStepHide": false
           },
           "cancel": {
             "hide": false
