@@ -747,7 +747,7 @@
           {
             "type": "formSeparator",
             "expansionPanel": {
-              "title": "Экспортный контракт (Договор)",
+              "title": "Экспортный контракт (договор)",
               "expandedByDefault": true,
               "isDynamicStatus": true,
               "validateStatus": {
