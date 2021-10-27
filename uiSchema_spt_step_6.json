@@ -1,7 +1,7 @@
 {
     "variables": {},
     "uiSchema": {
-        "onChangeHandler": "function({values,fields,prevValues,getName}) {console.log(values);var organizationTPPAddressV = values.organizationTPPName.addressTpP; return {updatedValues: Object.assign({}, values, {organizationTPPAddress: organizationTPPAddressV})}}",
+        "onChangeHandler": "function({values,fields,prevValues,getName}) {console.log(values);var organizationTPPAddressV = values.organizationTPPAddress; return {updatedValues: Object.assign({}, values, {organizationTPPAddress: organizationTPPAddressV})}}",
         "blocks": [
           {
             "name": "proTableEdit",
@@ -716,7 +716,7 @@
                 }
               },
               {
-                "id": "receivingAddress",
+                "id": "organizationTPPAddress",
                 "gridAttributes": {
                   "lg": 4
                 }
@@ -783,7 +783,19 @@
           {
             "columns": [
               {
-                "id": "DOCUMENT",
+                "id": "DOCUMENT1",
+                "gridAttributes": {
+                  "lg": 6
+                }
+              },
+              {
+                "id": "DOCUMENT2",
+                "gridAttributes": {
+                  "lg": 6
+                }
+              },
+              {
+                "id": "DOCUMENT3",
                 "gridAttributes": {
                   "lg": 12
                 }
@@ -864,10 +876,30 @@
               {}
             ]
           },
-          "DOCUMENT": {
-            "id": "DOCUMENT",
+          "DOCUMENT1": {
+            "id": "DOCUMENT1",
             "uiType": "document",
-            "fileName": "Скан-копия счета.pdf",
+            "fileName": "Заявление.pdf",
+            "fileSize": 634237233,
+            "date": 1633260900358,
+            "href": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+            "fileDateText": "Загружен",
+            "canDelete": true
+          },
+          "DOCUMENT2": {
+            "id": "DOCUMENT2",
+            "uiType": "document",
+            "fileName": "Проект сертификата.pdf",
+            "fileSize": 634237233,
+            "date": 1633260900358,
+            "href": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+            "fileDateText": "Загружен",
+            "canDelete": true
+          },
+          "DOCUMENT3": {
+            "id": "DOCUMENT3",
+            "uiType": "document",
+            "fileName": "Комментарий.pdf",
             "fileSize": 634237233,
             "date": 1633260900358,
             "href": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
@@ -1179,8 +1211,8 @@
             "uiType": "infoField",
             "title": "Способ получения"
           },
-          "receivingAddress": {
-            "id": "receivingAddress",
+          "organizationTPPAddress": {
+            "id": "organizationTPPAddress",
             "type": "String",
             "uiType": "infoField",
             "title": "Адрес получения"
