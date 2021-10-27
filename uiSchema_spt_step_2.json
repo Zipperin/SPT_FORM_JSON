@@ -339,6 +339,16 @@
           {
             "columns": [
               {
+                "id": "NOT_SPT_DEF_TYPE_CERT_3",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
                 "id": "routeTable",
                 "gridAttributes": {
                   "lg": 12
@@ -358,6 +368,12 @@
           }
         ],
         "fields": {
+          "NOT_SPT_DEF_TYPE_CERT_3": {
+            "id": "NOT_SPT_DEF_TYPE_CERT_3",
+            "uiType": "notification",
+            "notificationStatus": "INFO",
+            "html": ""
+          },
           "routeDate": {
             "id": "routeDate",
             "label": "Дата отгрузки",
