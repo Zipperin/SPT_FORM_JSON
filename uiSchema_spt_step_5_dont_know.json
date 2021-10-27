@@ -1025,19 +1025,31 @@
           },
           "file_contract": {
             "id": "file_contract",
+            "type": "file",
             "uiType": "krFileUploader",
             "filesLimit": 1,
             "outerError": "",
             "required": true,
-            "canDelete": true
+            "canDelete": true,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ]
           },
           "file_invoice": {
             "id": "file_invoice",
+            "type": "file",
             "uiType": "krFileUploader",
             "filesLimit": 1,
             "outerError": "",
             "required": true,
-            "canDelete": true
+            "canDelete": true,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ]
           },
           "exportContractNumber": {
             "id": "exportContractNumber",
