@@ -1566,7 +1566,7 @@
         "navigationButtons": {
           "next": {
             "hide": false,
-            "label": "Подтвердить"
+            "label": "К перечню заявлений"
           },
           "cancel": {
             "hide": false
