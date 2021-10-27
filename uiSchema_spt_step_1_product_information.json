@@ -119,13 +119,17 @@
                   {
                     "id": "cargoOriginCountry",
                     "gridAttributes": {
-                      "lg": 6
+                      "lg": 12
                     }
-                  },
+                  }              
+                ]
+              },
+              {
+                "columns": [
                   {
                     "id": "invoiceOfCountry",
                     "gridAttributes": {
-                      "lg": 6
+                      "lg": 12
                     }
                   }
                 ]
@@ -135,7 +139,7 @@
                   {
                     "id": "certificateOfCountry",
                     "gridAttributes": {
-                      "lg": 6
+                      "lg": 12
                     }
                   }
                 ]
