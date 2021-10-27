@@ -1560,7 +1560,7 @@
             "hide": true
           },
           "prev": {
-            "hide": false,
+            "hide": true,
             "label": "Исправить информацию"
           }
         },
