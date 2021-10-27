@@ -501,21 +501,6 @@
               {
                 "type": "typography",
                 "typographyProps": {
-                  "html": "Информация об условиях поставки",
-                  "variant": "h5",
-                  "margin": "0px 0px 15px 0px"
-                },
-                "gridAttributes": {
-                  "lg": 12
-                }
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "type": "typography",
-                "typographyProps": {
                   "html": "Грузоотправитель",
                   "variant": "h5",
                   "margin": "0px 0px 15px 0px"
