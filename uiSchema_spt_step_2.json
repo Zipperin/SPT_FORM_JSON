@@ -548,11 +548,11 @@
             "uiType": "reference",
             "label": "Вид транспорта",
             "placeholder": "Выберите вид транспорта",
-            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/types_of_transport/items/search",
+            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/transport_types_classifier/items/search",
             "requestParams": {
               "resultObjectParams": {
                 "name": [
-                  "name"
+                  "naim"
                 ],
                 "key": "uuid"
               },
@@ -563,7 +563,7 @@
                   "showRefs": 0,
                   "size": 1000
                 },
-                "relativeUrl": "api/v1/catalogs/types_of_transport/items/search"
+                "relativeUrl": "api/v1/catalogs/transport_types_classifier/items/search"
               },
               "filters": [
                 {
