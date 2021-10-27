@@ -1908,7 +1908,7 @@
         },
         "navigationButtons": {
           "next": {
-            "label": "К перечню заявлений",
+            "label": "Подписать и отправить",
             "lastStepHide": false
           },
           "cancel": {
@@ -1918,7 +1918,8 @@
             "hide": true
           },
           "prev": {
-            "hide": true
+            "label": "К перечню заявлений",
+            "hide": false
           }
         },
         "uiSteps": {
