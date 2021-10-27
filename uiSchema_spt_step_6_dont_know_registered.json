@@ -491,21 +491,6 @@
               {
                 "type": "typography",
                 "typographyProps": {
-                  "html": "Информация об условиях поставки",
-                  "variant": "h5",
-                  "margin": "0px 0px 15px 0px"
-                },
-                "gridAttributes": {
-                  "lg": 12
-                }
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "type": "typography",
-                "typographyProps": {
                   "html": "Грузоотправитель",
                   "variant": "h5",
                   "margin": "0px 0px 15px 0px"
@@ -644,50 +629,6 @@
               {
                 "type": "typography",
                 "typographyProps": {
-                  "html": "Информация об уполномоченном сотруднике ТПП",
-                  "variant": "h5",
-                  "margin": "0px 0px 15px 0px"
-                },
-                "gridAttributes": {
-                  "lg": 12
-                }
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "id": "employeeTPPName",
-                "gridAttributes": {
-                  "lg": 4
-                }
-              },
-              {
-                "id": "employeeTPPPhone",
-                "gridAttributes": {
-                  "lg": 4
-                }
-              },
-              {
-                "id": "employeeTPPEmail",
-                "gridAttributes": {
-                  "lg": 4
-                }
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "type": "divider"
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "type": "typography",
-                "typographyProps": {
                   "html": "Информация о партии товаров",
                   "variant": "h5",
                   "margin": "0px 0px 15px 0px"
@@ -756,6 +697,50 @@
               },
               {
                 "id": "receivingAddress",
+                "gridAttributes": {
+                  "lg": 4
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "type": "divider"
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "type": "typography",
+                "typographyProps": {
+                  "html": "Информация об уполномоченном сотруднике для получения сертификата",
+                  "variant": "h5",
+                  "margin": "0px 0px 15px 0px"
+                },
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "employeeTPPName",
+                "gridAttributes": {
+                  "lg": 4
+                }
+              },
+              {
+                "id": "employeeTPPPhone",
+                "gridAttributes": {
+                  "lg": 4
+                }
+              },
+              {
+                "id": "employeeTPPEmail",
                 "gridAttributes": {
                   "lg": 4
                 }
@@ -1566,7 +1551,7 @@
         "navigationButtons": {
           "next": {
             "hide": false,
-            "label": "Подтвердить"
+            "label": "К перечню заявлений"
           },
           "cancel": {
             "hide": false
@@ -1575,7 +1560,7 @@
             "hide": true
           },
           "prev": {
-            "hide": false,
+            "hide": true,
             "label": "Исправить информацию"
           }
         },

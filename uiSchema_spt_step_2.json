@@ -339,6 +339,16 @@
           {
             "columns": [
               {
+                "id": "NOT_SPT_DEF_TYPE_CERT_3",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
                 "id": "routeTable",
                 "gridAttributes": {
                   "lg": 12
@@ -358,6 +368,12 @@
           }
         ],
         "fields": {
+          "NOT_SPT_DEF_TYPE_CERT_3": {
+            "id": "NOT_SPT_DEF_TYPE_CERT_3",
+            "uiType": "notification",
+            "notificationStatus": "INFO",
+            "html": ""
+          },
           "routeDate": {
             "id": "routeDate",
             "label": "Дата отгрузки",
@@ -548,11 +564,11 @@
             "uiType": "reference",
             "label": "Вид транспорта",
             "placeholder": "Выберите вид транспорта",
-            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/types_of_transport/items/search",
+            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/transport_types_classifier/items/search",
             "requestParams": {
               "resultObjectParams": {
                 "name": [
-                  "name"
+                  "naim"
                 ],
                 "key": "uuid"
               },
@@ -563,7 +579,7 @@
                   "showRefs": 0,
                   "size": 1000
                 },
-                "relativeUrl": "api/v1/catalogs/types_of_transport/items/search"
+                "relativeUrl": "api/v1/catalogs/transport_types_classifier/items/search"
               },
               "filters": [
                 {
@@ -648,7 +664,7 @@
           "consigneeName": {
             "id": "consigneeName",
             "type": "String",
-            "label": "Наименование",
+            "label": "Наименование грузополучателя",
             "sendIfNotVisible": true,
             "placeholder": "Введите наименование",
             "tooltip": "",
@@ -703,7 +719,7 @@
             "value": null,
             "sendIfNotVisible": true,
             "uiType": "reference",
-            "label": "Наименование",
+            "label": "Наименование грузоотправителя",
             "placeholder": "Введите наименование или ИНН",
             "constraints": [
               {

@@ -1,7 +1,7 @@
 {
     "variables": {},
     "uiSchema": {
-        "onChangeHandler": "function({values,fields,prevValues,getName}) {console.log(values);var organizationTPPAddressV = values.organizationExpertiseName.addressTpP; var descriptionV = values.productName.description; var manufacturerCaptionV = values.productName.manufacturerCaption; return {updatedValues: Object.assign({}, values, {organizationExpertiseAddress: organizationTPPAddressV, nameManufacturer:manufacturerCaptionV, description:descriptionV })}}",
+        "onChangeHandler": "function({values,fields,prevValues,getName}) {console.log(values);var organizationTPPAddressV = values.organizationExpertiseName.addressTpP; return {updatedValues: Object.assign({}, values, {organizationExpertiseAddress: organizationTPPAddressV})}}",
         "blocks": [
           {
             "name": "proTableEdit",
@@ -415,7 +415,7 @@
               "isDynamicStatus": true,
               "validateStatus": {
                 "success": "Заполнено",
-                "default": "Не заполнено",
+                "default": "Заполните",
                 "error": "Ошибка"
               }
             }
@@ -438,7 +438,7 @@
               "isDynamicStatus": true,
               "validateStatus": {
                 "success": "Заполнено",
-                "default": "Не заполнено",
+                "default": "Заполните",
                 "error": "Ошибка"
               }
             }
@@ -580,21 +580,6 @@
             "columns": [
               {
                 "type": "divider"
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "type": "typography",
-                "typographyProps": {
-                  "html": "Информация об условиях поставки",
-                  "variant": "h5",
-                  "margin": "0px 0px 15px 0px"
-                },
-                "gridAttributes": {
-                  "lg": 12
-                }
               }
             ]
           },
@@ -766,7 +751,7 @@
               "isDynamicStatus": true,
               "validateStatus": {
                 "success": "Заполнено",
-                "default": "Не заполнено",
+                "default": "Заполните",
                 "error": "Ошибка"
               }
             }
@@ -902,14 +887,7 @@
             "label": "Адрес",
             "multiline": false,
             "readonly": true,
-            "constraints": [
-              {
-                "name": "NotNull"
-              }
-            ],
-            "conditionals": [
-              {}
-            ]
+            "discription": " "     
           },
           "country": {
             "id": "country",

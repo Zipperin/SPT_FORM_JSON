@@ -327,7 +327,6 @@
                 "typographyProps": {
                   "html": "Маршрут следования",
                   "variant": "h5",
-                  "tooltip": "1231",
                   "margin": "0px 0px 15px 0px"
                 },
                 "gridAttributes": {

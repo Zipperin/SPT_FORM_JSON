@@ -206,7 +206,7 @@
             "hide": true
           },
           "prev": {
-            "hide": true
+            "hide": false
           }
         },
         "uiSteps": {

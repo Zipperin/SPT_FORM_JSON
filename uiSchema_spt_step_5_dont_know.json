@@ -569,21 +569,6 @@
               {
                 "type": "typography",
                 "typographyProps": {
-                  "html": "Информация об условиях поставки",
-                  "variant": "h5",
-                  "margin": "0px 0px 15px 0px"
-                },
-                "gridAttributes": {
-                  "lg": 12
-                }
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "type": "typography",
-                "typographyProps": {
                   "html": "Грузоотправитель",
                   "variant": "h5",
                   "margin": "0px 0px 15px 0px"
@@ -713,7 +698,7 @@
           {
             "type": "formSeparator",
             "expansionPanel": {
-              "title": "Экспортный контракт (Договор)",
+              "title": "Экспортный контракт (договор)",
               "expandedByDefault": true,
               "isDynamicStatus": true,
               "validateStatus": {
@@ -1040,19 +1025,31 @@
           },
           "file_contract": {
             "id": "file_contract",
+            "type": "file",
             "uiType": "krFileUploader",
             "filesLimit": 1,
             "outerError": "",
             "required": true,
-            "canDelete": true
+            "canDelete": true,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ]
           },
           "file_invoice": {
             "id": "file_invoice",
+            "type": "file",
             "uiType": "krFileUploader",
             "filesLimit": 1,
             "outerError": "",
             "required": true,
-            "canDelete": true
+            "canDelete": true,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ]
           },
           "exportContractNumber": {
             "id": "exportContractNumber",
@@ -1908,7 +1905,7 @@
         },
         "navigationButtons": {
           "next": {
-            "label": "К перечню заявлений",
+            "label": "Подписать и отправить",
             "lastStepHide": false
           },
           "cancel": {
@@ -1918,7 +1915,8 @@
             "hide": true
           },
           "prev": {
-            "hide": true
+            "label": "К перечню заявлений",
+            "hide": false
           }
         },
         "uiSteps": {
