@@ -648,7 +648,7 @@
           "consigneeName": {
             "id": "consigneeName",
             "type": "String",
-            "label": "Наименование",
+            "label": "Наименование грузополучателя",
             "sendIfNotVisible": true,
             "placeholder": "Введите наименование",
             "tooltip": "",
@@ -703,7 +703,7 @@
             "value": null,
             "sendIfNotVisible": true,
             "uiType": "reference",
-            "label": "Наименование",
+            "label": "Наименование грузоотправителя",
             "placeholder": "Введите наименование или ИНН",
             "constraints": [
               {
