@@ -1,7 +1,7 @@
 {
     "variables": {},
     "uiSchema": {
-        "onChangeHandler": "function({values,fields,prevValues,getName}) {console.log(values);var organizationTPPAddressV = values.organizationTPPName.addressTpP; return {updatedValues: Object.assign({}, values, {organizationTPPAddress: organizationTPPAddressV})}}",
+        "onChangeHandler": "function({values,fields,prevValues,getName}) {console.log(values);var organizationTPPAddressV = values.organizationTPPAddress; return {updatedValues: Object.assign({}, values, {organizationTPPAddress: organizationTPPAddressV})}}",
         "blocks": [
           {
             "name": "proTableEdit",
@@ -706,7 +706,7 @@
                 }
               },
               {
-                "id": "receivingAddress",
+                "id": "organizationTPPAddress",
                 "gridAttributes": {
                   "lg": 4
                 }
@@ -1195,8 +1195,8 @@
             "uiType": "infoField",
             "title": "Способ получения"
           },
-          "receivingAddress": {
-            "id": "receivingAddress",
+          "organizationTPPAddress": {
+            "id": "organizationTPPAddress",
             "type": "String",
             "uiType": "infoField",
             "title": "Адрес получения"
