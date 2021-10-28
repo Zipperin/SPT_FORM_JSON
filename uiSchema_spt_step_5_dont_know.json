@@ -1,7 +1,7 @@
 {
     "variables": {},
     "uiSchema": {
-        "onChangeHandler": "function({values,fields,prevValues,getName}) {console.log(values);var organizationTPPAddressV = values.organizationTPPName.addressTpP; return {updatedValues: Object.assign({}, values, {organizationTPPAddress: organizationTPPAddressV})}}",
+        "onChangeHandler": "function({values,fields,prevValues,getName}) {console.log(values);var organizationTPPAddressV = values.organizationTPPAddress; return {updatedValues: Object.assign({}, values, {organizationTPPAddress: organizationTPPAddressV})}}",
         "blocks": [
           {
             "name": "proTableEdit",
@@ -781,7 +781,13 @@
               {
                 "id": "wayGetSolution",
                 "gridAttributes": {
-                  "lg": 5
+                  "lg": 6
+                }
+              },
+              {
+                "id": "numberOfCopies",
+                "gridAttributes": {
+                  "lg": 6
                 }
               }
             ]
@@ -1021,6 +1027,32 @@
             },
             "conditionals": [
               {}
+            ]
+          },
+          "numberOfCopies": {
+            "id": "numberOfCopies",
+            "type": "String",
+            "placeholder": "Введите количество",
+            "label": "Количество копий",
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "wayGetSolution",
+                "equalValue": "Лично"
+              }
+            ],
+            "multiple": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              },
+              {
+                "name": "Pattern",
+                "attributes": {
+                  "regexp": "^[0-9]*$",
+                  "message": "Только целые числовые значения"
+                }
+              }
             ]
           },
           "file_contract": {
@@ -1832,7 +1864,7 @@
                 "name": "Pattern",
                 "attributes": {
                   "regexp": "^[0-9]*$",
-                  "message": "Только целы числовые значения"
+                  "message": "Только целые числовые значения"
                 }
               }
             ]
