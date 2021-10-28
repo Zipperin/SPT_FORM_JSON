@@ -765,6 +765,9 @@
             ],
             "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
             "requestParams": {
+              "additionalFields": {
+                "alpha2Code": "alpha2Code"
+              },
               "resultObjectParams": {
                 "name": [
                   "shortName"
@@ -811,6 +814,9 @@
             ],
             "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
             "requestParams": {
+              "additionalFields": {
+                "alpha2Code": "alpha2Code"
+              },
               "resultObjectParams": {
                 "name": [
                   "shortName"
@@ -858,6 +864,9 @@
             ],
             "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
             "requestParams": {
+              "additionalFields": {
+                "alpha2Code": "alpha2Code"
+              },
               "resultObjectParams": {
                 "name": [
                   "shortName"
@@ -1049,6 +1058,9 @@
             ],
             "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
             "requestParams": {
+              "additionalFields": {
+                "alpha2Code": "alpha2Code"
+              },
               "resultObjectParams": {
                 "name": [
                   "shortName"
@@ -1107,6 +1119,9 @@
             ],
             "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
             "requestParams": {
+              "additionalFields": {
+                "alpha2Code": "alpha2Code"
+              },
               "resultObjectParams": {
                 "name": [
                   "shortName"
