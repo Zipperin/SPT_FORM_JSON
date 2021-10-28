@@ -565,7 +565,8 @@
             "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/org_goods/items/search",
             "requestParams": {
               "additionalFields": {
-                "description": "description"
+                "description": "description",
+                "tnved": "tnved"
               },
               "resultObjectParams": {
                 "name": [
