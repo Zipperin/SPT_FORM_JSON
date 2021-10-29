@@ -433,8 +433,7 @@
                 "dataIndex": "rowsNumber"
               },
               {
-                "dataIndex": "productName",
-                "tmpl": "{{productName.value}}{{productNameAdd}}"
+                "dataIndex": "productName"
               },
               {
                 "dataIndex": "cargoOriginCountry"
@@ -633,10 +632,13 @@
             ],
             "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/tnved/items/search",
             "requestParams": {
-              "additionalFields": {},
+              "additionalFields": {
+                "parentId": "parentId"
+              },
               "resultObjectParams": {
                 "name": [
-                  "code"
+                  "code",
+                  "caption"
                 ],
                 "key": "uuid"
               },
