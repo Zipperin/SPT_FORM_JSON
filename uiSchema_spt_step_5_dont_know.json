@@ -836,7 +836,7 @@
             "type": "formSeparator",
             "expansionPanel": {
               "title": "Сведения об уполномоченном лице заявителя",
-              "expandedByDefault": true,
+              "expandedByDefault": false,
               "isDynamicStatus": true,
               "validateStatus": {
                 "success": "Заполнено",
