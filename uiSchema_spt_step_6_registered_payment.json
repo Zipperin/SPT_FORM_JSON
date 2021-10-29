@@ -1614,7 +1614,7 @@
         },
         "navigationButtons": {
           "next": {
-            "label": "К перечню заявлений",
+            "label": "Подтвердить",
             "lastStepHide": false
           },
           "cancel": {
@@ -1624,7 +1624,8 @@
             "hide": true
           },
           "prev": {
-            "hide": true
+            "hide": false,
+            "label": "Отозвать заявление"
           }
         },
         "uiSteps": {
