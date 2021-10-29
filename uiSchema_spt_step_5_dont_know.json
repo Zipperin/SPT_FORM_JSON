@@ -836,7 +836,7 @@
             "type": "formSeparator",
             "expansionPanel": {
               "title": "Сведения об уполномоченном лице заявителя",
-              "expandedByDefault": true,
+              "expandedByDefault": false,
               "isDynamicStatus": true,
               "validateStatus": {
                 "success": "Заполнено",
@@ -1357,7 +1357,7 @@
             "notificationStatus": "WARNING",
             "html": "",
             "buttonUrl": null,
-            "buttonText": "Перейти"
+            "buttonText": "Получить мотивированный отказ"
           },
           "NOT_SPT_WARNING_ISSUE_CERT_3": {
             "id": "NOT_SPT_WARNING_ISSUE_CERT_3",
