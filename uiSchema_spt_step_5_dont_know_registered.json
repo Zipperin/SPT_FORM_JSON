@@ -1116,7 +1116,7 @@
             "id": "numberOfCopies",
             "type": "String",
             "uiType": "infoField",
-            "title": "Количество копий"
+            "title": "Количество копий сертификата"
           },
           "wayGetSolution": {
             "id": "wayGetSolution",
