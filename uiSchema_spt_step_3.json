@@ -1,7 +1,7 @@
 {
     "variables": {},
     "uiSchema": {
-        "onChangeHandler": "function({values,fields,prevValues,getName}) {console.log(values); var descriptionV = values.productName.description; var manufacturerCaptionV = values.productName.manufacturerCaption; return {updatedValues: Object.assign({}, values, {description:descriptionV, nameManufacturer:manufacturerCaptionV})}}",
+        "onChangeHandler": "function({values,fields,prevValues,getName}) {console.log(values); var descriptionV = values.productName.description; var manufacturerCaptionV = values.productName.manufacturerCaption; return {updatedValues: Object.assign({}, values, {description:descriptionV, productManufacturerName:manufacturerCaptionV})}}",
         "blocks": [
           {
             "name": "proTableEdit",
@@ -45,6 +45,26 @@
               {
                 "columns": [
                   {
+                    "id": "productNameAdd",
+                    "gridAttributes": {
+                      "lg": 12
+                    }
+                  }
+                ]
+              },
+              {
+                "columns": [
+                  {
+                    "id": "TNVEDcode",
+                    "gridAttributes": {
+                      "lg": 12
+                    }
+                  }
+                ]
+              },
+              {
+                "columns": [
+                  {
                     "id": "description",
                     "gridAttributes": {
                       "lg": 12
@@ -65,13 +85,17 @@
               {
                 "columns": [
                   {
-                    "id": "nameManufacturerAdd",
+                    "id": "productManufacturerNameAdd",
                     "gridAttributes": {
                       "lg": 12
                     }
-                  },
+                  }
+                ]
+              },
+              {
+                "columns": [
                   {
-                    "id": "nameManufacturer",
+                    "id": "productManufacturerName",
                     "gridAttributes": {
                       "lg": 12
                     }
@@ -243,6 +267,231 @@
           }
         ],
         "fields": {
+          "productName": {
+            "id": "productName",
+            "value": " ",
+            "type": "String",
+            "uiType": "reference",
+            "label": "Каталог продукции",
+            "placeholder": "Введите название товара или Код ТН ВЭД",
+            "multiple": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "GROUP_BUTTON_FOR_CHECKBOX",
+                "equalValue": "1"
+              }
+            ],
+            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/org_goods/items/search",
+            "requestParams": {
+              "additionalFields": {
+                "description": "description",
+                "tnved": "tnved",
+                "caption": "caption",
+                "manufacturerCaption": "manufacturerCaption"
+              },
+              "resultObjectParams": {
+                "name": [
+                  "tnved.code",
+                  "caption"
+                ],
+                "key": "uuid"
+              },
+              "params": {
+                "headers": {},
+                "queryParams": {
+                  "showDetails": 1,
+                  "showRefs": 1,
+                  "size": 100
+                },
+                "relativeUrl": "api/v1/catalogs/org_goods/items/search"
+              },
+              "filters": [
+                {
+                  "name": "caption_like"
+                }
+              ]
+            }
+          },
+          "productNameAdd": {
+            "id": "productNameAdd",
+            "value": " ",
+            "type": "String",
+            "label": "Наименование",
+            "placeholder": "Введите наименование товара",
+            "multiple": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "GROUP_BUTTON_FOR_CHECKBOX",
+                "equalValue": "2"
+              }
+            ]
+          },
+          "description": {
+            "id": "description",
+            "type": "String",
+            "label": "Описание",
+            "multiline": false,
+            "readonly": true,
+            "multiple": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "GROUP_BUTTON_FOR_CHECKBOX",
+                "equalValue": "1"
+              }
+            ]
+          },
+          "descriptionAdd": {
+            "id": "descriptionAdd",
+            "type": "String",
+            "placeholder": "Введите описание товара",
+            "label": "Описание",
+            "multiline": false,
+            "readonly": false,
+            "multiple": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "GROUP_BUTTON_FOR_CHECKBOX",
+                "equalValue": "2"
+              }
+            ]
+          },
+          "productManufacturerName": {
+            "id": "productManufacturerName",
+            "type": "String",
+            "label": "Наименование производителя",
+            "value": null,  
+            "multiline": false,
+            "readonly": true,
+            "multiple": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "GROUP_BUTTON_FOR_CHECKBOX",
+                "equalValue": "1"
+              }
+            ]  
+          },
+          "productManufacturerNameAdd": {
+            "id": "productManufacturerNameAdd",
+            "type": "String",
+            "value": null,
+            "uiType": "reference",
+            "label": "Наименование производителя",
+            "placeholder": "Введите наименование производителя",
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/org/items/search",
+            "requestParams": {
+              "additionalFields": {},
+              "resultObjectParams": {
+                "name": [
+                  "caption"
+                ],
+                "key": "uuid"
+              },
+              "params": {
+                "headers": [],
+                "queryParams": {
+                  "showDetails": 1,
+                  "showRefs": 1,
+                  "size": 10
+                },
+                "relativeUrl": "api/v1/catalogs/org/items/search"
+              },
+              "filters": [
+                {
+                  "name": "caption_startlike"
+                }
+              ]
+            },
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "GROUP_BUTTON_FOR_CHECKBOX",
+                "equalValue": "2"
+              }
+            ]
+          },
+          "TNVEDcode": {
+            "id": "TNVEDcode",
+            "value": " ",
+            "type": "String",
+            "uiType": "reference",
+            "label": "Код ТН ВЭД",
+            "placeholder": "Введите код ТН ВЭД",
+            "multiple": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "GROUP_BUTTON_FOR_CHECKBOX",
+                "equalValue": "2"
+              }
+            ],
+            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/tnved/items/search",
+            "requestParams": {
+              "additionalFields": {
+                "parentId": "parentId"
+              },
+              "resultObjectParams": {
+                "name": [
+                  "code",
+                  "caption"
+                ],
+                "key": "uuid"
+              },
+              "params": {
+                "headers": {},
+                "queryParams": {
+                  "showDetails": 1,
+                  "showRefs": 1,
+                  "size": 100
+                },
+                "relativeUrl": "api/v1/catalogs/tnved/items/search"
+              },
+              "filters": [
+                {
+                  "name": "caption_like"
+                }
+              ]
+            }
+          },
           "GROUP_BUTTON_FOR_CHECKBOX": {
             "id": "GROUP_BUTTON_FOR_CHECKBOX",
             "uiType": "groupButtons",
@@ -415,93 +664,6 @@
             "uiType": "notification",
             "notificationStatus": "WARNING",
             "html": ""
-          },
-          "productName": {
-            "id": "productName",
-            "value": " ",
-            "type": "String",
-            "uiType": "reference",
-            "label": "Каталог продукции",
-            "placeholder": "Введите название товара или Код ТН ВЭД",
-            "multiple": false,
-            "constraints": [
-              {
-                "name": "NotNull"
-              }
-            ],
-            "conditionals": [
-              {}
-            ],
-            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/org_goods/items/search",
-            "requestParams": {
-              "additionalFields": {
-                "description": "description",
-                "manufacturerCaption": "manufacturerCaption",   
-                "tnved": "tnved",
-                "caption":"caption"
-              },
-              "resultObjectParams": {
-                "name": [
-                  "tnved.code",
-                  "caption"
-                ],
-                "key": "uuid"
-              },
-              "params": {
-                "headers": {},
-                "queryParams": {
-                  "showDetails": 1,
-                  "showRefs": 1,
-                  "size": 100
-                },
-                "relativeUrl": "api/v1/catalogs/org_goods/items/search"
-              },
-              "filters": [
-                {
-                  "name": "caption_like"
-                }
-              ]
-            }
-          },
-          "description": {
-            "id": "description",
-            "type": "String",
-            "label": "Описание",
-            "multiline": false,
-            "readonly": true,
-            "multiple": false,
-            "constraints": [
-              {
-                "name": "NotNull"
-              }
-            ],
-            "conditionals": [
-              {
-                "type": "visible",
-                "equalName": "GROUP_BUTTON_FOR_CHECKBOX",
-                "equalValue": "1"
-              }
-            ]
-          },
-          "descriptionAdd": {
-            "id": "descriptionAdd",
-            "type": "String",
-            "label": "Описание",
-            "multiline": false,
-            "readonly": false,
-            "multiple": false,
-            "constraints": [
-              {
-                "name": "NotNull"
-              }
-            ],
-            "conditionals": [
-              {
-                "type": "visible",
-                "equalName": "GROUP_BUTTON_FOR_CHECKBOX",
-                "equalValue": "2"
-              }
-            ]
           },
           "nameManufacturerAdd": {
             "id": "nameManufacturerAdd",
