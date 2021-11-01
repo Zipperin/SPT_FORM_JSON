@@ -1261,7 +1261,7 @@
           },
           "shippingDate": {
             "id": "shippingDate",
-            "label": "Дата отгрузки",
+            "label": "Предполагаемая дата отгрузки",
             "uiType": "krDate",
             "visible": false,
             "tooltip": "1123",
