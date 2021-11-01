@@ -854,7 +854,8 @@
             "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/list_of_tpp/items/search",
             "requestParams": {
               "additionalFields": {
-                "addressTpP": "addressTpP"
+                "addressTpP": "addressTpP",
+                "codeCertificate": "codeCertificate"
               },
               "resultObjectParams": {
                 "name": [
