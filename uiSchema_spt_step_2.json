@@ -376,7 +376,7 @@
           },
           "routeDate": {
             "id": "routeDate",
-            "label": "Дата отгрузки",
+            "label": "Предполагаемая дата отгрузки",
             "uiType": "krDate",
             "placeholder": "дд.мм.гггг",
             "constraints": [
