@@ -84,6 +84,21 @@
           {
             "columns": [
               {
+                "type": "typography",
+                "typographyProps": {
+                  "html": "Уполномоченное лицо для выдачи сертификата",
+                  "variant": "h5",
+                  "margin": "0px 0px 15px 0px"
+                },
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
                 "id": "employeeTPPName",
                 "gridAttributes": {
                   "lg": 4
@@ -175,19 +190,19 @@
             "id": "employeeTPPName",
             "type": "String",
             "uiType": "infoField",
-            "title": "ФИО инспектора"
+            "title": "ФИО"
           },
           "employeeTPPPosition": {
             "id": "employeeTPPPosition",
             "type": "String",
             "uiType": "infoField",
-            "title": "Должность инспектора"
+            "title": "Должность"
           },
           "employeeTPPPhone": {
             "id": "employeeTPPPhone",
             "type": "String",
             "uiType": "infoField",
-            "title": "Телефон инспектора"
+            "title": "Телефон"
           },
           "NOT_SPT_FORMALIZED_1": {
             "id": "NOT_SPT_FORMALIZED_1",
