@@ -1,7 +1,7 @@
 {
     "variables": {},
     "uiSchema": {
-        "onChangeHandler": "function({values,fields,prevValues,getName}) {console.log(values);var descriptionV = values.productName.description;var productManufacturerNameV = values.productName.productManufacturerName.manufacturerCaption; return {updatedValues: Object.assign({}, values, {description: descriptionV,productManufacturerName: productManufacturerNameV})}}",
+        "onChangeHandler": "function({values,fields,prevValues,getName}) {console.log(values);var descriptionV = values.productName.description;var productManufacturerNameV = values.productName.manufacturerCaption; return {updatedValues: Object.assign({}, values, {description: descriptionV,productManufacturerName: productManufacturerNameV})}}",
         "blocks": [
           {
             "name": "proTableEdit",
@@ -86,6 +86,16 @@
                 "columns": [
                   {
                     "id": "productManufacturerNameAdd",
+                    "gridAttributes": {
+                      "lg": 12
+                    }
+                  }
+                ]
+              },
+              {
+                "columns": [
+                  {
+                    "id": "productManufacturerName",
                     "gridAttributes": {
                       "lg": 12
                     }
@@ -566,7 +576,8 @@
               "additionalFields": {
                 "description": "description",
                 "tnved": "tnved",
-                "caption": "caption"
+                "caption": "caption",
+                "manufacturerCaption": "manufacturerCaption"
               },
               "resultObjectParams": {
                 "name": [
@@ -704,9 +715,9 @@
           "productManufacturerName": {
             "id": "productManufacturerName",
             "type": "String",
-            "multiline": false,            
-            "multiple": false,
-            "sendIfNotVisible": true      
+            "value": null,
+            "sendIfNotVisible": true,   
+            "visible": false   
           },
           "productManufacturerNameAdd": {
             "id": "productManufacturerNameAdd",
