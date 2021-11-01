@@ -1,0 +1,93 @@
+{
+  "variables": {},
+  "uiSchema": {
+    "blocks": [],
+    "rows": [
+      {
+        "type": "formSeparator",
+        "expansionPanel": {
+          "title": "Причина отказа от получения сертификата",
+          "expandedByDefault": true,
+          "isDynamicStatus": true,
+          "validateStatus": {
+            "success": "Заполнено",
+            "default": "Заполните",
+            "error": "Ошибка"
+          }
+        }
+      },
+      {
+        "columns": [
+          {
+            "id": "refusalInfo",
+            "gridAttributes": {
+              "lg": 12
+            }
+          }
+        ]
+      }
+    ],
+    "fields": {
+      "refusalInfo": {
+        "id": "refusalInfo",
+        "type": "String",
+        "label": "Введите текст причины отказа от получения сертификата",
+        "multiline": false,
+        "readonly": false,
+        "constraints": [
+          {
+            "name": "NotNull"
+          }
+        ],
+        "conditionals": [
+          {}
+        ]
+      }
+    },
+    "serviceTitle": "Отказ от получения сертификата",
+    "formTitle": "",
+    "uiFormType": {
+      "type": "json",
+      "withSteps": "true"
+    },
+    "navigationButtons": {
+      "next": {
+        "label": "Отправить",
+        "lastStepHide": false,
+        "action": "finish"
+      },
+      "cancel": {
+        "hide": false
+      },
+      "fillLater": {
+        "hide": true
+      },
+      "prev": {
+        "hide": false,
+        "label": "Отмена"
+      }
+    },
+    "uiSteps": {
+      "count": 7,
+      "current": 7,
+      "passed": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "disabled": [],
+      "names": [
+        "Определение вида сертификата",
+        "Заполнение информации о заявителе и получателе, и условиях поставки",
+        "Заполнение информации о партии товаров",
+        "Подписание и направление заявления на экспертизу",
+        "Подписание и направление заявления на выдачу сертификата",
+        "Подтверждение проекта сертификата и оплаты",
+        "Отказ от получения сертификата"
+      ]
+    }
+  }
+}
