@@ -1,7 +1,7 @@
 {
     "variables": {},
     "uiSchema": {
-        "onChangeHandler": "function({values,fields,prevValues,getName}) {console.log(values);var descriptionV = values.productName.description; return {updatedValues: Object.assign({}, values, {description: descriptionV})}}",
+        "onChangeHandler": "function({values,fields,prevValues,getName}) {console.log(values);var descriptionV = values.productName.description;var productManufacturerNameV = values.productName.productManufacturerName.manufacturerCaption; return {updatedValues: Object.assign({}, values, {description: descriptionV,productManufacturerName: productManufacturerNameV})}}",
         "blocks": [
           {
             "name": "proTableEdit",
@@ -565,7 +565,8 @@
             "requestParams": {
               "additionalFields": {
                 "description": "description",
-                "tnved": "tnved"
+                "tnved": "tnved",
+                "caption": "caption"
               },
               "resultObjectParams": {
                 "name": [
@@ -699,6 +700,13 @@
                 "equalValue": "2"
               }
             ]
+          },
+          "productManufacturerName": {
+            "id": "productManufacturerName",
+            "type": "String",
+            "multiline": false,            
+            "multiple": false,
+            "sendIfNotVisible": true      
           },
           "productManufacturerNameAdd": {
             "id": "productManufacturerNameAdd",

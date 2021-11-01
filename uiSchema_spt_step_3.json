@@ -437,7 +437,8 @@
               "additionalFields": {
                 "description": "description",
                 "manufacturerCaption": "manufacturerCaption",   
-                "tnved": "tnved"
+                "tnved": "tnved",
+                "caption":"caption"
               },
               "resultObjectParams": {
                 "name": [
