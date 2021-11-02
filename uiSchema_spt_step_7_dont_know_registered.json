@@ -10,7 +10,7 @@
               {
                 "columns": [
                   {
-                    "id": "productName",
+                    "id": "productNameInfo",
                     "gridAttributes": {
                       "lg": 12
                     }
@@ -20,7 +20,7 @@
               {
                 "columns": [
                   {
-                    "id": "description",
+                    "id": "descriptionInfo",
                     "gridAttributes": {
                       "lg": 12
                     }
@@ -30,7 +30,7 @@
               {
                 "columns": [
                   {
-                    "id": "nameManufacturer",
+                    "id": "nameManufacturerInfo",
                     "gridAttributes": {
                       "lg": 12
                     }
@@ -172,7 +172,7 @@
               {
                 "columns": [
                   {
-                    "id": "productName",
+                    "id": "productNameInfo",
                     "gridAttributes": {
                       "lg": 12
                     }
@@ -182,7 +182,7 @@
               {
                 "columns": [
                   {
-                    "id": "description",
+                    "id": "descriptionInfo",
                     "gridAttributes": {
                       "lg": 12
                     }
@@ -192,7 +192,7 @@
               {
                 "columns": [
                   {
-                    "id": "nameManufacturer",
+                    "id": "nameManufacturerInfo",
                     "gridAttributes": {
                       "lg": 12
                     }
@@ -810,6 +810,54 @@
           }
         ],
         "fields": {
+          "productNameInfo": {
+            "id": "productNameInfo",
+            "type": "String",
+            "label": "Наименование",
+            "multiline": false,
+            "readonly": true,
+            "multiple": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {}
+            ]
+          },
+          "descriptionInfo": {
+            "id": "descriptionInfo",
+            "type": "String",
+            "label": "Описание",
+            "multiline": false,
+            "readonly": true,
+            "multiple": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {}
+            ]
+          },
+          "nameManufacturerInfo": {
+            "id": "nameManufacturerInfo",
+            "type": "String",
+            "label": "Наименование производителя",
+            "multiline": false,
+            "readonly": true,
+            "multiple": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {}
+            ]
+          },
           "NOT_SPT_REGISTERED_1": {
             "id": "NOT_SPT_REGISTERED_1",
             "uiType": "notification",
@@ -1165,7 +1213,7 @@
                 "dataIndex": "rowsNumber"
               },
               {
-                "dataIndex": "productName"
+                "dataIndex": "productNameInfo"
               },
               {
                 "dataIndex": "cargoOriginCountry"
