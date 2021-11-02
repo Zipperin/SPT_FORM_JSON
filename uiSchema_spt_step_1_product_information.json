@@ -646,7 +646,8 @@
             "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/tnved/items/search",
             "requestParams": {
               "additionalFields": {
-                "parentId": "parentId"
+                "parentId": "parentId",
+                "code": "code"
               },
               "resultObjectParams": {
                 "name": [
