@@ -854,7 +854,7 @@
             "id": "dateOfPayment",
             "label": "Дата оплаты",
             "uiType": "krDate",
-            "placeholder": "дд/мм/гггг",
+            "placeholder": "дд.мм.гггг",
             "constraints": [
               {
                 "name": "NotNull"

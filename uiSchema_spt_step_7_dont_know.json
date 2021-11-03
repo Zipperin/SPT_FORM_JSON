@@ -127,7 +127,7 @@
                 }
               },
               {
-                "id": "DOCUMENT1",
+                "id": "spt_positive_response_id",
                 "gridAttributes": {
                   "lg": 6
                 }
@@ -176,8 +176,8 @@
             "fileDateText": "Загружен",
             "canDelete": true
           },
-          "DOCUMENT1": {
-            "id": "DOCUMENT1",
+          "spt_positive_response": {
+            "id": "spt_positive_response_id",
             "uiType": "document",
             "fileName": "Решение по заявлению.pdf",
             "fileSize": 634237233,
