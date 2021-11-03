@@ -472,89 +472,8 @@
         "columns": [
           {
             "id": "NOT_SPT_APPROVED",
-<<<<<<< HEAD
-            "uiType": "notification",
-            "notificationStatus": "INFO",
-            "html": ""
-          },
-          "paymentOrderNumber": {
-            "id": "paymentOrderNumber",
-            "type": "String",
-            "label": "Номер платежного поручения (УНК)",
-            "multiline": false,
-            "readonly": false,
-            "tooltip": "",
-            "placeholder": "Введите номер",
-            "multiple": false,
-            "constraints": [
-              {
-                "name": "NotNull"
-              }
-            ]
-          },
-          "dateOfPayment": {
-            "id": "dateOfPayment",
-            "label": "Дата оплаты",
-            "uiType": "krDate",
-            "placeholder": "дд.мм.гггг",
-            "constraints": [
-              {
-                "name": "NotNull"
-              }
-            ],
-            "conditionals": [
-              {}
-            ]
-          },
-          "DOCUMENT1": {
-            "id": "DOCUMENT1",
-            "uiType": "document",
-            "fileName": "Заявление.pdf",
-            "fileSize": 634237233,
-            "date": 1633260900358,
-            "href": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-            "fileDateText": "Загружен",
-            "canDelete": true
-          },
-          "country": {
-            "id": "country",
-            "value": null,
-            "type": "String",
-            "uiType": "reference",
-            "label": "Страна",
-            "multiple": false,
-            "placeholder": "Выберите страну",
-            "constraints": [
-              {
-                "name": "NotNull"
-              }
-            ],
-            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
-            "requestParams": {
-              "resultObjectParams": {
-                "name": [
-                  "shortName"
-                ],
-                "key": "uuid"
-              },
-              "params": {
-                "headers": {},
-                "queryParams": {
-                  "showDetails": 0,
-                  "showRefs": 0,
-                  "size": 1000
-                },
-                "relativeUrl": "api/v1/catalogs/country/items/search"
-              },
-              "filters": [
-                {
-                  "name": "shortName_starlike"
-                }
-              ]
-=======
             "gridAttributes": {
               "lg": 12
->>>>>>> upstream/main
             }
           }
         ]
