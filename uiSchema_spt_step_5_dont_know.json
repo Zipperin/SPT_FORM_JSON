@@ -1,7 +1,7 @@
 {
     "variables": {},
     "uiSchema": {
-        "onChangeHandler": "function({values,fields,prevValues,getName}) {console.log(values);var organizationTPPAddressV = values.organizationTPPAddress; return {updatedValues: Object.assign({}, values, {organizationTPPAddress: organizationTPPAddressV})}}",
+        "onChangeHandler": "function({values,fields,prevValues,getName}) {console.log(values);var organizationTPPAddressV = values.organizationTPPName.addressTpP; return {updatedValues: Object.assign({}, values, {organizationTPPAddress: organizationTPPAddressV})}}",
         "blocks": [
           {
             "name": "proTableEdit",
@@ -1622,7 +1622,7 @@
                 "dataIndex": "rowsNumber"
               },
               {
-                "dataIndex": "productName"
+                "dataIndex": "productNameInfo"
               },
               {
                 "dataIndex": "actNumber"
