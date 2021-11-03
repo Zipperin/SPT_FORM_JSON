@@ -92,13 +92,13 @@
           {
             "columns": [
               {
-                "id": "DOCUMENT1",
+                "id": "spt_certificate_request_id",
                 "gridAttributes": {
                   "lg": 6
                 }
               },
               {
-                "id": "DOCUMENT2",
+                "id": "spt_refusal_response_id",
                 "gridAttributes": {
                   "lg": 6
                 }
@@ -119,25 +119,41 @@
             "uiType": "infoField",
             "title": "Адрес организации"
           },
-          "DOCUMENT1": {
-            "id": "DOCUMENT1",
+          "spt_certificate_request": {
+            "id": "spt_certificate_request_id",
             "uiType": "document",
+            "type": "File",
             "fileName": "Заявление на выдачу сертификата.pdf",
-            "fileSize": 634237233,
-            "date": 1633260900358,
-            "href": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-            "fileDateText": "Загружен",
-            "canDelete": true
+            "multiple": false,
+            "readonly": true,
+            "label": "Заявление",
+            "constraints": [
+              {
+                "name": "Size",
+                "attributes": {
+                  "min": 0,
+                  "max": 31457280
+                }
+              }
+            ]
           },
-          "DOCUMENT2": {
-            "id": "DOCUMENT2",
+          "spt_refusal_response": {
+            "id": "spt_refusal_response_id",
             "uiType": "document",
+            "type": "File",
             "fileName": "Решение по заявлению.pdf",
-            "fileSize": 634237233,
-            "date": 1633260900358,
-            "href": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-            "fileDateText": "Загружен",
-            "canDelete": true
+            "multiple": false,
+            "readonly": true,
+            "label": "Заявление",
+            "constraints": [
+              {
+                "name": "Size",
+                "attributes": {
+                  "min": 0,
+                  "max": 31457280
+                }
+              }
+            ]
           },
           "employeeTPPName": {
             "id": "employeeTPPName",
