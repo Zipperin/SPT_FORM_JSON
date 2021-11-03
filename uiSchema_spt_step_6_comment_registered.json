@@ -909,6 +909,7 @@
           "country": {
             "id": "country",
             "value": null,
+            "readonly": true,
             "type": "String",
             "uiType": "reference",
             "label": "Страна",
@@ -948,7 +949,7 @@
             "type": "String",
             "label": "Населенный пункт",
             "multiline": false,
-            "readonly": false,
+            "readonly": true,
             "tooltip": "1",
             "placeholder": "Введите населенный пункт",
             "multiple": false,
@@ -961,6 +962,7 @@
           "typeOfTransport": {
             "id": "typeOfTransport",
             "value": null,
+            "readonly": true,
             "type": "String",
             "uiType": "reference",
             "label": "Вид транспорта",
@@ -1061,6 +1063,7 @@
           "radio": {
             "id": "radio",
             "type": "String",
+            "readonly": true,
             "uiType": "radio",
             "label": "Выбор пункта маршрута",
             "data": [
@@ -1351,6 +1354,7 @@
             "value": null,
             "type": "String",
             "uiType": "reference",
+            "readonly": true,
             "label": "Страна происхождения товара",
             "placeholder": "Выберите страну",
             "tooltip": "1231",
@@ -1387,6 +1391,7 @@
           },
           "certificateAvailable": {
             "id": "certificateAvailable",
+            "readonly": true,
             "data": [
               {
                 "label": "Акт экспертизы в наличии",
@@ -1407,7 +1412,7 @@
             "label": "Номер акта",
             "placeholder": "Введите номер акта",
             "multiline": false,
-            "readonly": false,
+            "readonly": true,
             "multiple": false,
             "constraints": [
               {
@@ -1435,6 +1440,7 @@
           "actDateIssue": {
             "id": "actDateIssue",
             "label": "Дата выдачи",
+            "readonly": true,
             "uiType": "krDate",
             "placeholder": "дд.мм.гггг",
             "constraints": [
@@ -1460,6 +1466,7 @@
               }
             ],
             "type": "String",
+            "readonly": true,
             "uiType": "checkbox",
             "value": "true",
             "visible": true,
@@ -1468,10 +1475,10 @@
           "productNameGoodsMatchInTheAct": {
             "id": "productNameGoodsMatchInTheAct",
             "type": "String",
+            "readonly": true,
             "label": "Наименование товара в соответствии с актом экспертизы",
             "placeholder": "Введите наименование",
             "multiline": false,
-            "readonly": false,
             "multiple": false,
             "constraints": [
               {
@@ -1492,6 +1499,7 @@
             "value": null,
             "type": "String",
             "uiType": "reference",
+            "readonly": true,
             "label": "Единица измерения товара",
             "placeholder": "Выберите единицу измерения",
             "multiple": false,
@@ -1525,7 +1533,7 @@
             "label": "Количество товара",
             "placeholder": "Введите количество товара",
             "multiline": false,
-            "readonly": false,
+            "readonly": true,
             "tooltip": "1",
             "multiple": false,
             "constraints": [
@@ -1546,7 +1554,7 @@
             "type": "String",
             "label": "Количество мест",
             "multiline": true,
-            "readonly": false,
+            "readonly": true,
             "multiple": false,
             "placeholder": "Введите количество мест",
             "tooltip": "1",
@@ -1568,6 +1576,7 @@
             "value": null,
             "type": "String",
             "uiType": "reference",
+            "readonly": true,
             "label": "Вид упаковки",
             "placeholder": "Выберите вид упаковки",
             "multiple": false,
@@ -1606,7 +1615,7 @@
             "label": "Масса в кг (брутто)",
             "placeholder": "Введите количество",
             "multiline": false,
-            "readonly": false,
+            "readonly": true,
             "multiple": false,
             "constraints": [
               {

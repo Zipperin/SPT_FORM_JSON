@@ -1019,6 +1019,7 @@
         "id": "country",
         "value": null,
         "type": "String",
+        "readonly": true,
         "uiType": "reference",
         "label": "Страна",
         "multiple": false,
@@ -1057,7 +1058,7 @@
         "type": "String",
         "label": "Населенный пункт",
         "multiline": false,
-        "readonly": false,
+        "readonly": true,
         "tooltip": "1",
         "placeholder": "Введите населенный пункт",
         "multiple": false,
@@ -1071,6 +1072,7 @@
         "id": "typeOfTransport",
         "value": null,
         "type": "String",
+        "readonly": true,
         "uiType": "reference",
         "label": "Вид транспорта",
         "placeholder": "Выберите вид транспорта",
@@ -1171,6 +1173,7 @@
         "id": "radio",
         "type": "String",
         "uiType": "radio",
+        "readonly": true,
         "label": "Выбор пункта маршрута",
         "data": [
           {
@@ -1381,6 +1384,7 @@
         "id": "productName",
         "value": " ",
         "type": "String",
+        "readonly": true,
         "uiType": "reference",
         "label": "Каталог продукции",
         "placeholder": "Введите название товара или Код ТН ВЭД",
@@ -1459,6 +1463,7 @@
         "id": "cargoOriginCountry",
         "value": null,
         "type": "String",
+        "readonly": true,
         "uiType": "reference",
         "label": "Страна происхождения товара",
         "placeholder": "Выберите страну",
@@ -1496,6 +1501,7 @@
       },
       "certificateAvailable": {
         "id": "certificateAvailable",
+        "readonly": true,
         "data": [
           {
             "label": "Акт экспертизы в наличии",
@@ -1516,7 +1522,7 @@
         "label": "Номер акта",
         "placeholder": "Введите номер акта",
         "multiline": false,
-        "readonly": false,
+        "readonly": true,
         "multiple": false,
         "constraints": [
           {
@@ -1545,6 +1551,7 @@
         "id": "actDateIssue",
         "label": "Дата выдачи",
         "uiType": "krDate",
+        "readonly": true,
         "placeholder": "дд/мм/гггг",
         "constraints": [
           {
@@ -1561,6 +1568,7 @@
       },
       "goodsMatchInTheAct": {
         "id": "goodsMatchInTheAct",
+        "readonly": true,
         "data": [
           {
             "label": "Наименование товара совпадает с наименование в акте экспертизы",
@@ -1580,7 +1588,7 @@
         "label": "Наименование товара в соответствии с актом экспертизы",
         "placeholder": "Введите наименование",
         "multiline": false,
-        "readonly": false,
+        "readonly": true,
         "multiple": false,
         "constraints": [
           {
@@ -1600,6 +1608,7 @@
         "id": "unitNameSpecial",
         "value": null,
         "type": "String",
+        "readonly": true,
         "uiType": "reference",
         "label": "Единица измерения товара",
         "placeholder": "Выберите единицу измерения",
@@ -1634,7 +1643,7 @@
         "label": "Количество товара",
         "placeholder": "Введите количество товара",
         "multiline": false,
-        "readonly": false,
+        "readonly": true,
         "tooltip": "1",
         "multiple": false,
         "constraints": [
@@ -1655,7 +1664,7 @@
         "type": "String",
         "label": "Количество мест",
         "multiline": true,
-        "readonly": false,
+        "readonly": true,
         "multiple": false,
         "placeholder": "Введите количество мест",
         "tooltip": "1",
@@ -1676,6 +1685,7 @@
         "id": "descriptionOfPackaging",
         "value": null,
         "type": "String",
+        "readonly": true,
         "uiType": "reference",
         "label": "Вид упаковки",
         "placeholder": "Выберите вид упаковки",
@@ -1715,7 +1725,7 @@
         "label": "Масса в кг (брутто)",
         "placeholder": "Введите количество",
         "multiline": false,
-        "readonly": false,
+        "readonly": true,
         "multiple": false,
         "constraints": [
           {
