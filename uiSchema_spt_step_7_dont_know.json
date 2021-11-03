@@ -173,7 +173,6 @@
             "fileName": "Заявление на выдачу сертификата.pdf",
             "multiple": false,
             "readonly": true,
-            "label": "Заявление",
             "constraints": [
               {
                 "name": "Size",
@@ -191,7 +190,6 @@
             "fileName": "Решение по заявлению.pdf",
             "multiple": false,
             "readonly": true,
-            "label": "Заявление",
             "constraints": [
               {
                 "name": "Size",
