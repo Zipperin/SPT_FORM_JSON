@@ -10,7 +10,7 @@
               {
                 "columns": [
                   {
-                    "id": "productName",
+                    "id": "productNameInfo",
                     "gridAttributes": {
                       "lg": 12
                     }
@@ -20,7 +20,7 @@
               {
                 "columns": [
                   {
-                    "id": "description",
+                    "id": "descriptionInfo",
                     "gridAttributes": {
                       "lg": 12
                     }
@@ -30,7 +30,7 @@
               {
                 "columns": [
                   {
-                    "id": "nameManufacturer",
+                    "id": "nameManufacturerInfo",
                     "gridAttributes": {
                       "lg": 12
                     }
@@ -172,7 +172,7 @@
               {
                 "columns": [
                   {
-                    "id": "productName",
+                    "id": "productNameInfo",
                     "gridAttributes": {
                       "lg": 12
                     }
@@ -182,7 +182,7 @@
               {
                 "columns": [
                   {
-                    "id": "description",
+                    "id": "descriptionInfo",
                     "gridAttributes": {
                       "lg": 12
                     }
@@ -192,7 +192,7 @@
               {
                 "columns": [
                   {
-                    "id": "nameManufacturer",
+                    "id": "nameManufacturerInfo",
                     "gridAttributes": {
                       "lg": 12
                     }
@@ -795,6 +795,54 @@
           }
         ],
         "fields": {
+          "productNameInfo": {
+            "id": "productNameInfo",
+            "type": "String",
+            "label": "Наименование",
+            "multiline": false,
+            "readonly": true,
+            "multiple": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {}
+            ]
+          },
+          "descriptionInfo": {
+            "id": "descriptionInfo",
+            "type": "String",
+            "label": "Описание",
+            "multiline": false,
+            "readonly": true,
+            "multiple": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {}
+            ]
+          },
+          "nameManufacturerInfo": {
+            "id": "nameManufacturerInfo",
+            "type": "String",
+            "label": "Наименование производителя",
+            "multiline": false,
+            "readonly": true,
+            "multiple": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {}
+            ]
+          },
           "NOT_SPT_REGISTERED_1": {
             "id": "NOT_SPT_REGISTERED_1",
             "uiType": "notification",
@@ -821,6 +869,7 @@
             "id": "country",
             "value": null,
             "type": "String",
+            "readonly": true,
             "uiType": "reference",
             "label": "Страна",
             "multiple": false,
@@ -859,7 +908,7 @@
             "type": "String",
             "label": "Населенный пункт",
             "multiline": false,
-            "readonly": false,
+            "readonly": true,
             "tooltip": "1",
             "placeholder": "Введите населенный пункт",
             "multiple": false,
@@ -872,6 +921,7 @@
           "typeOfTransport": {
             "id": "typeOfTransport",
             "value": null,
+            "readonly": true,
             "type": "String",
             "uiType": "reference",
             "label": "Вид транспорта",
@@ -973,6 +1023,7 @@
             "id": "radio",
             "type": "String",
             "uiType": "radio",
+            "readonly": true,
             "label": "Выбор пункта маршрута",
             "data": [
               {
@@ -1150,7 +1201,7 @@
                 "dataIndex": "rowsNumber"
               },
               {
-                "dataIndex": "productName"
+                "dataIndex": "productNameInfo"
               },
               {
                 "dataIndex": "cargoOriginCountry"
@@ -1183,6 +1234,7 @@
             "id": "productName",
             "value": " ",
             "type": "String",
+            "readonly": true,
             "uiType": "reference",
             "label": "Каталог продукции",
             "placeholder": "Введите название товара или Код ТН ВЭД",
@@ -1261,6 +1313,7 @@
             "id": "cargoOriginCountry",
             "value": null,
             "type": "String",
+            "readonly": true,
             "uiType": "reference",
             "label": "Страна происхождения товара",
             "placeholder": "Выберите страну",
@@ -1298,6 +1351,7 @@
           },
           "certificateAvailable": {
             "id": "certificateAvailable",
+            "readonly": true,
             "data": [
               {
                 "label": "Акт экспертизы в наличии",
@@ -1318,7 +1372,7 @@
             "label": "Номер акта",
             "placeholder": "Введите номер акта",
             "multiline": false,
-            "readonly": false,
+            "readonly": true,
             "multiple": false,
             "constraints": [
               {
@@ -1346,6 +1400,7 @@
           "actDateIssue": {
             "id": "actDateIssue",
             "label": "Дата выдачи",
+            "readonly": true,
             "uiType": "krDate",
             "placeholder": "дд.мм.гггг",
             "constraints": [
@@ -1363,6 +1418,7 @@
           },
           "goodsMatchInTheAct": {
             "id": "goodsMatchInTheAct",
+            "readonly": true,
             "data": [
               {
                 "label": "Наименование товара совпадает с наименование в акте экспертизы",
@@ -1379,10 +1435,10 @@
           "productNameGoodsMatchInTheAct": {
             "id": "productNameGoodsMatchInTheAct",
             "type": "String",
+            "readonly": true,
             "label": "Наименование товара в соответствии с актом экспертизы",
             "placeholder": "Введите наименование",
             "multiline": false,
-            "readonly": false,
             "multiple": false,
             "constraints": [
               {
@@ -1402,6 +1458,7 @@
             "id": "unitNameSpecial",
             "value": null,
             "type": "String",
+            "readonly": true,
             "uiType": "reference",
             "label": "Единица измерения товара",
             "placeholder": "Выберите единицу измерения",
@@ -1436,7 +1493,7 @@
             "label": "Количество товара",
             "placeholder": "Введите количество товара",
             "multiline": false,
-            "readonly": false,
+            "readonly": true,
             "tooltip": "1",
             "multiple": false,
             "constraints": [
@@ -1457,7 +1514,7 @@
             "type": "String",
             "label": "Количество мест",
             "multiline": true,
-            "readonly": false,
+            "readonly": true,
             "multiple": false,
             "placeholder": "Введите количество мест",
             "tooltip": "1",
@@ -1480,6 +1537,7 @@
             "type": "String",
             "uiType": "reference",
             "label": "Вид упаковки",
+            "readonly": true,
             "placeholder": "Выберите вид упаковки",
             "multiple": false,
             "constraints": [
@@ -1517,7 +1575,7 @@
             "label": "Масса в кг (брутто)",
             "placeholder": "Введите количество",
             "multiline": false,
-            "readonly": false,
+            "readonly": true,
             "multiple": false,
             "constraints": [
               {

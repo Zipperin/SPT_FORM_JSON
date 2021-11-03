@@ -156,7 +156,7 @@
           {
             "columns": [
               {
-                "id": "country",
+                "id": "countryOfImporter",
                 "gridAttributes": {
                   "lg": 4
                 }
@@ -368,6 +368,43 @@
           }
         ],
         "fields": {
+          "countryOfImporter": {
+            "id": "countryOfImporter",
+            "value": null,
+            "type": "String",
+            "uiType": "reference",
+            "label": "Страна",
+            "multiple": false,
+            "placeholder": "Выберите страну",
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
+            "requestParams": {
+              "resultObjectParams": {
+                "name": [
+                  "shortName"
+                ],
+                "key": "uuid"
+              },
+              "params": {
+                "headers": {},
+                "queryParams": {
+                  "showDetails": 0,
+                  "showRefs": 0,
+                  "size": 1000
+                },
+                "relativeUrl": "api/v1/catalogs/country/items/search"
+              },
+              "filters": [
+                {
+                  "name": "shortName_starlike"
+                }
+              ]
+            }
+          },
           "NOT_SPT_DEF_TYPE_CERT_3": {
             "id": "NOT_SPT_DEF_TYPE_CERT_3",
             "uiType": "notification",

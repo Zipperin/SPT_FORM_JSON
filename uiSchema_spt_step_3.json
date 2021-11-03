@@ -552,7 +552,8 @@
                 "dataIndex": "rowsNumber"
               },
               {
-                "dataIndex": "productName"
+                "dataIndex": "productName",
+                "tmpl": "{{productName.value}}{{productNameAdd}}"
               },
               {
                 "dataIndex": "cargoOriginCountry"

@@ -1,7 +1,7 @@
 {
     "variables": {},
     "uiSchema": {
-        "onChangeHandler": "function({values,fields,prevValues,getName}) {console.log(values);var organizationTPPAddressV = values.organizationTPPAddress; return {updatedValues: Object.assign({}, values, {organizationTPPAddress: organizationTPPAddressV})}}",
+        "onChangeHandler": "function({values,fields,prevValues,getName}) {console.log(values);var organizationTPPAddressV = values.organizationTPPName.addressTpP; return {updatedValues: Object.assign({}, values, {organizationTPPAddress: organizationTPPAddressV})}}",
         "blocks": [
           {
             "name": "proTableEdit",
@@ -10,7 +10,7 @@
               {
                 "columns": [
                   {
-                    "id": "productName",
+                    "id": "productNameInfo",
                     "gridAttributes": {
                       "lg": 12
                     }
@@ -20,7 +20,7 @@
               {
                 "columns": [
                   {
-                    "id": "description",
+                    "id": "descriptionInfo",
                     "gridAttributes": {
                       "lg": 12
                     }
@@ -30,7 +30,7 @@
               {
                 "columns": [
                   {
-                    "id": "nameManufacturer",
+                    "id": "nameManufacturerInfo",
                     "gridAttributes": {
                       "lg": 12
                     }
@@ -172,7 +172,7 @@
               {
                 "columns": [
                   {
-                    "id": "productName",
+                    "id": "productNameInfo",
                     "gridAttributes": {
                       "lg": 12
                     }
@@ -182,7 +182,7 @@
               {
                 "columns": [
                   {
-                    "id": "description",
+                    "id": "descriptionInfo",
                     "gridAttributes": {
                       "lg": 12
                     }
@@ -192,7 +192,7 @@
               {
                 "columns": [
                   {
-                    "id": "nameManufacturer",
+                    "id": "nameManufacturerInfo",
                     "gridAttributes": {
                       "lg": 12
                     }
@@ -919,6 +919,54 @@
           }
         ],
         "fields": {
+          "productNameInfo": {
+            "id": "productNameInfo",
+            "type": "String",
+            "label": "Наименование",
+            "multiline": false,
+            "readonly": true,
+            "multiple": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {}
+            ]
+          },
+          "descriptionInfo": {
+            "id": "descriptionInfo",
+            "type": "String",
+            "label": "Описание",
+            "multiline": false,
+            "readonly": true,
+            "multiple": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {}
+            ]
+          },
+          "nameManufacturerInfo": {
+            "id": "nameManufacturerInfo",
+            "type": "String",
+            "label": "Наименование производителя",
+            "multiline": false,
+            "readonly": true,
+            "multiple": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {}
+            ]
+          },
           "organizationTPPName": {
             "id": "organizationTPPName",
             "type": "String",
@@ -1522,7 +1570,7 @@
                 "dataIndex": "rowsNumber"
               },
               {
-                "dataIndex": "productName"
+                "dataIndex": "productNameInfo"
               },
               {
                 "dataIndex": "cargoOriginCountry"
@@ -1574,7 +1622,7 @@
                 "dataIndex": "rowsNumber"
               },
               {
-                "dataIndex": "productName"
+                "dataIndex": "productNameInfo"
               },
               {
                 "dataIndex": "actNumber"

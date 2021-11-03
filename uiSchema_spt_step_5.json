@@ -209,7 +209,7 @@
               {
                 "columns": [
                   {
-                    "id": "productName",
+                    "id": "productNameInfo",
                     "gridAttributes": {
                       "lg": 12
                     }
@@ -219,7 +219,7 @@
               {
                 "columns": [
                   {
-                    "id": "description",
+                    "id": "descriptionInfo",
                     "gridAttributes": {
                       "lg": 12
                     }
@@ -229,7 +229,7 @@
               {
                 "columns": [
                   {
-                    "id": "nameManufacturer",
+                    "id": "nameManufacturerInfo",
                     "gridAttributes": {
                       "lg": 12
                     }
@@ -1569,7 +1569,7 @@
                 "dataIndex": "rowsNumber"
               },
               {
-                "dataIndex": "productName"
+                "dataIndex": "productNameInfo"
               },
               {
                 "dataIndex": "actNumber"
