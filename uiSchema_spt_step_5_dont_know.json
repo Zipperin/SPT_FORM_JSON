@@ -436,11 +436,16 @@
           {
             "columns": [
               {
+                "id": "NOT_SPT_ISSUANCE_3_DONT_KNOW",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              },
+              {
                 "id": "getReasonedRefusal-1",
                 "gridAttributes": {
                   "lg": 12
-                },
-                "html": "В случае необходимости получения решения ТПП России о невозможности выдачи выбранного вида сертификата по указанным условия, вы можете сформировать заявление на получение мотивированного отказа"
+                }         
               }
             ]
           },
@@ -1432,8 +1437,12 @@
           "NOT_SPT_ISSUANCE_1_DONT_KNOW": {
             "id": "NOT_SPT_ISSUANCE_1_DONT_KNOW",
             "uiType": "notification",
-            "notificationStatus": "ERROR",
-            "html": "Под указанные условия поставки выбранный товар и сертификат не может быть выдан."
+            "notificationStatus": "ERROR"
+          },
+          "NOT_SPT_ISSUANCE_3_DONT_KNOW": {
+            "id": "NOT_SPT_ISSUANCE_3_DONT_KNOW",
+            "uiType": "notification",
+            "notificationStatus": "WARNING"         
           },
           "getReasonedRefusal": {
             "id": "getReasonedRefusal",
