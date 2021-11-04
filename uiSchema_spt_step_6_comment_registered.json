@@ -398,19 +398,9 @@
         ],
         "rows": [
           {
-            "columns": [
-              {
-                "id": "NOT_SPT_PAYMENT_1",
-                "gridAttributes": {
-                  "lg": 12
-                }
-              }
-            ]
-          },
-          {
             "type": "formSeparator",
             "expansionPanel": {
-              "title": "Информация о проекте сертификата",
+              "title": "Заявление",
               "expandedByDefault": false,
               "isDynamicStatus": true,
               "validateStatus": {
@@ -758,11 +748,24 @@
             ]
           },
           {
+            "type": "formSeparator"
+          },
+          {
+            "columns": [
+              {
+                "id": "NOT_SPT_COMMENT_REGISTERED_1",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
             "type": "formSeparator",
             "expansionPanel": {
-              "title": "Оплата",
+              "title": "Результат рассмотрения комментария",
               "expandedByDefault": true,
-              "isDynamicStatus": true,
+              "isDynamicStatus": false,
               "validateStatus": {
                 "success": "Заполнено",
                 "default": "Заполните",
@@ -773,22 +776,7 @@
           {
             "columns": [
               {
-                "id": "DOCUMENT1",
-                "gridAttributes": {
-                  "lg": 6
-                }
-              }
-            ]
-          },
-          {
-            "columns": [
-              {
-                "type": "typography",
-                "typographyProps": {
-                  "html": "Реквизиты оплаченного счета",
-                  "variant": "h5",
-                  "margin": "0px 0px 15px 0px"
-                },
+                "id": "NOT_SPT_COMMENT_REGISTERED_2",
                 "gridAttributes": {
                   "lg": 12
                 }
@@ -798,21 +786,69 @@
           {
             "columns": [
               {
-                "id": "paymentOrderNumber",
+                "id": "printFormStatement",
                 "gridAttributes": {
                   "lg": 4
                 }
               },
               {
-                "id": "dateOfPayment",
+                "id": "printFormDraftSertificate",
+                "gridAttributes": {
+                  "lg": 4
+                }
+              },
+              {
+                "id": "printFormComment",
                 "gridAttributes": {
                   "lg": 4
                 }
               }
             ]
-          }
+        } 
         ],
         "fields": {
+          "NOT_SPT_COMMENT_REGISTERED_1": {
+            "id": "NOT_SPT_COMMENT_REGISTERED_1",
+            "uiType": "notification",
+            "notificationStatus": "SUCCESS",
+            "html": ""
+          },
+          "NOT_SPT_COMMENT_REGISTERED_2": {
+            "id": "NOT_SPT_COMMENT_REGISTERED_2",
+            "uiType": "notification",
+            "notificationStatus": "INFO",
+            "html": ""
+          },
+        "printFormStatement": {
+            "id": "printFormStatement",
+            "uiType": "document",
+            "fileName": "Заявление.pdf",
+            "fileSize": 634237233,
+            "date": 1633260900358,
+            "href": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+            "fileDateText": "Загружен",
+            "canDelete": true
+        },
+        "printFormDraftSertificate": {
+          "id": "printFormDraftSertificate",
+          "uiType": "document",
+          "fileName": "Проект сертификата.pdf",
+          "fileSize": 634237233,
+          "date": 1633260900358,
+          "href": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+          "fileDateText": "Загружен",
+          "canDelete": true
+      },
+      "printFormComment": {
+        "id": "printFormComment",
+        "uiType": "document",
+        "fileName": "Комментарий.pdf",
+        "fileSize": 634237233,
+        "date": 1633260900358,
+        "href": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
+        "fileDateText": "Загружен",
+        "canDelete": true
+    },
           "productNameInfo": {
             "id": "productNameInfo",
             "type": "String",
@@ -895,16 +931,6 @@
             "conditionals": [
               {}
             ]
-          },
-          "DOCUMENT1": {
-            "id": "DOCUMENT1",
-            "uiType": "document",
-            "fileName": "Заявление.pdf",
-            "fileSize": 634237233,
-            "date": 1633260900358,
-            "href": "https://www.w3.org/WAI/ER/tests/xhtml/testfiles/resources/pdf/dummy.pdf",
-            "fileDateText": "Загружен",
-            "canDelete": true
           },
           "country": {
             "id": "country",
