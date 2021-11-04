@@ -1165,6 +1165,7 @@
             "id": "exportContractDate",
             "label": "Дата",
             "uiType": "krDate",
+            "disableFuture": true,
             "placeholder": "дд.мм.гггг",
             "constraints": [
               {
@@ -1194,6 +1195,7 @@
             "id": "invoiceDate",
             "label": "Дата",
             "uiType": "krDate",
+            "disableFuture": true,
             "placeholder": "дд.мм.гггг",
             "constraints": [
               {
@@ -1751,6 +1753,7 @@
           "actDateIssue": {
             "id": "actDateIssue",
             "label": "Дата выдачи",
+            "disableFuture": true,
             "uiType": "krDate",
             "placeholder": "дд.мм.гггг",
             "constraints": [

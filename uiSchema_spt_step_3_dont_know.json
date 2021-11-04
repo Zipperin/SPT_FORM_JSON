@@ -332,7 +332,8 @@
             "id": "actDateIssue",
             "label": "Дата выдачи",
             "uiType": "krDate",
-            "placeholder": "дд/мм/гггг",
+            "placeholder": "дд.мм.гггг",
+            "disableFuture": true,
             "constraints": [
               {
                 "name": "NotNull"

@@ -995,7 +995,8 @@
         "id": "dateOfPayment",
         "label": "Дата оплаты",
         "uiType": "krDate",
-        "placeholder": "дд/мм/гггг",
+        "disableFuture": true,
+        "placeholder": "дд.мм.гггг",
         "constraints": [
           {
             "name": "NotNull"
@@ -1552,7 +1553,7 @@
         "label": "Дата выдачи",
         "uiType": "krDate",
         "readonly": true,
-        "placeholder": "дд/мм/гггг",
+        "placeholder": "дд.мм.гггг",
         "constraints": [
           {
             "name": "NotNull"

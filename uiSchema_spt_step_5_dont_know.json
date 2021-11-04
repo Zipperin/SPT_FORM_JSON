@@ -1190,6 +1190,7 @@
           "exportContractDate": {
             "id": "exportContractDate",
             "label": "Дата",
+            "disableFuture": true,
             "uiType": "krDate",
             "placeholder": "дд.мм.гггг",
             "constraints": [
@@ -1836,6 +1837,7 @@
             "id": "actDateIssue",
             "readonly": true,
             "label": "Дата выдачи",
+            "disableFuture": true,
             "uiType": "krDate",
             "placeholder": "дд.мм.гггг",
             "constraints": [

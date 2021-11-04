@@ -1266,7 +1266,7 @@
             "uiType": "krDate",
             "visible": false,
             "tooltip": "1123",
-            "placeholder": "дд/мм/гггг",
+            "placeholder": "дд.мм.гггг",
             "constraints": [
               {
                 "name": "NotNull"

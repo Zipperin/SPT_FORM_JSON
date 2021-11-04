@@ -1401,6 +1401,7 @@
             "id": "actDateIssue",
             "label": "Дата выдачи",
             "readonly": true,
+            "disableFuture": true,
             "uiType": "krDate",
             "placeholder": "дд.мм.гггг",
             "constraints": [
