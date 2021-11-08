@@ -595,6 +595,16 @@
           {
             "columns": [
               {
+                "id": "exporterIsShipper",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
                 "id": "shipperCompanyName",
                 "gridAttributes": {
                   "lg": 12
@@ -1498,6 +1508,22 @@
             "type": "String",
             "uiType": "infoField",
             "title": "Наименование импортера"
+          },
+          "exporterIsShipper": {
+            "id": "exporterIsShipper",
+            "data": [
+              {
+                "label": "Заявитель является грузоотправителем",
+                "value": "exporterIsShipper",
+                "key": "exporterIsShipper"
+              }
+            ],
+            "type": "String",
+            "uiType": "checkbox",
+            "value": "true",
+            "readonly": true,
+            "visible": true,
+            "title": ""
           },
           "shipperOgrn": {
             "id": "shipperOgrn",

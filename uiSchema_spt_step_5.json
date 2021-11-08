@@ -583,6 +583,16 @@
           {
             "columns": [
               {
+                "id": "exporterIsShipper",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
                 "id": "shipperCompanyName",
                 "gridAttributes": {
                   "lg": 12
@@ -635,6 +645,16 @@
             "columns": [
               {
                 "id": "importerName",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "importerIsConsignee",
                 "gridAttributes": {
                   "lg": 12
                 }
@@ -897,12 +917,12 @@
             "filesLimit": 1,
             "outerError": "",
             "required": true,
-            "canDelete": true,      
+            "canDelete": true,
             "constraints": [
               {
                 "name": "NotNull"
               }
-            ]     
+            ]
           },
           "file_invoice": {
             "id": "file_invoice",
@@ -1354,6 +1374,22 @@
             "notificationStatus": "WARNING",
             "html": ""
           },
+          "exporterIsShipper": {
+            "id": "exporterIsShipper",
+            "data": [
+              {
+                "label": "Заявитель является грузоотправителем",
+                "value": "exporterIsShipper",
+                "key": "exporterIsShipper"
+              }
+            ],
+            "type": "String",
+            "uiType": "checkbox",
+            "value": "true",
+            "readonly": true,
+            "visible": true,
+            "title": ""
+          },
           "legalAddress": {
             "id": "legalAddress",
             "type": "String",
@@ -1365,6 +1401,22 @@
             "type": "String",
             "uiType": "infoField",
             "title": "Наименование организации"
+          },
+          "importerIsConsignee": {
+            "id": "importerIsConsignee",
+            "data": [
+              {
+                "label": "Импортер является грузополучателем",
+                "value": "importerIsConsignee",
+                "key": "importerIsConsignee"
+              }
+            ],
+            "type": "String",
+            "uiType": "checkbox",
+            "value": "true",
+            "visible": true,
+            "readonly": true,
+            "title": ""
           },
           "сonsigneeLocation": {
             "id": "сonsigneeLocation",
