@@ -690,7 +690,7 @@
                 }
               },
               {
-                "id": "wayGetSolution",
+                "id": "wayGetSolutionInfo",
                 "gridAttributes": {
                   "lg": 4
                 }
@@ -1167,8 +1167,8 @@
             "uiType": "infoField",
             "title": "Количество копий"
           },
-          "wayGetSolution": {
-            "id": "wayGetSolution",
+          "wayGetSolutionInfo": {
+            "id": "wayGetSolutionInfo",
             "type": "String",
             "uiType": "infoField",
             "title": "Способ получения"
