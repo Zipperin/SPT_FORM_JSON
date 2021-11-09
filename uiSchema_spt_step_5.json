@@ -1379,13 +1379,12 @@
             "data": [
               {
                 "label": "Заявитель является грузоотправителем",
-                "value": "exporterIsShipper",
-                "key": "exporterIsShipper"
+                "value": "exporterIsShipper-1",
+                "key": "exporterIsShipper-1"
               }
             ],
             "type": "String",
             "uiType": "checkbox",
-            "value": "true",
             "readonly": true,
             "visible": true,
             "title": ""
@@ -1407,13 +1406,12 @@
             "data": [
               {
                 "label": "Импортер является грузополучателем",
-                "value": "importerIsConsignee",
-                "key": "importerIsConsignee"
+                "value": "importerIsConsignee-1",
+                "key": "importerIsConsignee-1"
               }
             ],
             "type": "String",
             "uiType": "checkbox",
-            "value": "true",
             "visible": true,
             "readonly": true,
             "title": ""

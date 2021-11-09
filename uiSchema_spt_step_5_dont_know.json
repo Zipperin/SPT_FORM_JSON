@@ -656,6 +656,16 @@
           {
             "columns": [
               {
+                "id": "importerIsConsignee",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
                 "id": "importerName",
                 "gridAttributes": {
                   "lg": 12
@@ -1514,8 +1524,8 @@
             "data": [
               {
                 "label": "Заявитель является грузоотправителем",
-                "value": "exporterIsShipper",
-                "key": "exporterIsShipper"
+                "value": "exporterIsShipper-1",
+                "key": "exporterIsShipper-1"
               }
             ],
             "type": "String",
@@ -1523,6 +1533,21 @@
             "value": "true",
             "readonly": true,
             "visible": true,
+            "title": ""
+          },
+          "importerIsConsignee": {
+            "id": "importerIsConsignee",
+            "data": [
+              {
+                "label": "Импортер является грузополучателем",
+                "value": "importerIsConsignee-1",
+                "key": "importerIsConsignee-1"
+              }
+            ],
+            "type": "String",
+            "uiType": "checkbox",
+            "visible": true,
+            "readonly": true,
             "title": ""
           },
           "shipperOgrn": {
