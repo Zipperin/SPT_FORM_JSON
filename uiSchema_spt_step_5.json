@@ -583,7 +583,7 @@
           {
             "columns": [
               {
-                "id": "exporterIsShipper",
+                "id": "exporterIsShipper-1",
                 "gridAttributes": {
                   "lg": 12
                 }
@@ -640,11 +640,11 @@
                 }
               }
             ]
-          },
+          },       
           {
             "columns": [
               {
-                "id": "importerName",
+                "id": "importerIsConsignee-1",
                 "gridAttributes": {
                   "lg": 12
                 }
@@ -654,7 +654,7 @@
           {
             "columns": [
               {
-                "id": "importerIsConsignee",
+                "id": "importerName",
                 "gridAttributes": {
                   "lg": 12
                 }
