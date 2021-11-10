@@ -1130,6 +1130,9 @@
             ],
             "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
             "requestParams": {
+              "additionalFields": {
+                "alpha2Code": "alpha2Code"
+              },
               "resultObjectParams": {
                 "name": [
                   "shortName"
@@ -1236,6 +1239,9 @@
             "placeholder": "Выберите вид транспорта",
             "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/types_of_transport/items/search",
             "requestParams": {
+              "additionalFields": {
+                "kod": "kod"
+              },
               "resultObjectParams": {
                 "name": [
                   "name"
@@ -1750,6 +1756,9 @@
             ],
             "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
             "requestParams": {
+              "additionalFields": {
+                "alpha2Code": "alpha2Code"
+              },
               "resultObjectParams": {
                 "name": [
                   "shortName"
