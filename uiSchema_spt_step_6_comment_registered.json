@@ -690,7 +690,7 @@
         }
       },
       {
-        "id": "wayGetSolution",
+        "id": "wayGetSolutionInfo",
         "gridAttributes": {
           "lg": 4
         }

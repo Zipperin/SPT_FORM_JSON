@@ -10,11 +10,6 @@
               {
                 "columns": [
                   {
-                    "gridAttributes": {
-                      "lg": 2
-                    }
-                  },
-                  {
                     "id": "GROUP_BUTTON_FOR_CHECKBOX",
                     "gridAttributes": {
                       "lg": 10
