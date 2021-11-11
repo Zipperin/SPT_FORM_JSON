@@ -1625,6 +1625,9 @@
         "multiple": false,
         "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/units/items/search",
         "requestParams": {
+          "additionalFields": {
+            "code": "code"
+          },
           "resultObjectParams": {
             "name": [
               "fullName"
@@ -1707,6 +1710,9 @@
         ],
         "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/cargo_packaging_classifier/items/search",
         "requestParams": {
+          "additionalFields": {
+            "kod": "kod"
+          },
           "resultObjectParams": {
             "name": [
               "naimR"
