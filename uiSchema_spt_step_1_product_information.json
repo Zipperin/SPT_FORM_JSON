@@ -359,7 +359,7 @@
           {
             "columns": [
               {
-                "id": "сonsigneeСountry",
+                "id": "consigneeCountry",
                 "gridAttributes": {
                   "lg": 6
                 }
@@ -1166,8 +1166,8 @@
               ]
             }
           },
-          "сonsigneeСountry": {
-            "id": "сonsigneeСountry",
+          "consigneeCountry": {
+            "id": "consigneeCountry",
             "value": null,
             "type": "String",
             "uiType": "reference",
