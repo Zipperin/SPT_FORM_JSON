@@ -2103,7 +2103,7 @@
         },
         "navigationButtons": {
           "next": {
-            "label": "Подписать и отправить",
+            "label": "Далее",
             "lastStepHide": false
           },
           "cancel": {
