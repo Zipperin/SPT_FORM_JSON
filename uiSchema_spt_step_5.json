@@ -684,7 +684,7 @@
           {
             "columns": [
               {
-                "id": "сonsigneeLocation",
+                "id": "consigneeLocation",
                 "gridAttributes": {
                   "lg": 12
                 }
@@ -1423,8 +1423,8 @@
             "readonly": true,
             "title": ""
           },
-          "сonsigneeLocation": {
-            "id": "сonsigneeLocation",
+          "consigneeLocation": {
+            "id": "consigneeLocation",
             "type": "String",
             "uiType": "infoField",
             "title": "Местонахождение (адрес) "
