@@ -1766,7 +1766,7 @@
     "navigationButtons": {
       "next": {
         "hide": false,
-        "label": "Подтвердить"
+        "label": "Далее"
       },
       "cancel": {
         "hide": false
@@ -1785,7 +1785,7 @@
         "buttons": [
           {
             "type": "customAction",
-            "title": "Подписать и отправить"
+            "title": "Далее"
           }
         ]
       }
