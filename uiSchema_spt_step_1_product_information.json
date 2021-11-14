@@ -1268,6 +1268,7 @@
             "visible": false,
             "tooltip": "1123",
             "placeholder": "дд.мм.гггг",
+            "minDate": "now",
             "constraints": [
               {
                 "name": "NotNull"

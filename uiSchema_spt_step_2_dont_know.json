@@ -401,6 +401,7 @@
             "id": "routeDate",
             "label": "Предполагаемая дата отгрузки",
             "uiType": "krDate",
+            "minDate": "now",
             "placeholder": "дд.мм.гггг",
             "constraints": [
               {
