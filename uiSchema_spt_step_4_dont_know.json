@@ -1,5 +1,867 @@
 {
-    "variables": {},
+  "variables": {
+    "cargoOriginCountry": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "country": {
+      "value": {
+        "alpha2Code": "AF",
+        "key": "2e929c2e-0afe-4383-8767-3b2844bf1571",
+        "value": "АФГАНИСТАН "
+      },
+      "type": "Object",
+      "valueInfo": {
+        "objectTypeName": "java.util.LinkedHashMap",
+        "serializationDataFormat": "application/x-java-serialized-object"
+      }
+    },
+    "certType": {
+      "value": "Не знаю",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "certReceiveMethod_GENERALFORM": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "invoiceOfCountry": {
+      "value": {},
+      "type": "Object",
+      "valueInfo": {
+        "objectTypeName": "java.util.LinkedHashMap",
+        "serializationDataFormat": "application/x-java-serialized-object"
+      }
+    },
+    "companyName": {
+      "value": "ООО \"АЛСЕЗА\"",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "shipperCountry": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "shipperInn": {
+      "value": "7743300600",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "descriptionOfPackaging": {
+      "value": {
+        "key": "2bbf8809-54ca-4c30-bae7-a579b325bbb1",
+        "kod": "NA",
+        "value": "Нет сведений * Не применяется при заполнении декларации на товары и транзитной декларации. "
+      },
+      "type": "Object",
+      "valueInfo": {
+        "objectTypeName": "java.util.TreeMap",
+        "serializationDataFormat": "application/x-java-serialized-object"
+      }
+    },
+    "consigneeLocation": {
+      "value": "Салиха Батыева 1",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "certCopiesQuantity_ST2_EN": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "GROUP_BUTTON_FOR_CHECKBOX": {
+      "value": "1",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "productName": {
+      "value": {
+        "caption": "123",
+        "description": "123",
+        "key": "a0cc8168-216d-4e18-972c-9cdeef8df11c",
+        "manufacturerCaption": "ООО \"ЯНДЕКС\" ",
+        "tnved": {
+          "cRMId": null,
+          "chapter": false,
+          "actual": true,
+          "fullCaption": null,
+          "codeHs": null,
+          "code": "77777777",
+          "description": null,
+          "caption": "sdfs",
+          "dateFrom": "2021-11-04T15:10:16.369+0000",
+          "uuid": "7f5a53ec-039d-4040-afeb-21ef69a2763e",
+          "version": 65465,
+          "parentId": null,
+          "authorFio": "camunda camunda camunda",
+          "regulatoryName": null,
+          "catalogId": {
+            "caption": "Справочник \"Классификатор ТН ВЭД\"",
+            "catalogIdentifier": "tnved",
+            "catalogUuid": "cac1c5e8-3290-470e-aaad-00e56f1901cc",
+            "catalogTypeId": "1",
+            "catalogGroupCode": null,
+            "catalogGroupCaption": null
+          },
+          "id": 65462,
+          "createDate": "2021-11-04T15:10:16.359+0000"
+        },
+        "value": "77777777 123 "
+      },
+      "type": "Object",
+      "valueInfo": {
+        "objectTypeName": "java.util.LinkedHashMap",
+        "serializationDataFormat": "application/x-java-serialized-object"
+      }
+    },
+    "legalAddress": {
+      "value": "Тобольск,Старопетровский проезд,Строение  5,Под. 1, оф. 515",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "radio": {
+      "value": "radio-middle",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "quantityOfGoodsGross": {
+      "value": "123",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "companyPhone": {
+      "value": "+7 (499) 343-43-42",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "radio1": {
+      "value": "radio1-no",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "shipperLegalAddress": {
+      "value": "Тобольск,Старопетровский проезд,Строение  5,Под. 1, оф. 515",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "radio2": {
+      "value": "radio2-yes",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "ogrn": {
+      "value": "1197746303325",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "emailOfAuthorizedPerson": {
+      "value": "rec-notifications-group@roox.ru",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "productAdditionalName": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "nameManufacturer": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "certReceiveMethod_ST1UZ": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "locality": {
+      "value": "1",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "certReceiveMethod_ST2_EN": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "kpp": {
+      "value": "774301001",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "descriptionAdd": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "certCopiesQuantity_EAV": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "organizationExpertiseAddress": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "shipperOgrn": {
+      "value": "1197746303325",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "certificateForm": {
+      "value": "Не знаю",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "rowsNumber": {
+      "value": "1",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "actDateIssue": {
+      "value": "03.11.2021",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "certReceiveMethod_EAV": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "quantityOfGoodsSpecial": {
+      "value": "123",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "consigneeCountry": {
+      "value": {},
+      "type": "Object",
+      "valueInfo": {
+        "objectTypeName": "java.util.LinkedHashMap",
+        "serializationDataFormat": "application/x-java-serialized-object"
+      }
+    },
+    "status": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "nameOfAuthorizedPerson": {
+      "value": "Иванов Иван Иванович",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "numberOfPlaces": {
+      "value": "123",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "shippingDate": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "unitNameSpecial": {
+      "value": {
+        "code": "003",
+        "key": "e8a7113d-252f-4f69-8047-0d0f9687bb92",
+        "value": "Миллиметр "
+      },
+      "type": "Object",
+      "valueInfo": {
+        "objectTypeName": "java.util.TreeMap",
+        "serializationDataFormat": "application/x-java-serialized-object"
+      }
+    },
+    "chatId": {
+      "value": "dd8ace50-4559-11ec-9241-b6f9296156e0",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "routeTable": {
+      "value": [
+        {
+          "id": "510dea77-16f3-44be-ac91-6f4ce5d7536a",
+          "rowsNumber": "1",
+          "country": {
+            "value": "АФГАНИСТАН ",
+            "key": "2e929c2e-0afe-4383-8767-3b2844bf1571",
+            "alpha2Code": "AF"
+          },
+          "locality": "1",
+          "typeOfTransport": {
+            "value": "Состав транспортных средств (тягач с прицепом (-ами) и полуприцепом (-ами) )",
+            "key": "fb570507-084c-4601-a9cb-116d05819107",
+            "kod": "32"
+          },
+          "radio": "middle"
+        }
+      ],
+      "type": "Object",
+      "valueInfo": {
+        "objectTypeName": "java.util.ArrayList",
+        "serializationDataFormat": "application/x-java-serialized-object"
+      }
+    },
+    "description": {
+      "value": "123",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "typeOfTransport": {
+      "value": {
+        "key": "fb570507-084c-4601-a9cb-116d05819107",
+        "kod": "32",
+        "value": "Состав транспортных средств (тягач с прицепом (-ами) и полуприцепом (-ами) )"
+      },
+      "type": "Object",
+      "valueInfo": {
+        "objectTypeName": "java.util.LinkedHashMap",
+        "serializationDataFormat": "application/x-java-serialized-object"
+      }
+    },
+    "shipperCompanyName": {
+      "value": "ООО \"АЛСЕЗА\"",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "certificateAvailable": {
+      "value": "[certificateAvailable]",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "consigneeName": {
+      "value": "1",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "certCopiesQuantity_ST1UZ": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "companyEmail": {
+      "value": "exp_test@mail.ru",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "importerName": {
+      "value": "1",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "phoneOfAuthorizedPerson": {
+      "value": "+7 (907) 654-32-13",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "NEXT": {
+      "value": "NEXT",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "certificateOfCountry": {
+      "value": {},
+      "type": "Object",
+      "valueInfo": {
+        "objectTypeName": "java.util.LinkedHashMap",
+        "serializationDataFormat": "application/x-java-serialized-object"
+      }
+    },
+    "client": {
+      "value": "2f237496-b9ec-4eb5-b239-17e24a39d078",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "organizationExpertiseName": {
+      "value": {},
+      "type": "Object",
+      "valueInfo": {
+        "objectTypeName": "java.util.TreeMap",
+        "serializationDataFormat": "application/x-java-serialized-object"
+      }
+    },
+    "CUSTOM_BUTTON1": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "serviceId": {
+      "value": "41e5b74f-4f04-4907-8bf6-44eac4dd544a",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "certCopiesQuantity_A": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "countryImporter": {
+      "value": {},
+      "type": "Object",
+      "valueInfo": {
+        "objectTypeName": "java.util.LinkedHashMap",
+        "serializationDataFormat": "application/x-java-serialized-object"
+      }
+    },
+    "CUSTOM_BUTTON2": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "countryExporter": {
+      "value": {},
+      "type": "Object",
+      "valueInfo": {
+        "objectTypeName": "java.util.LinkedHashMap",
+        "serializationDataFormat": "application/x-java-serialized-object"
+      }
+    },
+    "address": {
+      "value": "Салиха Батыева 1",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "inn": {
+      "value": "7743300600",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "actNumber": {
+      "value": "12",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "uiFormType": {
+      "value": "steps",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "certCopiesQuantity_GENERALFORM_EN": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "resultProductsDetailsTable": {
+      "value": [
+        {
+          "id": "aee35dd0-d163-4852-aefa-faf8e72000bc",
+          "rowsNumber": "1",
+          "productName": {
+            "value": "77777777 123 ",
+            "key": "a0cc8168-216d-4e18-972c-9cdeef8df11c",
+            "description": "123",
+            "tnved": {
+              "cRMId": null,
+              "chapter": false,
+              "actual": true,
+              "fullCaption": null,
+              "codeHs": null,
+              "code": "77777777",
+              "description": null,
+              "caption": "sdfs",
+              "dateFrom": "2021-11-04T15:10:16.369+0000",
+              "uuid": "7f5a53ec-039d-4040-afeb-21ef69a2763e",
+              "version": 65465,
+              "parentId": null,
+              "authorFio": "camunda camunda camunda",
+              "regulatoryName": null,
+              "catalogId": {
+                "caption": "Справочник \"Классификатор ТН ВЭД\"",
+                "catalogIdentifier": "tnved",
+                "catalogUuid": "cac1c5e8-3290-470e-aaad-00e56f1901cc",
+                "catalogTypeId": "1",
+                "catalogGroupCode": null,
+                "catalogGroupCaption": null
+              },
+              "id": 65462,
+              "createDate": "2021-11-04T15:10:16.359+0000"
+            },
+            "caption": "123",
+            "manufacturerCaption": "ООО \"ЯНДЕКС\" "
+          },
+          "cargoOriginCountry": {},
+          "GROUP_BUTTON_FOR_CHECKBOX": "1",
+          "NOT_SPT_DEF_TYPE_CERT_1": "",
+          "productNameAdd": "",
+          "TNVEDcode": "",
+          "description": "123",
+          "descriptionAdd": "",
+          "productManufacturerNameAdd": "",
+          "productManufacturerName": "ООО \"ЯНДЕКС\" ",
+          "radio1": "no",
+          "invoiceOfCountry": "",
+          "certificateOfCountry": "",
+          "productNameInfo": "77777777 123 ",
+          "descriptionInfo": "123",
+          "nameManufacturerInfo": "ООО \"ЯНДЕКС\" ",
+          "certificateAvailable": [
+            "certificateAvailable"
+          ],
+          "actNumber": "12",
+          "actDateIssue": "03.11.2021",
+          "goodsMatchInTheAct": [
+            "goodsMatchInTheAct"
+          ],
+          "unitNameSpecial": {
+            "value": "Миллиметр ",
+            "key": "e8a7113d-252f-4f69-8047-0d0f9687bb92",
+            "code": "003"
+          },
+          "quantityOfGoodsSpecial": "123",
+          "numberOfPlaces": "123",
+          "descriptionOfPackaging": {
+            "value": "Нет сведений * Не применяется при заполнении декларации на товары и транзитной декларации. ",
+            "key": "2bbf8809-54ca-4c30-bae7-a579b325bbb1",
+            "kod": "NA"
+          },
+          "quantityOfGoodsGross": "123"
+        }
+      ],
+      "type": "Object",
+      "valueInfo": {
+        "objectTypeName": "java.util.ArrayList",
+        "serializationDataFormat": "application/x-java-serialized-object"
+      }
+    },
+    "certReceiveMethod_ST3": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "certReceiveMethod_ST2": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "certReceiveMethod_ST1": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "certReceiveMethod_A": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "certReceiveMethod_GENERALFORM_EN": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "certCopiesQuantity_ST2": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "certCopiesQuantity_ST3": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "certCopiesQuantity_GENERALFORM": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "productNameGoodsMatchInTheAct": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
+    "productsDetailsTable": {
+      "value": [
+        {
+          "id": "aee35dd0-d163-4852-aefa-faf8e72000bc",
+          "rowsNumber": "1",
+          "productName": {
+            "value": "77777777 123 ",
+            "key": "a0cc8168-216d-4e18-972c-9cdeef8df11c",
+            "description": "123",
+            "tnved": {
+              "cRMId": null,
+              "chapter": false,
+              "actual": true,
+              "fullCaption": null,
+              "codeHs": null,
+              "code": "77777777",
+              "description": null,
+              "caption": "sdfs",
+              "dateFrom": "2021-11-04T15:10:16.369+0000",
+              "uuid": "7f5a53ec-039d-4040-afeb-21ef69a2763e",
+              "version": 65465,
+              "parentId": null,
+              "authorFio": "camunda camunda camunda",
+              "regulatoryName": null,
+              "catalogId": {
+                "caption": "Справочник \"Классификатор ТН ВЭД\"",
+                "catalogIdentifier": "tnved",
+                "catalogUuid": "cac1c5e8-3290-470e-aaad-00e56f1901cc",
+                "catalogTypeId": "1",
+                "catalogGroupCode": null,
+                "catalogGroupCaption": null
+              },
+              "id": 65462,
+              "createDate": "2021-11-04T15:10:16.359+0000"
+            },
+            "caption": "123",
+            "manufacturerCaption": "ООО \"ЯНДЕКС\" "
+          },
+          "cargoOriginCountry": {},
+          "GROUP_BUTTON_FOR_CHECKBOX": "1",
+          "NOT_SPT_DEF_TYPE_CERT_1": "",
+          "productNameAdd": "",
+          "TNVEDcode": "",
+          "description": "123",
+          "descriptionAdd": "",
+          "productManufacturerNameAdd": "",
+          "productManufacturerName": "ООО \"ЯНДЕКС\" ",
+          "radio1": "no",
+          "invoiceOfCountry": "",
+          "certificateOfCountry": "",
+          "productNameInfo": "77777777 123 ",
+          "descriptionInfo": "123",
+          "nameManufacturerInfo": "ООО \"ЯНДЕКС\" ",
+          "certificateAvailable": [
+            "certificateAvailable"
+          ],
+          "actNumber": "12",
+          "actDateIssue": "03.11.2021",
+          "goodsMatchInTheAct": [
+            "goodsMatchInTheAct"
+          ],
+          "unitNameSpecial": {
+            "value": "Миллиметр ",
+            "key": "e8a7113d-252f-4f69-8047-0d0f9687bb92",
+            "code": "003"
+          },
+          "quantityOfGoodsSpecial": "123",
+          "numberOfPlaces": "123",
+          "descriptionOfPackaging": {
+            "value": "Нет сведений * Не применяется при заполнении декларации на товары и транзитной декларации. ",
+            "key": "2bbf8809-54ca-4c30-bae7-a579b325bbb1",
+            "kod": "NA"
+          },
+          "quantityOfGoodsGross": "123"
+        }
+      ],
+      "type": "Object",
+      "valueInfo": {
+        "objectTypeName": "java.util.ArrayList",
+        "serializationDataFormat": "application/x-java-serialized-object"
+      }
+    },
+    "certCopiesQuantity_ST1": {
+      "value": "",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    }
+  },
     "uiSchema": {
         "onChangeHandler": "function({values,fields,prevValues,getName}) {console.log(values);var organizationTPPAddressV = values.organizationExpertiseName.addressTpP; return {updatedValues: Object.assign({}, values, {organizationExpertiseAddress: organizationTPPAddressV})}}",
         "blocks": [
@@ -1544,7 +2406,14 @@
             "uiType": "checkbox",
             "value": "true",
             "visible": true,
-            "title": ""
+            "title": "",
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "certificateAvailable",
+                "equalValue": "certificateAvailable"
+              }
+            ]
           },
           "productNameGoodsMatchInTheAct": {
             "id": "productNameGoodsMatchInTheAct",
@@ -1562,9 +2431,20 @@
             "conditionals": [
               {
                 "type": "visible",
-                "equalName": "goodsMatchInTheAct",
-                "equalValue": "goodsMatchInTheAct",
-                "inverse": true
+                "equalFields": {
+                  "comparisonType": "and",
+                  "fields": [
+                    {
+                      "equalName": "certificateAvailable",
+                      "equalValue": "certificateAvailable"
+                    },
+                    {
+                      "equalName": "goodsMatchInTheAct",
+                      "equalValue": "goodsMatchInTheAct",
+                      "inverse": true
+                    }
+                  ]
+                }
               }
             ]
           },

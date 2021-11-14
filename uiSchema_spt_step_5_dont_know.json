@@ -1928,7 +1928,14 @@
             "uiType": "checkbox",
             "value": "true",
             "visible": true,
-            "title": ""
+            "title": "",
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "certificateAvailable",
+                "equalValue": "certificateAvailable"
+              }
+            ]
           },
           "productNameGoodsMatchInTheAct": {
             "id": "productNameGoodsMatchInTheAct",
@@ -1946,9 +1953,20 @@
             "conditionals": [
               {
                 "type": "visible",
-                "equalName": "goodsMatchInTheAct",
-                "equalValue": "goodsMatchInTheAct",
-                "inverse": true
+                "equalFields": {
+                  "comparisonType": "and",
+                  "fields": [
+                    {
+                      "equalName": "certificateAvailable",
+                      "equalValue": "certificateAvailable"
+                    },
+                    {
+                      "equalName": "goodsMatchInTheAct",
+                      "equalValue": "goodsMatchInTheAct",
+                      "inverse": true
+                    }
+                  ]
+                }
               }
             ]
           },
