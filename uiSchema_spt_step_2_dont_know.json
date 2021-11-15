@@ -647,7 +647,7 @@
               },
               "resultObjectParams": {
                 "name": [
-                  "caption"
+                  "shortName"
                 ],
                 "key": "uuid"
               },
@@ -662,7 +662,7 @@
               },
               "filters": [
                 {
-                  "name": "caption_startlike"
+                  "name": "shortName_startlike"
                 }
               ]
             },
