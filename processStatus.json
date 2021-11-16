@@ -1,0 +1,50 @@
+{
+  "status": 1,
+  "stageNum": 1,
+  "statusName": "Определение вида сертификата",
+  "stageCount": 7,
+  "stages": [
+    {
+      "stageId": "8f380daa-d5bd-11eb-b8bc-0242ac130003",
+      "sequence": 1,
+      "stageName": "Определение вида сертификата",
+      "status": 1
+    },
+    {
+      "stageId": "8f381016-d5bd-11eb-b8bc-0242ac130003",
+      "sequence": 2,
+      "stageName": "Заполнение информации о заявителе и получателе, и условиях поставки",
+      "status": 0
+    },
+    {
+      "stageId": "8f3810fc-d5bd-11eb-b8bc-0242ac130003",
+      "sequence": 3,
+      "stageName": "Заполнение информации о партии товаров",
+      "status": 0
+    },
+    {
+      "stageId": "8f3811d8-d5bd-11eb-b8bc-0242ac130003",
+      "sequence": 4,
+      "stageName": "Подписание и направление заявления на экспертизу",
+      "status": 0
+    },
+    {
+      "stageId": "8f381296-d5bd-11eb-b8bc-0242ac130003",
+      "sequence": 5,
+      "stageName": "Подписание и направление заявления на выдачу сертификата",
+      "status": 0
+    },
+    {
+      "stageId": "8f381354-d5bd-11eb-b8bc-0242ac130003",
+      "sequence": 6,
+      "stageName": "Подтверждение проекта сертификата и оплаты",
+      "status": 0
+    },
+    {
+      "stageId": "8f381692-d5bd-11eb-b8bc-0242ac130003",
+      "sequence": 7,
+      "stageName": "Получение решения по заявлению",
+      "status": 0
+    }
+  ]
+}
