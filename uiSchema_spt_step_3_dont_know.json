@@ -161,6 +161,16 @@
                     }
                   }
                 ]
+              },
+              {
+                "columns": [
+                  {
+                    "id": "ProductIdExaminationReport",
+                    "gridAttributes": {
+                      "lg": 12
+                    }
+                  }
+                ]
               }
             ]
           }
@@ -201,6 +211,16 @@
           }
         ],
         "fields": {
+          "ProductIdExaminationReport": {
+            "id": "ProductIdExaminationReport",
+            "type": "String",
+            "label": "Идентификатор товара из Акта экспертизы",
+            "multiline": false,
+            "readonly": false,
+            "multiple": false,
+            "visible": false,
+            "sendIfNotVisible":true          
+          },
           "quantityOfGoodsGross": {
             "id": "quantityOfGoodsGross",
             "type": "String",

@@ -68,6 +68,14 @@
         "serializationDataFormat": null
       }
     },
+    "ProductIdExaminationReport": {
+      "value": "7743300600",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
     "descriptionOfPackaging": {
       "value": {
         "key": "2bbf8809-54ca-4c30-bae7-a579b325bbb1",
@@ -659,6 +667,7 @@
           "GROUP_BUTTON_FOR_CHECKBOX": "1",
           "NOT_SPT_DEF_TYPE_CERT_1": "",
           "productNameAdd": "",
+          "ProductIdExaminationReport": "",
           "TNVEDcode": "",
           "description": "123",
           "descriptionAdd": "",
@@ -1024,6 +1033,16 @@
                     }
                   }
                 ]
+              },
+              {
+                "columns": [
+                  {
+                    "id": "ProductIdExaminationReport",
+                    "gridAttributes": {
+                      "lg": 12
+                    }
+                  }
+                ]
               }
             ]
           },
@@ -1193,6 +1212,16 @@
                     "id": "status",
                     "gridAttributes": {
                       "lg": 6
+                    }
+                  }
+                ]
+              },
+              {
+                "columns": [
+                  {
+                    "id": "ProductIdExaminationReport",
+                    "gridAttributes": {
+                      "lg": 12
                     }
                   }
                 ]
@@ -1656,6 +1685,16 @@
           }
         ],
         "fields": {
+          "ProductIdExaminationReport": {
+            "id": "ProductIdExaminationReport",
+            "type": "String",
+            "label": "Идентификатор товара из Акта экспертизы",
+            "multiline": false,
+            "readonly": false,
+            "multiple": false,
+            "visible": false,
+            "sendIfNotVisible":true          
+          },
           "productNameInfo": {
             "id": "productNameInfo",
             "type": "String",
