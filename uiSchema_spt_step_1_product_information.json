@@ -391,7 +391,7 @@
                 }
               }
             ]
-          },
+          },         
           {
             "columns": [
               {
@@ -1070,7 +1070,7 @@
             "visible": false,
             "type": "String",
             "uiType": "reference",
-            "label": "Страна импортер",
+            "label": "Страна импортера",
             "placeholder": "Выберите страну",
             "tooltip": "1231",
             "multiple": false,
@@ -1131,7 +1131,7 @@
             "type": "String",
             "uiType": "reference",
             "visible": false,
-            "label": "Страна экспортер",
+            "label": "Страна покупателя",
             "placeholder": "Выберите страну",
             "tooltip": "1231",
             "multiple": false,
@@ -1191,7 +1191,7 @@
             "value": null,
             "type": "String",
             "uiType": "reference",
-            "label": "Страна грузополучатель",
+            "label": "Страна грузополучателя",
             "placeholder": "Выберите страну",
             "tooltip": "",
             "multiple": false,
@@ -1204,8 +1204,19 @@
             "conditionals": [
               {
                 "type": "visible",
-                "equalName": "radio2",
-                "equalValue": "dontKnow"
+                "equalFields": {
+                  "comparisonType": "or",
+                  "fields": [
+                    {
+                      "equalName": "radio2",
+                      "equalValue": "no"
+                    },
+                    {
+                      "equalName": "radio2",
+                      "equalValue": "dontKnow"
+                    }
+                  ]
+                }
               }
             ],
             "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
@@ -1240,7 +1251,7 @@
             "value": null,
             "type": "String",
             "uiType": "reference",
-            "label": "Страна грузоотправитель",
+            "label": "Страна грузоотправителя",
             "placeholder": "Выберите страну",
             "tooltip": "1231",
             "multiple": false,
@@ -1253,12 +1264,26 @@
             "conditionals": [
               {
                 "type": "visible",
-                "equalName": "radio2",
-                "equalValue": "dontKnow"
+                "equalFields": {
+                  "comparisonType": "or",
+                  "fields": [
+                    {
+                      "equalName": "radio2",
+                      "equalValue": "no"
+                    },
+                    {
+                      "equalName": "radio2",
+                      "equalValue": "dontKnow"
+                    }
+                  ]
+                }
               }
             ],
             "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
             "requestParams": {
+              "additionalFields": {
+                "alpha2Code": "alpha2Code"
+              },
               "resultObjectParams": {
                 "name": [
                   "shortName"
@@ -1285,7 +1310,6 @@
             "id": "shippingDate",
             "label": "Предполагаемая дата отгрузки",
             "uiType": "krDate",
-            "visible": false,
             "tooltip": "1123",
             "placeholder": "дд.мм.гггг",
             "minDate": "now",
@@ -1293,25 +1317,7 @@
               {
                 "name": "NotNull"
               }
-            ],
-            "conditionals": [
-              {
-                "type": "visible",
-                "equalFields": {
-                  "comparisonType": "or",
-                  "fields": [
-                    {
-                      "equalName": "radio2",
-                      "equalValue": "no"
-                    },
-                    {
-                      "equalName": "radio2",
-                      "equalValue": "dontKnow"
-                    }
-                  ]
-                }
-              }
-            ]
+            ]           
           },
           "CUSTOM_BUTTON1": {
             "id": "CUSTOM_BUTTON1",
