@@ -159,6 +159,12 @@
                     "gridAttributes": {
                       "lg": 6
                     }
+                  },
+                  {
+                    "id": "weightNetto",
+                    "gridAttributes": {
+                      "lg": 6
+                    }
                   }
                 ]
               },
@@ -225,6 +231,27 @@
             "id": "quantityOfGoodsGross",
             "type": "String",
             "label": "Масса в кг (брутто)",
+            "placeholder": "Введите количество",
+            "multiline": false,
+            "readonly": false,
+            "multiple": false,
+            "constraints": [
+              {
+                "name": "Pattern",
+                "attributes": {
+                  "regexp": "(^[+]?([0-9]*[.])?[0-9]+$|^$)",
+                  "message": "Только числовые значения"
+                }
+              },
+              {
+                "name": "NotNull"
+              }
+            ]
+          },
+          "weightNetto": {
+            "id": "weightNetto",
+            "type": "String",
+            "label": "Масса в кг (нетто)",
             "placeholder": "Введите количество",
             "multiline": false,
             "readonly": false,
