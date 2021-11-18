@@ -176,6 +176,14 @@
         "serializationDataFormat": null
       }
     },
+    "weightNetto": {
+      "value": "123",
+      "type": "String",
+      "valueInfo": {
+        "objectTypeName": null,
+        "serializationDataFormat": null
+      }
+    },
     "companyPhone": {
       "value": "+7 (499) 343-43-42",
       "type": "String",
@@ -699,7 +707,8 @@
             "key": "2bbf8809-54ca-4c30-bae7-a579b325bbb1",
             "kod": "NA"
           },
-          "quantityOfGoodsGross": "123"
+          "quantityOfGoodsGross": "123",
+          "weightNetto": "123"
         }
       ],
       "type": "Object",
@@ -853,7 +862,8 @@
             "key": "2bbf8809-54ca-4c30-bae7-a579b325bbb1",
             "kod": "NA"
           },
-          "quantityOfGoodsGross": "123"
+          "quantityOfGoodsGross": "123",
+          "weightNetto": "123"
         }
       ],
       "type": "Object",
@@ -1031,6 +1041,12 @@
                     "gridAttributes": {
                       "lg": 6
                     }
+                  },
+                  {
+                    "id": "weightNetto",
+                    "gridAttributes": {
+                      "lg": 6
+                    }
                   }
                 ]
               },
@@ -1200,6 +1216,12 @@
                 "columns": [
                   {
                     "id": "quantityOfGoodsGross",
+                    "gridAttributes": {
+                      "lg": 6
+                    }
+                  },
+                  {
+                    "id": "weightNetto",
                     "gridAttributes": {
                       "lg": 6
                     }
@@ -1693,7 +1715,7 @@
             "readonly": false,
             "multiple": false,
             "visible": false,
-            "sendIfNotVisible":true          
+            "sendIfNotVisible":true
           },
           "productNameInfo": {
             "id": "productNameInfo",
@@ -1838,7 +1860,7 @@
             "label": "Адрес",
             "multiline": false,
             "readonly": true,
-            "discription": " "     
+            "discription": " "
           },
           "country": {
             "id": "country",
@@ -2630,6 +2652,27 @@
             ]
           }
         },
+      "weightNetto": {
+        "id": "weightNetto",
+        "type": "String",
+        "label": "Масса в кг (нетто)",
+        "placeholder": "Введите количество",
+        "multiline": false,
+        "readonly": true,
+        "multiple": false,
+        "constraints": [
+          {
+            "name": "Pattern",
+            "attributes": {
+              "regexp": "(^[+]?([0-9]*[.])?[0-9]+$|^$)",
+              "message": "Только числовые значения"
+            }
+          },
+          {
+            "name": "NotNull"
+          }
+        ]
+      },
         "serviceTitle": "Выдача сертификата о происхождении товара",
         "formTitle": "",
         "uiFormType": {

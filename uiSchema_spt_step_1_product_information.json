@@ -395,12 +395,6 @@
           {
             "columns": [
               {
-                "id": "CUSTOM_BUTTON1",
-                "gridAttributes": {
-                  "lg": 2
-                }
-              },
-              {
                 "gridAttributes": {
                   "lg": 2
                 }
