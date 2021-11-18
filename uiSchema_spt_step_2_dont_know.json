@@ -146,7 +146,48 @@
           {
             "columns": [
               {
+                "type": "typography",
+                "typographyProps": {
+                  "html": "Импортер известен",
+                  "variant": "h5",
+                  "margin": "0px 0px 15px 0px"
+                },
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "radioImporter-yes",
+                "gridAttributes": {
+                  "lg": 2
+                }
+              },
+              {
+                "id": "radioImporter-no",
+                "gridAttributes": {
+                  "lg": 2
+                }
+              }          
+            ]
+          },      
+          {
+            "columns": [
+              {
                 "id": "importerName",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "importerNameField",
                 "gridAttributes": {
                   "lg": 12
                 }
@@ -166,7 +207,13 @@
                 "gridAttributes": {
                   "lg": 8
                 }
-              }
+              },
+              {
+                "id": "importerAddressField",
+                "gridAttributes": {
+                  "lg": 8
+                }
+              }           
             ]
           },
           {
@@ -280,6 +327,37 @@
           {
             "columns": [
               {
+                "type": "typography",
+                "typographyProps": {
+                  "html": "Грузополучатель известен",
+                  "variant": "h5",
+                  "margin": "0px 0px 15px 0px"
+                },
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "radioConsignee-yes",
+                "gridAttributes": {
+                  "lg": 2
+                }
+              },
+              {
+                "id": "radioConsignee-no",
+                "gridAttributes": {
+                  "lg": 2
+                }
+              }          
+            ]
+          },
+          {
+            "columns": [
+              {
                 "id": "importerIsConsignee-1",
                 "gridAttributes": {
                   "lg": 12
@@ -357,6 +435,82 @@
           }
         ],
         "fields": {
+          "importerAddressField": {
+            "id": "importerAddressField",
+            "type": "String",
+            "uiType": "infoField",
+            "title": "Адрес",
+            "value": "По заказу",
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "radioImporter",
+                "equalValue": "radioImporter-no"
+                
+              }
+            ]
+          },
+          "importerNameField": {
+            "id": "importerNameField",
+            "type": "String",
+            "uiType": "infoField",
+            "title": "Наименование",
+            "value": "По заказу",
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "radioImporter",
+                "equalValue": "radioImporter-no"
+                
+              }
+            ]
+          },
+          "radioConsignee": {
+            "id": "radioConsignee",
+            "type": "String",
+            "uiType": "radio",
+            "label": "",
+            "data": [
+              {
+                "label": "Да",
+                "value": "radioConsignee-yes",
+                "key": "radioConsignee-yes"
+              },
+              {
+                "label": "Нет",
+                "value": "radioConsignee-no",
+                "key": "radioConsignee-no"
+              }         
+            ],
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ]
+          },
+          "radioImporter": {
+            "id": "radioImporter",
+            "type": "String",
+            "uiType": "radio",
+            "label": "",
+            "data": [
+              {
+                "label": "Да",
+                "value": "radioImporter-yes",
+                "key": "radioImporter-yes"
+              },
+              {
+                "label": "Нет",
+                "value": "radioImporter-no",
+                "key": "radioImporter-no"
+              }         
+            ],
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ]
+          },
           "countryOfImporter": {
             "id": "countryOfImporter",
             "value": null,
@@ -368,6 +522,24 @@
             "constraints": [
               {
                 "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalFields": {
+                  "comparisonType": "or",
+                  "fields": [
+                    {
+                      "equalName": "radioImporter",
+                      "equalValue": "radioImporter-yes"
+                    },
+                    {
+                      "equalName": "radioImporter",
+                      "equalValue": "radioImporter-no"
+                    }
+                  ]
+                }
               }
             ],
             "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
@@ -570,6 +742,14 @@
               {
                 "name": "NotNull"
               }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "radioImporter",
+                "equalValue": "radioImporter-yes"
+                
+              }
             ]
           },
           "locality": {
@@ -672,12 +852,23 @@
               }
             ],
             "conditionals": [
-              {
-                "type": "visible",
-                "equalName": "importerIsConsignee",
-                "equalValue": "importerIsConsignee-1",
-                "inverse": true
-              }
+              {              
+                  "type": "visible",
+                  "equalFields": {
+                    "comparisonType": "and",
+                    "fields": [
+                      {
+                        "equalName": "importerIsConsignee",
+                        "equalValue": "importerIsConsignee-1",
+                        "inverse": true
+                      },
+                      {
+                        "equalName": "radioConsignee",
+                        "equalValue": "radioConsignee-yes"
+                      }
+                  ]
+                }
+              }                        
             ]
           },
           "consigneeLocation": {
@@ -695,12 +886,23 @@
               }
             ],
             "conditionals": [
-              {
-                "type": "visible",
-                "equalName": "importerIsConsignee",
-                "equalValue": "importerIsConsignee-1",
-                "inverse": true
-              }
+              {              
+                  "type": "visible",
+                  "equalFields": {
+                    "comparisonType": "and",
+                    "fields": [
+                      {
+                        "equalName": "importerIsConsignee",
+                        "equalValue": "importerIsConsignee-1",
+                        "inverse": true
+                      },
+                      {
+                        "equalName": "radioConsignee",
+                        "equalValue": "radioConsignee-yes"
+                      }
+                    ]
+                  }
+                }               
             ]
           },
           "consigneeName": {
@@ -718,12 +920,23 @@
               }
             ],
             "conditionals": [
-              {
-                "type": "visible",
-                "equalName": "importerIsConsignee",
-                "equalValue": "importerIsConsignee-1",
-                "inverse": true
-              }
+              {              
+                  "type": "visible",
+                  "equalFields": {
+                    "comparisonType": "and",
+                    "fields": [
+                      {
+                        "equalName": "importerIsConsignee",
+                        "equalValue": "importerIsConsignee-1",
+                        "inverse": true
+                      },
+                      {
+                        "equalName": "radioConsignee",
+                        "equalValue": "radioConsignee-yes"
+                      }
+                    ]
+                  }
+                }               
             ]
           },
           "importerName": {
@@ -737,6 +950,14 @@
             "constraints": [
               {
                 "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "radioImporter",
+                "equalValue": "radioImporter-yes"
+                
               }
             ]
           },
@@ -753,7 +974,15 @@
             "uiType": "checkbox",
             "value": "true",
             "visible": true,
-            "title": ""
+            "title": "",
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "radioConsignee",
+                "equalValue": "radioConsignee-yes"
+                
+              }
+            ]
           },
           "shipperCompanyName": {
             "id": "shipperCompanyName",

@@ -1377,7 +1377,24 @@
                 "name": "NotNull"
               }
             ],
-            "conditionals": []
+            "conditionals": [
+              {              
+                  "type": "visible",
+                  "equalFields": {
+                    "comparisonType": "or",
+                    "fields": [
+                      {
+                        "equalName": "radio",
+                        "equalValue": "send"
+                      },
+                      {
+                        "equalName": "radio",
+                        "equalValue": "middle"
+                      }
+                    ]
+                  }
+                }               
+            ]
           }
         },
         "serviceTitle": "Выдача сертификата о происхождении товара",
