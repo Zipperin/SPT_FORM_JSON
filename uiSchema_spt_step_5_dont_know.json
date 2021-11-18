@@ -172,6 +172,50 @@
               {
                 "columns": [
                   {
+                    "type": "divider"
+                  }
+                ]
+              },
+              {
+                "columns": [
+                  {
+                    "type": "typography",
+                    "typographyProps": {
+                      "text": "Счет-фактура (инвойс)",
+                      "variant": "h5",
+                      "margin": "0px 0px 15px 0px"
+                    },
+                    "gridAttributes": {
+                      "lg": 12
+                    }
+                  }
+                ]
+              },
+              {
+                "columns": [
+                  {
+                    "id": "invoiceNumber",
+                    "gridAttributes": {
+                      "lg": 4
+                    }
+                  },
+                  {
+                    "id": "invoiceDate",
+                    "gridAttributes": {
+                      "lg": 4
+                    }
+                  },
+                  {
+                    "id": "file_invoice",
+                    "gridAttributes": {
+                      "lg": 4
+                    }
+                  }
+                ]
+              },
+              {
+                "columns": [
+                  {
                     "id": "ProductIdExaminationReport",
                     "gridAttributes": {
                       "lg": 12
@@ -1265,6 +1309,36 @@
               {}
             ]
           },
+          "invoiceNumber": {
+            "id": "invoiceNumber",
+            "type": "String",
+            "label": "Номер",
+            "multiline": false,
+            "readonly": false,
+            "tooltip": "",
+            "placeholder": "Введите номер",
+            "multiple": false,
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ]
+          },
+          "invoiceDate": {
+            "id": "invoiceDate",
+            "label": "Дата",
+            "uiType": "krDate",
+            "disableFuture": true,
+            "placeholder": "дд.мм.гггг",
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {}
+            ]
+          },
           "nameOfAuthorizedPerson": {
             "id": "nameOfAuthorizedPerson",
             "type": "String",
@@ -1507,12 +1581,14 @@
           "NOT_SPT_ISSUANCE_1_DONT_KNOW": {
             "id": "NOT_SPT_ISSUANCE_1_DONT_KNOW",
             "uiType": "notification",
-            "notificationStatus": "ERROR"
+            "notificationStatus": "ERROR",
+            "html": ""
           },
           "NOT_SPT_ISSUANCE_3_DONT_KNOW": {
             "id": "NOT_SPT_ISSUANCE_3_DONT_KNOW",
             "uiType": "notification",
-            "notificationStatus": "WARNING"         
+            "notificationStatus": "WARNING"   ,
+            "html": ""
           },
           "getReasonedRefusal": {
             "id": "getReasonedRefusal",

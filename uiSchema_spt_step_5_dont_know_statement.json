@@ -1514,12 +1514,14 @@
       "NOT_SPT_ISSUANCE_1_DONT_KNOW": {
         "id": "NOT_SPT_ISSUANCE_1_DONT_KNOW",
         "uiType": "notification",
-        "notificationStatus": "ERROR"
+        "notificationStatus": "ERROR",
+        "html": ""
       },
       "NOT_SPT_ISSUANCE_3_DONT_KNOW": {
         "id": "NOT_SPT_ISSUANCE_3_DONT_KNOW",
         "uiType": "notification",
-        "notificationStatus": "WARNING"
+        "notificationStatus": "WARNING",
+        "html": ""
       },
       "getReasonedRefusal": {
         "id": "getReasonedRefusal",
