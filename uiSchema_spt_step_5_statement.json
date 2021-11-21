@@ -1,6 +1,7 @@
 {
-  "variables": {},
-  "uiSchema": {
+  "paramCode": "uiSchema_spt_step_5_statement",
+  "paramName": "Шаг 5 заявление сформировано",
+  "paramValue": {
     "onChangeHandler": "function({values,fields,prevValues,getName}) {console.log(values);var organizationTPPAddressV = values.organizationTPPName.addressTpP; return {updatedValues: Object.assign({}, values, {organizationTPPAddress: organizationTPPAddressV})}}",
     "blocks": [
       {
@@ -924,7 +925,7 @@
         "readonly": false,
         "multiple": false,
         "visible": false,
-        "sendIfNotVisible":true          
+        "sendIfNotVisible": true
       },
       "numberOfCopies": {
         "id": "numberOfCopies",
@@ -955,33 +956,43 @@
       },
       "file_contract": {
         "id": "file_contract",
-        "type": "file",
-        "uiType": "krFileUploader",
-        "filesLimit": 1,
-        "outerError": "",
-        "required": true,
-        "canDelete": true,
+        "uiType": "file",
+        "label": "Экспортный контракт",
         "constraints": [
           {
-            "name": "NotNull"
+            "name": "Size",
+            "attributes": {
+              "min": 0,
+              "max": 31457280
+            }
           }
         ],
-        "readonly": true
+        "conditionals": [
+          {
+            "type": "visible",
+            "equalValue": true
+          }
+        ]
       },
       "file_invoice": {
         "id": "file_invoice",
-        "type": "file",
-        "uiType": "krFileUploader",
-        "filesLimit": 1,
-        "outerError": "",
-        "required": true,
-        "canDelete": true,
+        "uiType": "file",
+        "label": "Счет-фактура",
         "constraints": [
           {
-            "name": "NotNull"
+            "name": "Size",
+            "attributes": {
+              "min": 0,
+              "max": 31457280
+            }
           }
         ],
-        "readonly": true
+        "conditionals": [
+          {
+            "type": "visible",
+            "equalValue": true
+          }
+        ]
       },
       "wayGetSolution": {
         "id": "wayGetSolution",
@@ -995,7 +1006,7 @@
             "name": "NotNull"
           }
         ],
-        "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/cert_method/items/search",
+        "url": "http://lk.t.exportcenter.ru/mdm-adapter/api/v1/catalogs/cert_method/items/search",
         "requestParams": {
           "additionalFields": {},
           "resultObjectParams": {
@@ -1107,7 +1118,7 @@
             "name": "NotNull"
           }
         ],
-        "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/list_of_tpp/items/search",
+        "url": "http://lk.t.exportcenter.ru/mdm-adapter/api/v1/catalogs/list_of_tpp/items/search",
         "requestParams": {
           "additionalFields": {
             "addressTpP": "addressTpP",
@@ -1176,7 +1187,7 @@
             "name": "NotNull"
           }
         ],
-        "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
+        "url": "http://lk.t.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
         "requestParams": {
           "additionalFields": {
             "alpha2Code": "alpha2Code"
@@ -1287,7 +1298,7 @@
         "uiType": "reference",
         "label": "Вид транспорта",
         "placeholder": "Выберите вид транспорта",
-        "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/types_of_transport/items/search",
+        "url": "http://lk.t.exportcenter.ru/mdm-adapter/api/v1/catalogs/types_of_transport/items/search",
         "requestParams": {
           "additionalFields": {
             "kod": "kod"
@@ -1727,7 +1738,7 @@
         "conditionals": [
           {}
         ],
-        "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/org_goods/items/search",
+        "url": "http://lk.t.exportcenter.ru/mdm-adapter/api/v1/catalogs/org_goods/items/search",
         "requestParams": {
           "additionalFields": {
             "description": "description",
@@ -1805,7 +1816,7 @@
             "name": "NotNull"
           }
         ],
-        "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
+        "url": "http://lk.t.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
         "requestParams": {
           "additionalFields": {
             "alpha2Code": "alpha2Code"
@@ -1923,7 +1934,7 @@
         "label": "Единица измерения товара",
         "placeholder": "Выберите единицу измерения",
         "multiple": false,
-        "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/units/items/search",
+        "url": "http://lk.t.exportcenter.ru/mdm-adapter/api/v1/catalogs/units/items/search",
         "requestParams": {
           "additionalFields": {
             "code": "code"
@@ -2008,7 +2019,7 @@
             "name": "NotNull"
           }
         ],
-        "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/cargo_packaging_classifier/items/search",
+        "url": "http://lk.t.exportcenter.ru/mdm-adapter/api/v1/catalogs/cargo_packaging_classifier/items/search",
         "requestParams": {
           "additionalFields": {
             "kod": "kod"
@@ -2074,6 +2085,46 @@
             }
           }
         ]
+      },
+      "xml_issue_request": {
+        "id": "xml_issue_request",
+        "uiType": "file",
+        "label": "XML-файл",
+        "constraints": [
+          {
+            "name": "Size",
+            "attributes": {
+              "min": 0,
+              "max": 31457280
+            }
+          }
+        ],
+        "conditionals": [
+          {
+            "type": "visible",
+            "equalValue": false
+          }
+        ]
+      },
+      "spt_certificate_request": {
+        "id": "spt_certificate_request",
+        "uiType": "file",
+        "label": "Заявление",
+        "constraints": [
+          {
+            "name": "Size",
+            "attributes": {
+              "min": 0,
+              "max": 31457280
+            }
+          }
+        ],
+        "conditionals": [
+          {
+            "type": "visible",
+            "equalValue": false
+          }
+        ]
       }
     },
     "serviceTitle": "Выдача сертификата о происхождении товара",
@@ -2085,7 +2136,26 @@
     "navigationButtons": {
       "next": {
         "hide": false,
-        "label": "Подписать и отправить"
+        "label": "Подписать и отправить",
+        "customId": "SignAndNextButton",
+        "documents": [
+          {
+            "name": "xml_issue_request",
+            "signType": "CADESCOM_PKCS7_TYPE"
+          },
+          {
+            "name": "spt_certificate_request",
+            "signType": "CADESCOM_CADES_BES"
+          },
+          {
+            "name": "file_invoice",
+            "signType": "CADESCOM_PKCS7_TYPE"
+          },
+          {
+            "name": "file_contract",
+            "signType": "CADESCOM_PKCS7_TYPE"
+          }
+        ]
       },
       "cancel": {
         "hide": false
@@ -2118,5 +2188,9 @@
         "Получение решения по заявлению"
       ]
     }
-  }
+  },
+  "paramType": "json",
+  "id": 754,
+  "bpms_process_id": 146,
+  "authorId": "c4623968-02f6-4318-8dd5-e75e45b67be3"
 }
