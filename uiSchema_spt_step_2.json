@@ -1,7 +1,7 @@
 {
     "variables": {},
     "uiSchema": {
-        "onChangeHandler": "function({values,prevValues}){console.log({values});const cloneObject=(obj)=>JSON.parse(JSON.stringify(obj));const fillObjectWithStateKeyMap=(objForCopy,data,map)=>{const clone=cloneObject(objForCopy);Object.keys(map).forEach((shipperKey)=>{const dataKey=map[shipperKey];clone[shipperKey]=data[dataKey]?data[dataKey]:''});return clone};const fillShipperAsApplicant=(values)=>{const stateKeyMap={shipperLegalAddress:'legalAddress',shipperInn:'inn',shipperOgrn:'ogrn',shipperKpp:'kpp'};const updatedValues=fillObjectWithStateKeyMap(values,values,stateKeyMap);updatedValues.shipperCompanyName={key:values.client,value:values.companyName};return{updatedValues}};const generateShipperLegalAddressFromChoosedCompany=({extAddresses})=>{const data=extAddresses.pop();if(!data){return''}const requiredFieldsNames=['extRegion','extCity','extHouse','extStreet','extOffice',];const requiredFields=requiredFieldsNames.map((fieldName)=>data[fieldName]).filter((v)=>!!v);return requiredFields.join(', ')};const fillShipperAsChoosedCompany=(values)=>{const stateKeyMap={shipperCountry:'regCountry',shipperInn:'inn',shipperOgrn:'ogrn',shipperKpp:'kpp'};const company=values.shipperCompanyName;const updatedValues=fillObjectWithStateKeyMap(values,company,stateKeyMap);updatedValues.shipperLegalAddress=generateShipperLegalAddressFromChoosedCompany(company);return{updatedValues}};const clearShipper=(values)=>{const updatedValues=cloneObject(values);const defaultState={shipperCompanyName:{},shipperCountry:'',shipperLegalAddress:'',shipperInn:'',shipperOgrn:'',shipperKpp:''};Object.keys(defaultState).forEach((key)=>updatedValues[key]=defaultState[key]);return{updatedValues}};const clearConsignee=(values)=>{const updatedValues=cloneObject(values);const defaultState={consigneeName:'',importerCountry:{},consigneeLocation:''};Object.keys(defaultState).forEach((key)=>updatedValues[key]=defaultState[key]);return{updatedValues}};const fillConsigneeAsApplicant=(values)=>{const stateKeyMap={consigneeName:'importerName',consigneeLocation:'address',importerCountry:'countryOfImporter'};return{updatedValues:fillObjectWithStateKeyMap(values,values,stateKeyMap)}};const isShipperCheckboxChanged=prevValues.exporterIsShipper.length!==values.exporterIsShipper.length;var selectedRadio=values.radio;if(selectedRadio==='destination'&&Object.keys(values.importerCountry).length>0){values.country=values.importerCountry}if(isShipperCheckboxChanged){const isShipperCheckboxDisabled=values.exporterIsShipper.length===0;if(isShipperCheckboxDisabled){return clearShipper(values)}return fillShipperAsApplicant(values)}const isShipperChoosedFromList=(!!values.shipperCompanyName.key)&&(values.shipperCompanyName.key!==prevValues.shipperCompanyName.key);if(isShipperChoosedFromList){return fillShipperAsChoosedCompany(values)}const isConsigneeCheckboxChanged=prevValues.importerIsConsignee.length!==values.importerIsConsignee.length;if(isConsigneeCheckboxChanged){const isConsigneeCheckboxDisabled=values.importerIsConsignee.length===0;if(isConsigneeCheckboxDisabled){return clearConsignee(values)}return fillConsigneeAsApplicant(values)}}",
+        "onChangeHandler": "function({values,prevValues, fields}){console.log({values}); const radioConsignee = values.radioConsignee;     var allFields = fields;     var actualImporterCountry = fields.find(el => el.id === 'importerCountry');     var fieldIndex = allFields.indexOf(actualImporterCountry);     if (radioConsignee === 'radioConsignee-yes') {         if (values.importerIsConsignee.length === 0) {             actualImporterCountry.visible = true;             allFields[fieldIndex] = actualImporterCountry;             return {updatedFields: allFields};         } else {             actualImporterCountry.visible = false;             allFields[fieldIndex] = actualImporterCountry;             return {updatedFields: allFields};         }                     }     if (radioConsignee === 'radioConsignee-no') {         actualImporterCountry.visible = true;         allFields[fieldIndex] = actualImporterCountry;         return {updatedFields: allFields};            } const cloneObject=(obj)=>JSON.parse(JSON.stringify(obj));const fillObjectWithStateKeyMap=(objForCopy,data,map)=>{const clone=cloneObject(objForCopy);Object.keys(map).forEach((shipperKey)=>{const dataKey=map[shipperKey];clone[shipperKey]=data[dataKey]?data[dataKey]:''});return clone};const fillShipperAsApplicant=(values)=>{const stateKeyMap={shipperLegalAddress:'legalAddress',shipperInn:'inn',shipperOgrn:'ogrn',shipperKpp:'kpp'};const updatedValues=fillObjectWithStateKeyMap(values,values,stateKeyMap);updatedValues.shipperCompanyName={key:values.client,value:values.companyName};return{updatedValues}};const generateShipperLegalAddressFromChoosedCompany=({extAddresses})=>{const data=extAddresses.pop();if(!data){return''}const requiredFieldsNames=['extRegion','extCity','extHouse','extStreet','extOffice',];const requiredFields=requiredFieldsNames.map((fieldName)=>data[fieldName]).filter((v)=>!!v);return requiredFields.join(', ')};const fillShipperAsChoosedCompany=(values)=>{const stateKeyMap={shipperCountry:'regCountry',shipperInn:'inn',shipperOgrn:'ogrn',shipperKpp:'kpp'};const company=values.shipperCompanyName;const updatedValues=fillObjectWithStateKeyMap(values,company,stateKeyMap);updatedValues.shipperLegalAddress=generateShipperLegalAddressFromChoosedCompany(company);return{updatedValues}};const clearShipper=(values)=>{const updatedValues=cloneObject(values);const defaultState={shipperCompanyName:{},shipperCountry:'',shipperLegalAddress:'',shipperInn:'',shipperOgrn:'',shipperKpp:''};Object.keys(defaultState).forEach((key)=>updatedValues[key]=defaultState[key]);return{updatedValues}};const clearConsignee=(values)=>{const updatedValues=cloneObject(values);const defaultState={consigneeName:'',importerCountry:{},consigneeLocation:''};Object.keys(defaultState).forEach((key)=>updatedValues[key]=defaultState[key]);return{updatedValues}};const fillConsigneeAsApplicant=(values)=>{const stateKeyMap={consigneeName:'importerName',consigneeLocation:'address',importerCountry:'countryOfImporter'};return{updatedValues:fillObjectWithStateKeyMap(values,values,stateKeyMap)}};const isShipperCheckboxChanged=prevValues.exporterIsShipper.length!==values.exporterIsShipper.length;var selectedRadio=values.radio;if(selectedRadio==='destination'&&Object.keys(values.importerCountry).length>0){values.country=values.importerCountry}if(isShipperCheckboxChanged){const isShipperCheckboxDisabled=values.exporterIsShipper.length===0;if(isShipperCheckboxDisabled){return clearShipper(values)}return fillShipperAsApplicant(values)}const isShipperChoosedFromList=(!!values.shipperCompanyName.key)&&(values.shipperCompanyName.key!==prevValues.shipperCompanyName.key);if(isShipperChoosedFromList){return fillShipperAsChoosedCompany(values)}const isConsigneeCheckboxChanged=prevValues.importerIsConsignee.length!==values.importerIsConsignee.length;if(isConsigneeCheckboxChanged){const isConsigneeCheckboxDisabled=values.importerIsConsignee.length===0;if(isConsigneeCheckboxDisabled){return clearConsignee(values)}return fillConsigneeAsApplicant(values)}}",
         "blocks": [
           {
             "name": "routeTableEdit",
@@ -146,7 +146,48 @@
           {
             "columns": [
               {
+                "type": "typography",
+                "typographyProps": {
+                  "html": "Импортер известен",
+                  "variant": "h5",
+                  "margin": "0px 0px 15px 0px"
+                },
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "radioImporter-yes",
+                "gridAttributes": {
+                  "lg": 2
+                }
+              },
+              {
+                "id": "radioImporter-no",
+                "gridAttributes": {
+                  "lg": 2
+                }
+              }          
+            ]
+          },
+          {
+            "columns": [
+              {
                 "id": "importerName",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "importerNameField",
                 "gridAttributes": {
                   "lg": 12
                 }
@@ -163,6 +204,12 @@
               },
               {
                 "id": "address",
+                "gridAttributes": {
+                  "lg": 8
+                }
+              },
+              {
+                "id": "importerAddressField",
                 "gridAttributes": {
                   "lg": 8
                 }
@@ -280,6 +327,37 @@
           {
             "columns": [
               {
+                "type": "typography",
+                "typographyProps": {
+                  "html": "Грузополучатель известен",
+                  "variant": "h5",
+                  "margin": "0px 0px 15px 0px"
+                },
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
+                "id": "radioConsignee-yes",
+                "gridAttributes": {
+                  "lg": 2
+                }
+              },
+              {
+                "id": "radioConsignee-no",
+                "gridAttributes": {
+                  "lg": 2
+                }
+              }          
+            ]
+          },
+          {
+            "columns": [
+              {
                 "id": "importerIsConsignee-1",
                 "gridAttributes": {
                   "lg": 12
@@ -300,6 +378,16 @@
           {
             "columns": [
               {
+                "id": "consigneeNameField",
+                "gridAttributes": {
+                  "lg": 12
+                }
+              }
+            ]
+          },
+          {
+            "columns": [
+              {
                 "id": "importerCountry",
                 "gridAttributes": {
                   "lg": 4
@@ -307,6 +395,12 @@
               },
               {
                 "id": "consigneeLocation",
+                "gridAttributes": {
+                  "lg": 8
+                }
+              },
+              {
+                "id": "consigneeAddressField",
                 "gridAttributes": {
                   "lg": 8
                 }
@@ -368,6 +462,112 @@
           }
         ],
         "fields": {
+          "consigneeNameField": {
+            "id": "consigneeNameField",
+            "type": "String",
+            "uiType": "infoField",
+            "title": "Наименование",
+            "value": "По заказу",
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "radioConsignee",
+                "equalValue": "radioConsignee-no"
+                
+              }
+            ]
+          },
+          "consigneeAddressField": {
+            "id": "consigneeAddressField",
+            "type": "String",
+            "uiType": "infoField",
+            "title": "Адрес",
+            "value": "По заказу",
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "radioConsignee",
+                "equalValue": "radioConsignee-no"
+                
+              }
+            ]
+          },
+          "importerAddressField": {
+            "id": "importerAddressField",
+            "type": "String",
+            "uiType": "infoField",
+            "title": "Адрес",
+            "value": "По заказу",
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "radioImporter",
+                "equalValue": "radioImporter-no"
+                
+              }
+            ]
+          },
+          "importerNameField": {
+            "id": "importerNameField",
+            "type": "String",
+            "uiType": "infoField",
+            "title": "Наименование",
+            "value": "По заказу",
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "radioImporter",
+                "equalValue": "radioImporter-no"
+                
+              }
+            ]
+          },
+          "radioConsignee": {
+            "id": "radioConsignee",
+            "type": "String",
+            "uiType": "radio",
+            "label": "",
+            "data": [
+              {
+                "label": "Да",
+                "value": "radioConsignee-yes",
+                "key": "radioConsignee-yes"
+              },
+              {
+                "label": "Нет",
+                "value": "radioConsignee-no",
+                "key": "radioConsignee-no"
+              }         
+            ],
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ]
+          },
+          "radioImporter": {
+            "id": "radioImporter",
+            "type": "String",
+            "uiType": "radio",
+            "label": "",
+            "data": [
+              {
+                "label": "Да",
+                "value": "radioImporter-yes",
+                "key": "radioImporter-yes"
+              },
+              {
+                "label": "Нет",
+                "value": "radioImporter-no",
+                "key": "radioImporter-no"
+              }         
+            ],
+            "constraints": [
+              {
+                "name": "NotNull"
+              }
+            ]
+          },
           "countryOfImporter": {
             "id": "countryOfImporter",
             "value": null,
@@ -379,6 +579,24 @@
             "constraints": [
               {
                 "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalFields": {
+                  "comparisonType": "or",
+                  "fields": [
+                    {
+                      "equalName": "radioImporter",
+                      "equalValue": "radioImporter-yes"
+                    },
+                    {
+                      "equalName": "radioImporter",
+                      "equalValue": "radioImporter-no"
+                    }
+                  ]
+                }
               }
             ],
             "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
@@ -585,6 +803,14 @@
               {
                 "name": "NotNull"
               }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "radioImporter",
+                "equalValue": "radioImporter-yes"
+                
+              }
             ]
           },
           "locality": {
@@ -663,6 +889,7 @@
             "value": null,
             "type": "String",
             "uiType": "reference",
+            "visible": false,
             "label": "Страна",
             "placeholder": "Выберите страну",
             "url": "http://mdm-api-adapter.integration-dev.d.exportcenter.ru/mdm-adapter/api/v1/catalogs/country/items/search",
@@ -695,15 +922,7 @@
               {
                 "name": "NotNull"
               }
-            ],
-            "conditionals": [
-              {
-                "type": "visible",
-                "equalName": "importerIsConsignee",
-                "equalValue": "importerIsConsignee-1",
-                "inverse": true
-              }
-            ]
+            ]      
           },
           "consigneeLocation": {
             "id": "consigneeLocation",
@@ -720,18 +939,29 @@
               }
             ],
             "conditionals": [
-              {
-                "type": "visible",
-                "equalName": "importerIsConsignee",
-                "equalValue": "importerIsConsignee-1",
-                "inverse": true
-              }
+              {              
+                  "type": "visible",
+                  "equalFields": {
+                    "comparisonType": "and",
+                    "fields": [
+                      {
+                        "equalName": "importerIsConsignee",
+                        "equalValue": "importerIsConsignee-1",
+                        "inverse": true
+                      },
+                      {
+                        "equalName": "radioConsignee",
+                        "equalValue": "radioConsignee-yes"
+                      }
+                    ]
+                  }
+                }               
             ]
           },
           "consigneeName": {
             "id": "consigneeName",
             "type": "String",
-            "label": "Наименование грузополучателя",
+            "label": "Наименование",
             "sendIfNotVisible": true,
             "placeholder": "Введите наименование",
             "tooltip": "",
@@ -743,12 +973,23 @@
               }
             ],
             "conditionals": [
-              {
-                "type": "visible",
-                "equalName": "importerIsConsignee",
-                "equalValue": "importerIsConsignee-1",
-                "inverse": true
-              }
+              {              
+                  "type": "visible",
+                  "equalFields": {
+                    "comparisonType": "and",
+                    "fields": [
+                      {
+                        "equalName": "importerIsConsignee",
+                        "equalValue": "importerIsConsignee-1",
+                        "inverse": true
+                      },
+                      {
+                        "equalName": "radioConsignee",
+                        "equalValue": "radioConsignee-yes"
+                      }
+                    ]
+                  }
+                }               
             ]
           },
           "importerName": {
@@ -762,6 +1003,14 @@
             "constraints": [
               {
                 "name": "NotNull"
+              }
+            ],
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "radioImporter",
+                "equalValue": "radioImporter-yes"
+                
               }
             ]
           },
@@ -778,7 +1027,15 @@
             "uiType": "checkbox",
             "value": "true",
             "visible": true,
-            "title": ""
+            "title": "",
+            "conditionals": [
+              {
+                "type": "visible",
+                "equalName": "radioConsignee",
+                "equalValue": "radioConsignee-yes"
+                
+              }
+            ]
           },
           "shipperCompanyName": {
             "id": "shipperCompanyName",
